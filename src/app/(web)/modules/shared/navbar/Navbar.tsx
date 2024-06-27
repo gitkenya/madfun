@@ -58,6 +58,7 @@ export default function Navbar(props: any) {
                   className="flex items-center text-slate-600 font-extrabold uppercase"
                 >
                   <Image
+                    className="w-[50px] h-[50px]"
                     width={50}
                     height={50}
                     src="/assets/img/logos/logo.svg"

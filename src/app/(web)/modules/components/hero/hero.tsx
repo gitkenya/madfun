@@ -12,6 +12,7 @@ export default function Hero() {
                   src="/assets/img/hero/travel.jpg"
                   fill
                   alt="Madfun"
+                  sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                 />
               </div>
               <div className="w-full h-full sm:w-1/2 p-4">
@@ -33,6 +34,7 @@ export default function Hero() {
                         src="/assets/img/hero/travel.jpg"
                         fill
                         alt="Madfun"
+                        sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                       />
                     </div>
                     <div className="w-full h-full sm:w-1/2 p-4">
@@ -46,6 +48,7 @@ export default function Hero() {
                         src="/assets/img/hero/travel.jpg"
                         fill
                         alt="Madfun"
+                        sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                       />
                     </div>
                     <div className="w-full h-full sm:w-1/2 p-4">

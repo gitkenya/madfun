@@ -15,18 +15,21 @@ export default function Destinations() {
   return (
     <section className="w-full py-8 bg-slate-100 mt-4">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-16">
-        <div className="w-full flex flex-row items-center justify-between">
+        <div className="w-full flex flex-col sm:flex-row items-center justify-between">
           <div className="flex flex-row items-center gap-2">
-            <h1 className="text-3xl font-bold">Popular Destinations from</h1>
-            <select className="mt-[2px] font-bold border-none outline-none text-3xl bg-transparent text-slate-500">
-              <option disabled selected>
-                Nairobi
-              </option>
-              <option>Mombasa</option>
-              <option>Kisumu</option>
-              <option>Nyeri</option>
-              <option>Nakuru</option>
-              <option>Thika</option>
+            <h1 className="text-lg sm:text-3xl font-bold">
+              Popular Destinations from
+            </h1>
+            <select
+              className="mt-[2px] font-bold border-none outline-none text-lg sm:text-3xl bg-transparent text-slate-500"
+              defaultValue={1}
+            >
+              <option value={1}>Nairobi</option>
+              <option value={2}>Mombasa</option>
+              <option value={3}>Kisumu</option>
+              <option value={4}>Nyeri</option>
+              <option value={5}>Nakuru</option>
+              <option value={6}>Thika</option>
             </select>
           </div>
           <Link
