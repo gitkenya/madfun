@@ -87,7 +87,10 @@ export default function Navbar(props: any) {
                         `}
                     >
                       <SlPlane size={18} />
-                      Travel
+                      Travel{" "}
+                      <span className="bg-red-600 px-4 py-1 text-xs text-slate-50 rounded-full">
+                        New
+                      </span>
                     </Link>
                     <Link
                       href="/marketplace"
