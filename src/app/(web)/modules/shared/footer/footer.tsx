@@ -3,6 +3,12 @@ import moment from "moment";
 import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail, MdLocalPhone } from "react-icons/md";
+import {
+  IoLogoFacebook,
+  IoLogoInstagram,
+  IoLogoTwitter,
+} from "react-icons/io5";
+import { FaXTwitter } from "react-icons/fa6";
 export default function Footer() {
   return (
     <section className="relative">
@@ -145,20 +151,51 @@ export default function Footer() {
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Contact us
                   </h3>
-                  <ul className="flex flex-col gap-4 text-slate-600">
+                  <ul className="flex flex-col gap-3 text-slate-600 border-b border-slate-200 pb-4">
                     <li className="flex flex-row gap-4 items-start">
-                      <FaMapMarkerAlt size={20} className="mt-1" />
+                      <FaMapMarkerAlt
+                        size={20}
+                        className="mt-1 text-slate-500"
+                      />
                       4th Floor, Kalson towers
                       <br />
                       76738 - 00200, Nairobi
                     </li>
                     <li className="flex flex-row gap-4 items-start">
-                      <MdLocalPhone size={20} /> +254 115 555 000
+                      <MdLocalPhone
+                        size={20}
+                        className="mt-0.5 text-slate-500"
+                      />{" "}
+                      +254 115 555 000
                     </li>
                     <li className="flex flex-row gap-4 items-start">
-                      <MdEmail size={20} /> info@madfun.com
+                      <MdEmail size={20} className="mt-0.5 text-slate-500" />{" "}
+                      info@madfun.com
                     </li>
                   </ul>
+                  <div className="flex flex-row justify-start items-center gap-8">
+                    <Link
+                      href="https://facebook.com/wearemadfun"
+                      target="_blank"
+                      className="transition-all duration-300 text-slate-500 hover:text-indigo-800"
+                    >
+                      <IoLogoFacebook size={28} />
+                    </Link>
+                    <Link
+                      href="https://x.com/weare_madfun"
+                      target="_blank"
+                      className="transition-all duration-300 text-slate-500 hover:text-slate-800"
+                    >
+                      <FaXTwitter size={26} />
+                    </Link>
+                    <Link
+                      href="https://instagram.com/wearemadfun"
+                      target="_blank"
+                      className="transition-all duration-300 text-slate-500 hover:text-orange-800"
+                    >
+                      <IoLogoInstagram size={28} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
