@@ -53,7 +53,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   </li>
                 </ol>
                 <h2 className="text-lg font-bold">Event Organizer</h2>
-                <div className="flex flex-row items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <div className="flex flex-row items-center gap-4">
                     <Image
                       className="rounded-full"
@@ -180,8 +180,18 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
-                Checkout
+              <div className="flex flex-col sm:flex-row gap-4 sm:items-center justify-between bg-slate-50 rounded-xl p-6">
+                <div>
+                  <p className="text-sm text-slate-500">Total</p>
+                  <h4 className="font-extrabold text-3xl text-slate-800">
+                    Ksh 2,500
+                  </h4>
+                </div>
+                <div>
+                  <button className="bg-slate-800 text-slate-50 px-12 py-4 font-medium rounded-lg">
+                    Checkout
+                  </button>
+                </div>
               </div>
             </div>
           </div>
