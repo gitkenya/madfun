@@ -3,8 +3,8 @@ import Link from "next/link";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
-    <section className="w-full bg-slate-100 py-12">
-      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-16">
+    <section className="w-full bg-slate-100 py-4 sm:py-12">
+      <div className="mx-auto max-w-[90rem] px-4 space-y-16">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="grid bg-slate-50 rounded-lg md:rounded-xl">
             <div className="p-4 md:p-12 flex flex-col gap-6">

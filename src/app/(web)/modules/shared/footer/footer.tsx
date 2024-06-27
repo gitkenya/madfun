@@ -31,9 +31,9 @@ export default function Footer() {
             </Link>
           </div>
           <div className="w-full md:w-2/3 p-4 md:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="grid">
-                <div className="flex flex-col gap-y-5">
+                <div className="flex flex-col gap-y-2 sm:gap-y-5">
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Quick links
                   </h3>
@@ -90,7 +90,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="grid">
-                <div className="flex flex-col gap-y-5">
+                <div className="flex flex-col gap-y-2 sm:gap-y-5">
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Our Services
                   </h3>
@@ -139,7 +139,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className="grid">
-                <div className="flex flex-col gap-y-5">
+                <div className="flex flex-col gap-y-2 sm:gap-y-5">
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Contact us
                   </h3>
