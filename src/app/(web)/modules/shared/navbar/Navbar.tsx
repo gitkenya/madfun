@@ -67,7 +67,11 @@ export default function Navbar(props: any) {
                   <div className="flex items-center space-x-4">
                     <Link
                       href="/streams"
-                      className={`transition-all duration-300 text-slate-800 rounded-full px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
+                      className={`transition-all duration-300 ${
+                        pathname === "streams" || pathname.includes("streams")
+                          ? "bg-slate-800 text-slate-50"
+                          : "text-slate-800"
+                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
                         `}
                     >
                       <MdVideoLibrary size={18} />
@@ -75,7 +79,11 @@ export default function Navbar(props: any) {
                     </Link>
                     <Link
                       href="/events"
-                      className={`transition-all duration-300 text-slate-800 rounded-full px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
+                      className={`transition-all duration-300 ${
+                        pathname === "events" || pathname.includes("events")
+                          ? "bg-slate-800 text-slate-50"
+                          : "text-slate-800"
+                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
                         `}
                     >
                       <BsCalendar2Check size={18} />
@@ -83,7 +91,11 @@ export default function Navbar(props: any) {
                     </Link>
                     <Link
                       href="/travel"
-                      className={`transition-all duration-300 text-slate-800 rounded-full px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
+                      className={`transition-all duration-300 ${
+                        pathname === "travel" || pathname.includes("travel")
+                          ? "bg-slate-800 text-slate-50"
+                          : "text-slate-800"
+                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
                         `}
                     >
                       <SlPlane size={18} />
@@ -94,7 +106,12 @@ export default function Navbar(props: any) {
                     </Link>
                     <Link
                       href="/marketplace"
-                      className={`transition-all duration-300 text-slate-800 rounded-full px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
+                      className={`transition-all duration-300 ${
+                        pathname === "marketplace" ||
+                        pathname.includes("marketplace")
+                          ? "bg-slate-800 text-slate-50"
+                          : "text-slate-800"
+                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
                         `}
                     >
                       <IoBagHandleOutline size={18} />
