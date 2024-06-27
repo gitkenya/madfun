@@ -9,7 +9,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="md:flex gap-6">
           <div className="w-full md:w-1/2">
             <div className="bg-slate-50 rounded-lg md:rounded-xl">
-              <div className="p-4 md:p-12 flex flex-col gap-6">
+              <div className="p-4 md:p-6 flex flex-col gap-6">
                 <Image
                   src="/assets/img/events/featured.svg"
                   width={800}
