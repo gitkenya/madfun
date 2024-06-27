@@ -16,8 +16,8 @@ export default function Hero() {
                   sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                 />
               </div>
-              <div className="w-full h-full sm:w-1/2 p-4 flex flex-col items-center justify-center gap-5">
-                <div className="font-bold text-3xl text-center">
+              <div className="w-full h-full sm:w-1/2 p-12 flex flex-col items-start justify-center gap-5">
+                <div className="font-bold text-3xl text-left">
                   Enjoy 20%
                   <br />
                   Flight Offers
@@ -28,15 +28,26 @@ export default function Hero() {
                   href="/"
                   className="bg-slate-800 text-slate-50 px-8 py-2 rounded"
                 >
-                  Book Now
+                  View Packages
                 </Link>
               </div>
             </div>
           </div>
           <div className="grid">
             <div className="rounded-xl flex flex-col sm:flex-row min-h-[18rem] gap-6">
-              <div className="w-full h-full sm:w-1/2 bg-slate-100 rounded-xl p-4">
-                Content Placeholder
+              <div className="w-full h-full sm:w-1/2 bg-slate-100 rounded-xl p-12 flex flex-col items-start justify-center gap-5">
+                <h2 className="text-3xl font-bold">Mega Sale</h2>
+                <div className="font-normal text-lg text-left">
+                  Travel to Popular Destinations and{" "}
+                  <span className="font-bold">save 20%</span> off holiday
+                  packages!
+                </div>
+                <Link
+                  href="/"
+                  className="bg-slate-800 text-slate-50 px-8 py-2 rounded"
+                >
+                  Book Now
+                </Link>
               </div>
               <div className="w-full h-full sm:w-1/2 relative">
                 <div className="h-full flex flex-col justify-between gap-6">
