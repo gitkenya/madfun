@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Inter, Great_Vibes } from "next/font/google";
+import localFont from "@next/font/local";
 import "./global.scss";
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,7 +28,14 @@ const vibes = Great_Vibes({
   preload: true,
   variable: "--font-vibes",
 });
-
+const citadel = localFont({
+  src: [
+    {
+      path: "../../public/assets/fonts/citadel/citadel.ttf",
+    },
+  ],
+  variable: "--font-citadel",
+});
 const meta: any = {
   title: "Madfun | Online Ticketing Platform",
   description:
@@ -82,7 +90,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${poppins.variable} ${inter.variable} ${vibes.variable}`}
+        className={`${poppins.variable} ${inter.variable} ${vibes.variable} ${citadel.variable}`}
       >
         {children}
       </body>

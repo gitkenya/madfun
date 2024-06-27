@@ -21,7 +21,7 @@ export default function Hero() {
                 <div className="font-bold text-3xl text-left">
                   Enjoy 20%
                   <br />
-                  <span className="font-vibes tracking-wide font-normal text-4xl">
+                  <span className="font-citadel tracking-wide font-normal text-5xl">
                     Flight
                   </span>{" "}
                   Offers
@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="grid">
             <div className="rounded-xl flex flex-col sm:flex-row min-h-[18rem] gap-6">
               <div className="w-full h-full sm:w-1/2 bg-slate-100 rounded-xl p-12 flex flex-col items-start justify-center gap-5">
-                <h2 className="text-3xl font-normal font-vibes">Mega Sale</h2>
+                <h2 className="text-5xl font-normal font-citadel">Mega Sale</h2>
                 <div className="font-normal text-base text-left">
                   Travel to Popular Destinations and{" "}
                   <span className="font-bold">save 20%</span> off holiday
@@ -67,7 +67,7 @@ export default function Hero() {
                     </div>
                     <div className="w-full h-full sm:w-1/2 p-4 flex flex-col justify-between">
                       <div>
-                        <h3 className="font-normal text-2xl font-vibes">
+                        <h3 className="font-normal text-4xl font-citadel">
                           Featured
                         </h3>
                         <h4 className="font-bold text-xl">Events</h4>
