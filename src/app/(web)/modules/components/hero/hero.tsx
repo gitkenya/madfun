@@ -8,7 +8,7 @@ export default function Hero() {
             <div className="rounded-xl bg-pink-100 flex flex-col sm:flex-row-reverse min-h-[18rem]">
               <div className="w-full h-full sm:w-1/2 relative">
                 <Image
-                  className="object-cover rounded-t-xl sm:rounded-e-xl sm:rounded-t-none"
+                  className="object-cover rounded-t-xl sm:rounded-e-xl sm:rounded-s-none"
                   src="/assets/img/hero/travel.jpg"
                   fill
                   alt="Madfun"
