@@ -9,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        vibes: ["var(--font-vibes)"],
         inter: ["var(--font-inter)"],
         poppins: ["var(--font-poppins)"],
         citadel: ["var(--font-citadel)"],

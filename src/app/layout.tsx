@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Inter, Great_Vibes } from "next/font/google";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import "./global.scss";
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,15 +19,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const vibes = Great_Vibes({
-  subsets: ["latin"],
-  display: "swap",
-  style: ["normal"],
-  weight: ["400"],
-  fallback: ["system-ui", "arial"],
-  preload: true,
-  variable: "--font-vibes",
-});
 const citadel = localFont({
   src: [
     {
@@ -90,7 +81,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${poppins.variable} ${inter.variable} ${vibes.variable} ${citadel.variable}`}
+        className={`${poppins.variable} ${inter.variable} ${citadel.variable}`}
       >
         {children}
       </body>
