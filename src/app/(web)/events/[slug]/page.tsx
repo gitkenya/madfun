@@ -164,7 +164,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     </button>
                   </div>
                 </div>
-                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-4">
+                <div className="flex flex-row justify-between items-center pt-4">
                   <div>
                     <h4>Early Bird</h4>
                     <p className="text-slate-500 text-sm">Ksh 800</p>
