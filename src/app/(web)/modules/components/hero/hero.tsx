@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IoChevronForward } from "react-icons/io5";
 export default function Hero() {
   return (
     <section className="w-full py-8">
@@ -61,8 +62,14 @@ export default function Hero() {
                         sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                       />
                     </div>
-                    <div className="w-full h-full sm:w-1/2 p-4">
-                      Content Placeholder
+                    <div className="w-full h-full sm:w-1/2 p-4 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-semibold text-xl">Featured</h3>
+                        <h4 className="font-bold text-xl">Events</h4>
+                      </div>
+                      <div className="flex flex-row items-center gap-2 font-semibold">
+                        See All <IoChevronForward size={16} />
+                      </div>
                     </div>
                   </div>
                   <div className="w-full h-1/2 bg-slate-100 rounded-xl flex flex-row">
@@ -75,8 +82,14 @@ export default function Hero() {
                         sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                       />
                     </div>
-                    <div className="w-full h-full sm:w-1/2 p-4">
-                      Content Placeholder
+                    <div className="w-full h-full sm:w-1/2 p-4 flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-medium text-lg">Movies</h3>
+                        <h4 className="font-bold text-xl">Streaming</h4>
+                      </div>
+                      <div className="flex flex-row items-center gap-2 font-semibold">
+                        Watch <IoChevronForward size={16} />
+                      </div>
                     </div>
                   </div>
                 </div>
