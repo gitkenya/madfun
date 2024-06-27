@@ -2,23 +2,63 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoChevronForwardOutline, IoShare } from "react-icons/io5";
 import { IoMdShare } from "react-icons/io";
+import { TfiSearch } from "react-icons/tfi";
 
-export default function Events() {
-  const events: any[] = [1, 2, 3, 4];
+export default function Events(props: any) {
+  const { events, mode } = props;
   return (
     <section className="w-full py-8 bg-slate-100">
-      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-16">
+      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-12">
+        {mode === "page" ? (
+          <div className="flex flex-row justify-between items-center">
+            <div className="flex items-center w-full max-w-md h-12 rounded bg-slate-100 border border-slate-300 overflow-hidden">
+              <button
+                type="submit"
+                className="transition-all duration-300 grid place-items-center h-full w-12 text-slate-700 border-r border-slate-300"
+              >
+                <TfiSearch />
+              </button>
+              <input
+                className="peer flex-grow h-full outline-none text-sm text-slate-700 px-4 py-3 bg-slate-100"
+                type="text"
+                id="search"
+                placeholder="Search events..."
+                autoComplete="off"
+              />
+            </div>
+            <div className="flex flex-row items-center gap-4">
+              <span className="font-medium">Filter Events By:</span>
+              <select className="bg-transparent border-b border-slate-300 py-2 focus:outline-none">
+                <option value={1}>Categories</option>
+              </select>
+              <div className="flex flex-row items-center gap-4 text-sm">
+                <span className="px-5 py-2 border border-slate-300 rounded-full font-semibold">
+                  All
+                </span>
+                <span>This Week</span>
+                <span>This Month</span>
+                <span>Next Month</span>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
         <div className="w-full flex flex-row items-center justify-between">
           <h1 className="text-lg sm:text-3xl font-bold">Upcoming events</h1>
-          <Link
-            href="/"
-            className="text-sm font-medium underline flex flex-row items-center gap-2"
-          >
-            See All <IoChevronForwardOutline size={20} />
-          </Link>
+          {mode === "section" ? (
+            <Link
+              href="/"
+              className="text-sm font-medium underline flex flex-row items-center gap-2"
+            >
+              See All <IoChevronForwardOutline size={20} />
+            </Link>
+          ) : (
+            <></>
+          )}
         </div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-6">
-          {events?.map((key) => (
+          {events?.map((key: any) => (
             <div key={key} className="grid">
               <div className="bg-slate-50 p-4 rounded-xl flex flex-col justify-between gap-4">
                 <div className="space-y-2">

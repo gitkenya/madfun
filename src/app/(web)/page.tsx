@@ -5,10 +5,11 @@ import Packages from "@/app/(web)/modules/components/packages/packages";
 import Destinations from "@/app/(web)/modules/components/destinations/destinations";
 
 export default function Home() {
+  const events = [1, 2, 3, 4];
   return (
     <>
       <Hero />
-      <Events />
+      <Events events={events} mode="section" />
       <Packages />
       <Destinations />
     </>
