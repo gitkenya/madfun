@@ -32,14 +32,14 @@ export default function Events() {
                     <span className="italic">Kenya Cinema, Nairobi</span>
                   </h3>
                 </div>
-                <div className="w-full">
+                <Link className="w-full" href={`/events/demo`}>
                   <Image
                     src="/assets/img/events/event1.svg"
                     width={600}
                     height={600}
                     alt="Events in Kenya Cinema Nairobi"
                   />
-                </div>
+                </Link>
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-row justify-between items-center">
                     <div className="flex flex-row items-center gap-2 text-xs text-slate-400 font-semibold">
