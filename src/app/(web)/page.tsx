@@ -11,7 +11,6 @@ export default function Home() {
       <Events />
       <Packages />
       <Destinations />
-      Home
     </>
   );
 }
