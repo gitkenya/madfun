@@ -66,7 +66,9 @@ export default function Events() {
                     </button>
                   </div>
                   <div className="flex flex-row justify-between items-center">
-                    <h4 className="font-bold text-slate-800">Ksh 1500+</h4>
+                    <h4 className="font-bold text-slate-800 text-xl">
+                      Ksh 1500+
+                    </h4>
                     <Link
                       href="/"
                       className="bg-slate-900 text-slate-50 px-8 py-2 rounded"
