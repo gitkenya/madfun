@@ -106,8 +106,79 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   </Link>
                 </div>
               </div>
-              <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
-                Select Tickets
+              <div className="flex flex-col gap-2 bg-slate-50 rounded-xl p-6">
+                <div>
+                  <h3 className="font-bold text-lg">Select Tickets</h3>
+                </div>
+                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-4">
+                  <div>
+                    <h4>Early Bird</h4>
+                    <p className="text-slate-500 text-sm">Ksh 800</p>
+                  </div>
+                  <div className="bg-red-600 text-slate-50 rounded-full px-4 py-1 text-sm">
+                    Sold out
+                  </div>
+                </div>
+                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-4">
+                  <div>
+                    <h4>Early Bird</h4>
+                    <p className="text-slate-500 text-sm">Ksh 800</p>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
+                      -
+                    </button>
+                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
+                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-4">
+                  <div>
+                    <h4>Early Bird</h4>
+                    <p className="text-slate-500 text-sm">Ksh 800</p>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
+                      -
+                    </button>
+                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
+                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-4">
+                  <div>
+                    <h4>Early Bird</h4>
+                    <p className="text-slate-500 text-sm">Ksh 800</p>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
+                      -
+                    </button>
+                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
+                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-4">
+                  <div>
+                    <h4>Early Bird</h4>
+                    <p className="text-slate-500 text-sm">Ksh 800</p>
+                  </div>
+                  <div className="flex flex-row items-center">
+                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
+                      -
+                    </button>
+                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
+                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
+                      +
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
                 Checkout
