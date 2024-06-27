@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="grid">
             <div className="rounded-xl bg-pink-100 flex flex-col sm:flex-row-reverse min-h-[18rem]">
-              <div className="w-full h-full sm:w-1/2 relative">
+              <div className="w-full h-full sm:w-1/2 relative min-h-[150px]">
                 <Image
                   className="object-cover rounded-t-xl sm:rounded-e-xl sm:rounded-s-none"
                   src="/assets/img/hero/banner.webp"
@@ -38,7 +38,7 @@ export default function Hero() {
             <div className="rounded-xl flex flex-col sm:flex-row min-h-[18rem] gap-6">
               <div className="w-full h-full sm:w-1/2 bg-slate-100 rounded-xl p-12 flex flex-col items-start justify-center gap-5">
                 <h2 className="text-3xl font-bold">Mega Sale</h2>
-                <div className="font-normal text-lg text-left">
+                <div className="font-normal text-base text-left">
                   Travel to Popular Destinations and{" "}
                   <span className="font-bold">save 20%</span> off holiday
                   packages!
