@@ -1,7 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins, Inter, Great_Vibes } from "next/font/google";
 import "./global.scss";
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  fallback: ["system-ui", "arial"],
+  preload: true,
+  variable: "--font-poppins",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  fallback: ["system-ui", "arial"],
+  preload: true,
+  variable: "--font-inter",
+});
+
+const vibes = Great_Vibes({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal"],
+  weight: ["400"],
+  fallback: ["system-ui", "arial"],
+  preload: true,
+  variable: "--font-vibes",
+});
 
 const meta: any = {
   title: "Madfun | Online Ticketing Platform",
@@ -56,7 +81,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${poppins.variable} ${inter.variable} ${vibes.variable}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

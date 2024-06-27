@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        vibes: ["var(--font-vibes)"],
+        inter: ["var(--font-inter)"],
+        poppins: ["var(--font-poppins)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

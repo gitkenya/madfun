@@ -50,7 +50,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main>
+    <main className="font-inter">
       <Navbar />
       {children}
       <Footer />
