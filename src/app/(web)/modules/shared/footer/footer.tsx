@@ -1,6 +1,8 @@
 import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { MdEmail, MdLocalPhone } from "react-icons/md";
 export default function Footer() {
   return (
     <section className="relative">
@@ -144,13 +146,18 @@ export default function Footer() {
                     Contact us
                   </h3>
                   <ul className="flex flex-col gap-4 text-slate-600">
-                    <li>
+                    <li className="flex flex-row gap-4 items-start">
+                      <FaMapMarkerAlt size={20} className="mt-1" />
                       4th Floor, Kalson towers
                       <br />
                       76738 - 00200, Nairobi
                     </li>
-                    <li>+254 115 555 000</li>
-                    <li>info@madfun.com</li>
+                    <li className="flex flex-row gap-4 items-start">
+                      <MdLocalPhone size={20} /> +254 115 555 000
+                    </li>
+                    <li className="flex flex-row gap-4 items-start">
+                      <MdEmail size={20} /> info@madfun.com
+                    </li>
                   </ul>
                 </div>
               </div>
