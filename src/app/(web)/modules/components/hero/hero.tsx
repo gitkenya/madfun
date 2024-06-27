@@ -6,7 +6,9 @@ export default function Hero() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="grid">
             <div className="rounded-xl bg-pink-100 flex flex-row min-h-[18rem]">
-              <div className="w-full h-full sm:w-1/2">Content</div>
+              <div className="w-full h-full sm:w-1/2 p-4">
+                Content Placeholder
+              </div>
               <div className="w-full h-full sm:w-1/2 relative">
                 <Image
                   className="object-cover rounded-e-xl"
@@ -19,8 +21,8 @@ export default function Hero() {
           </div>
           <div className="grid">
             <div className="rounded-xl flex flex-row min-h-[18rem] gap-6">
-              <div className="w-full h-full sm:w-1/2 bg-slate-100 rounded-xl">
-                Content
+              <div className="w-full h-full sm:w-1/2 bg-slate-100 rounded-xl p-4">
+                Content Placeholder
               </div>
               <div className="w-full h-full sm:w-1/2 relative">
                 <div className="h-full flex flex-col justify-between gap-6">
@@ -33,7 +35,9 @@ export default function Hero() {
                         alt="Madfun"
                       />
                     </div>
-                    <div className="w-full h-full sm:w-1/2">Content</div>
+                    <div className="w-full h-full sm:w-1/2 p-4">
+                      Content Placeholder
+                    </div>
                   </div>
                   <div className="w-full h-1/2 bg-slate-100 rounded-xl flex flex-row">
                     <div className="w-full h-full sm:w-1/2 relative">
@@ -44,7 +48,9 @@ export default function Hero() {
                         alt="Madfun"
                       />
                     </div>
-                    <div className="w-full h-full sm:w-1/2">Content</div>
+                    <div className="w-full h-full sm:w-1/2 p-4">
+                      Content Placeholder
+                    </div>
                   </div>
                 </div>
               </div>
