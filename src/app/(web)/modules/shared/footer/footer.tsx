@@ -12,8 +12,8 @@ export default function Footer() {
               className="flex items-center text-slate-600 font-extrabold uppercase"
             >
               <Image
-                className="w-[50px] h-[50px]"
-                width={50}
+                className="w-[56px] h-[50px]"
+                width={56}
                 height={50}
                 src="/assets/img/logos/logo.svg"
                 alt="Madfun Logo"
