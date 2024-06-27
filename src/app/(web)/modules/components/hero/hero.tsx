@@ -55,7 +55,7 @@ export default function Hero() {
                     <div className="w-full h-full sm:w-1/2 relative">
                       <Image
                         className="object-cover rounded-s-xl"
-                        src="/assets/img/hero/madfun-zanzibar.jpg"
+                        src="/assets/img/hero/safari.webp"
                         fill
                         alt="Madfun Zanzibar"
                         sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
