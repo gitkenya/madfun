@@ -69,7 +69,7 @@ export default function Hero() {
                     <div className="w-full h-full sm:w-1/2 relative">
                       <Image
                         className="object-cover rounded-s-xl"
-                        src="/assets/img/hero/travel.jpg"
+                        src="/assets/img/hero/jumanji.jpg"
                         fill
                         alt="Madfun"
                         sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
