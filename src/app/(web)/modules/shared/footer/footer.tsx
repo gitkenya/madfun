@@ -64,7 +64,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <Link
-                        href="/social-media-management"
+                        href="/"
                         className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
                       >
                         Blogs
