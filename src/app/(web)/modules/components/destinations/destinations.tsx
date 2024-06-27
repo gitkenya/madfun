@@ -65,7 +65,7 @@ export default function Destinations() {
                   <span>Economy</span>
                 </div>
                 <div className="flex flex-col gap-1 p-2">
-                  <h4 className="font-bold text-lg flex flex-row items-center gap-2">
+                  <h4 className="font-bold text-xl flex flex-row items-center gap-2">
                     Ksh 50,000{" "}
                     <span className="font-normal text-xs text-red-600">
                       20% off
