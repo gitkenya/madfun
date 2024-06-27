@@ -37,7 +37,7 @@ export default function Footer() {
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Quick links
                   </h3>
-                  <ul className="flex flex-col gap-4">
+                  <ul className="flex flex-col gap-2">
                     <li>
                       <Link
                         href="/"
@@ -94,7 +94,7 @@ export default function Footer() {
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Our Services
                   </h3>
-                  <ul className="flex flex-col gap-4">
+                  <ul className="flex flex-col gap-2">
                     <li>
                       <Link
                         href="/"
