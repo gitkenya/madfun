@@ -1,11 +1,35 @@
 import Link from "next/link";
 import moment from "moment";
+import Image from "next/image";
 export default function Footer() {
   return (
     <section className="relative">
-      <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-6 lg:px-7">
+      <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0">
         <div className="flex flex-col md:flex-row py-8">
-          <div className="w-full md:w-1/3 p-4 md:p-6"></div>
+          <div className="w-full md:w-1/3 md:py-6 md:pe-5 space-y-4">
+            <Link
+              href="/"
+              className="flex items-center text-slate-600 font-extrabold uppercase"
+            >
+              <Image
+                className="w-[50px] h-[50px]"
+                width={50}
+                height={50}
+                src="/assets/img/logos/logo.svg"
+                alt="Madfun Logo"
+              />
+            </Link>
+            <p className="text-slate-600">
+              Madfun is a B2B and B2C Online Ticketing Platform which aims to
+              build a dynamic and service oriented Travel Market in the World
+            </p>
+            <Link
+              href="/"
+              className="bg-slate-800 inline-block w-auto text-slate-50 px-5 py-2 rounded-lg"
+            >
+              Partner with us
+            </Link>
+          </div>
           <div className="w-full md:w-2/3 p-4 md:p-6">
             <div className="grid grid-cols-1 md:grid-cols-3">
               <div className="grid">
