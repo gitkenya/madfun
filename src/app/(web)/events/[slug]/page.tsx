@@ -5,7 +5,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <section className="w-full bg-slate-100 py-4 sm:py-12">
       <div className="mx-auto max-w-[90rem] px-4 space-y-16">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="grid bg-slate-50 rounded-lg md:rounded-xl">
             <div className="p-4 md:p-12 flex flex-col gap-6">
               <Image
@@ -77,6 +77,20 @@ export default async function Page({ params }: { params: { slug: string } }) {
                       Follow
                     </Link>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="grid rounded-lg md:rounded-xl sticky top-0">
+            <div className="rounded-xl">
+              <div className="bg-slate-50 rounded-xl p-6">
+                <h2 className="font-bold text-2xl">TTNT Five, Nairobi</h2>
+                <div className="flex flex-row gap-2 items-center text-slate-500 text-sm">
+                  <div className="flex flex-col text-center text-xs bg-slate-200 px-2 py-1 rounded">
+                    <h3>3 Jan</h3>
+                    <p>10:00am</p>
+                  </div>
+                  <p>Kenya Cinema, Nairobi</p>
                 </div>
               </div>
             </div>
