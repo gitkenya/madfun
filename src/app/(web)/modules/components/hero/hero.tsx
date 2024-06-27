@@ -28,7 +28,7 @@ export default function Hero() {
                   href="/"
                   className="bg-slate-800 text-slate-50 px-8 py-2 rounded"
                 >
-                  View Packages
+                  Book Now
                 </Link>
               </div>
             </div>
@@ -46,7 +46,7 @@ export default function Hero() {
                   href="/"
                   className="bg-slate-800 text-slate-50 px-8 py-2 rounded"
                 >
-                  Book Now
+                  View Packages
                 </Link>
               </div>
               <div className="w-full h-full sm:w-1/2 relative">
