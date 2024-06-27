@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IoMdShare } from "react-icons/io";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
@@ -82,16 +83,34 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </div>
           </div>
           <div className="grid rounded-lg md:rounded-xl sticky top-0">
-            <div className="rounded-xl">
-              <div className="bg-slate-50 rounded-xl p-6">
-                <h2 className="font-bold text-2xl">TTNT Five, Nairobi</h2>
-                <div className="flex flex-row gap-2 items-center text-slate-500 text-sm">
-                  <div className="flex flex-col text-center text-xs bg-slate-200 px-2 py-1 rounded">
-                    <h3>3 Jan</h3>
-                    <p>10:00am</p>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
+                <div>
+                  <h2 className="font-bold text-2xl mb-2">
+                    TTNT Five, Nairobi
+                  </h2>
+                  <div className="flex flex-row gap-2 items-center text-slate-500 text-sm">
+                    <div className="flex flex-col text-center text-xs bg-slate-200 px-2 py-1 rounded">
+                      <h3 className="text-slate-700">3 Jan</h3>
+                      <p>10:00am</p>
+                    </div>
+                    <p>Kenya Cinema, Nairobi</p>
                   </div>
-                  <p>Kenya Cinema, Nairobi</p>
                 </div>
+                <div>
+                  <Link
+                    href="/events/demo"
+                    className="p-2 block bg-slate-100 text-slate-500 rounded-full"
+                  >
+                    <IoMdShare size={24} />
+                  </Link>
+                </div>
+              </div>
+              <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
+                Select Tickets
+              </div>
+              <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
+                Checkout
               </div>
             </div>
           </div>
