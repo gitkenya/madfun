@@ -5,18 +5,16 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { usePathname } from "next/navigation";
-import { TfiClose, TfiBell, TfiAlignLeft } from "react-icons/tfi";
+import { TfiClose, TfiAlignLeft } from "react-icons/tfi";
 import Image from "next/image";
 import Link from "next/link";
 import DarkModeToggle from "@/components/theme/theme";
-import { MdMenuBook, MdVideoLibrary } from "react-icons/md";
+import { MdVideoLibrary } from "react-icons/md";
 import { IoAdd, IoBagHandleOutline, IoPersonOutline } from "react-icons/io5";
 import { BsCalendar2Check } from "react-icons/bs";
 import { SlPlane } from "react-icons/sl";
-import { HiOutlineShoppingBag } from "react-icons/hi";
 
 export default function Navbar(props: any) {
-  const { user } = props;
   const pathname = usePathname();
   const navigation = [
     { name: "Streams", href: "/streams", current: pathname === "/streams" },

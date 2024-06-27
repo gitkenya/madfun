@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="w-full py-8">
@@ -15,8 +16,20 @@ export default function Hero() {
                   sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                 />
               </div>
-              <div className="w-full h-full sm:w-1/2 p-4">
-                Content Placeholder
+              <div className="w-full h-full sm:w-1/2 p-4 flex flex-col items-center justify-center gap-5">
+                <div className="font-bold text-3xl text-center">
+                  Enjoy 20%
+                  <br />
+                  Flight Offers
+                  <br />
+                  till June 31st
+                </div>
+                <Link
+                  href="/"
+                  className="bg-slate-800 text-slate-50 px-8 py-2 rounded"
+                >
+                  Book Now
+                </Link>
               </div>
             </div>
           </div>
