@@ -13,6 +13,7 @@ export default function Hero() {
                   className="object-cover rounded-t-xl sm:rounded-e-xl sm:rounded-s-none"
                   src="/assets/img/hero/banner.webp"
                   fill
+                  priority
                   alt="Madfun Flights"
                   sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                 />
@@ -63,6 +64,7 @@ export default function Hero() {
                         className="object-cover rounded-s-xl"
                         src="/assets/img/hero/events.jpg"
                         fill
+                        priority
                         alt="Madfun Events"
                         sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                       />
@@ -85,6 +87,7 @@ export default function Hero() {
                         className="object-cover rounded-s-xl"
                         src="/assets/img/hero/jumanji.jpg"
                         fill
+                        priority
                         alt="Madfun Movies"
                         sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                       />
