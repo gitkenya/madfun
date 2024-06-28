@@ -120,6 +120,13 @@ export default function Navbar(props: any) {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center gap-5 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <Link
+                    href="/"
+                    className="md:hidden border border-slate-800 text-slate-800 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
+                  >
+                    <IoAdd size={18} />
+                    Create an event
+                  </Link>
                   <div className="hidden md:flex gap-4">
                     <Link
                       href="/"
