@@ -14,7 +14,7 @@ export default function Destinations() {
   const destinations: any[] = [1, 2, 3, 4, 5];
   return (
     <section className="w-full py-8 bg-slate-100 mt-4">
-      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-16">
+      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
         <div className="w-full flex flex-col sm:flex-row items-center justify-between">
           <div className="flex flex-row items-center gap-2">
             <h1 className="text-lg sm:text-3xl font-bold">

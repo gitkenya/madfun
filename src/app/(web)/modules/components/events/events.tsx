@@ -8,7 +8,7 @@ export default function Events(props: any) {
   const { events, mode } = props;
   return (
     <section className="w-full py-8 bg-slate-100">
-      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-12">
+      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
         {mode === "page" ? (
           <div className="flex flex-col md:flex-row justify-between md:items-center">
             <div className="flex items-center w-full max-w-sm md:max-w-md h-10 md:h-12 rounded bg-slate-100 border border-slate-300 overflow-hidden">
