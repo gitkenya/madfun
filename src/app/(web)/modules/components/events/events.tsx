@@ -112,7 +112,7 @@ export default function Events(props: any) {
                       Ksh 1500+
                     </h4>
                     <Link
-                      href="/"
+                      href="/events/demo"
                       className="bg-slate-900 text-slate-50 px-8 py-2 rounded"
                     >
                       Buy
