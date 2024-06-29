@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoMdShare } from "react-icons/io";
 import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import SelectTickets from "./modules/form";
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <section className="w-full bg-slate-100 py-4 sm:py-8">
@@ -84,117 +85,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 h-full sticky top-20">
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-row items-center justify-between bg-slate-50 rounded-xl p-6">
-                <div>
-                  <h2 className="font-bold text-xl mb-2">TTNT Five, Nairobi</h2>
-                  <div className="flex flex-row gap-2 items-center text-slate-500 text-sm">
-                    <div className="flex flex-col text-center text-xs bg-slate-200 px-2 py-1 rounded">
-                      <h3 className="text-slate-700">3 Jan</h3>
-                      <p>10:00am</p>
-                    </div>
-                    <p>Kenya Cinema, Nairobi</p>
-                  </div>
-                </div>
-                <div>
-                  <Link
-                    href="/events/demo"
-                    className="p-2 block bg-slate-100 text-slate-500 rounded-full"
-                  >
-                    <IoMdShare size={24} />
-                  </Link>
-                </div>
-              </div>
-              <div className="flex flex-col bg-slate-50 rounded-xl p-6">
-                <div>
-                  <h3 className="font-bold text-lg">Select Tickets</h3>
-                </div>
-                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-3">
-                  <div>
-                    <h4>Early Bird</h4>
-                    <p className="text-slate-500 text-sm">Ksh 800</p>
-                  </div>
-                  <div className="bg-red-600 text-slate-50 rounded-full px-4 py-1 text-sm">
-                    Sold out
-                  </div>
-                </div>
-                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-3">
-                  <div>
-                    <h4>Early Bird</h4>
-                    <p className="text-slate-500 text-sm">Ksh 800</p>
-                  </div>
-                  <div className="flex flex-row items-center">
-                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
-                      -
-                    </button>
-                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
-                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-3">
-                  <div>
-                    <h4>Early Bird</h4>
-                    <p className="text-slate-500 text-sm">Ksh 800</p>
-                  </div>
-                  <div className="flex flex-row items-center">
-                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
-                      -
-                    </button>
-                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
-                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="flex flex-row justify-between items-center border-b border-slate-200 py-3">
-                  <div>
-                    <h4>Early Bird</h4>
-                    <p className="text-slate-500 text-sm">Ksh 800</p>
-                  </div>
-                  <div className="flex flex-row items-center">
-                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
-                      -
-                    </button>
-                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
-                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
-                      +
-                    </button>
-                  </div>
-                </div>
-                <div className="flex flex-row justify-between items-center pt-3">
-                  <div>
-                    <h4>Early Bird</h4>
-                    <p className="text-slate-500 text-sm">Ksh 800</p>
-                  </div>
-                  <div className="flex flex-row items-center">
-                    <button className="bg-slate-200 px-4 py-2 rounded-s-full">
-                      -
-                    </button>
-                    <span className="px-4 py-2 bg-slate-200/[.4]">0</span>
-                    <button className="bg-slate-200 px-4 py-2 rounded-e-full">
-                      +
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4 sm:items-center justify-between bg-slate-50 rounded-xl p-6">
-                <div>
-                  <p className="text-sm text-slate-500">Total</p>
-                  <h4 className="font-extrabold text-2xl text-slate-800">
-                    Ksh 2,500
-                  </h4>
-                </div>
-                <div>
-                  <button className="bg-slate-800 text-slate-50 px-12 py-3 font-medium rounded-lg">
-                    Checkout
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <SelectTickets />
         </div>
       </div>
     </section>
