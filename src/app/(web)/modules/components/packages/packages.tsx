@@ -1,15 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  IoChevronForwardOutline,
-  IoEye,
-  IoEyeOutline,
-  IoShare,
-} from "react-icons/io5";
-import { IoMdShare } from "react-icons/io";
+import { IoChevronForwardOutline, IoEyeOutline } from "react-icons/io5";
+import ShareModal from "@/components/modals/shareModal";
 
 export default function Packages() {
-  const events: any[] = [1, 2, 3];
+  const packages: any[] = [1, 2, 3];
   return (
     <section className="w-full py-8 bg-slate-100 mt-4">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
@@ -23,7 +18,7 @@ export default function Packages() {
           </Link>
         </div>
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {events?.map((key) => (
+          {packages?.map((key) => (
             <div key={key} className="grid">
               <div className="bg-slate-50 p-4 rounded-xl flex flex-row justify-between gap-4">
                 <div className="relative w-full sm:w-1/2 rounded-xl">
@@ -45,7 +40,13 @@ export default function Packages() {
                     <span className="text-sm flex flex-row items-center gap-2">
                       <IoEyeOutline size={20} /> 20
                     </span>
-                    <IoMdShare size={20} />
+                    <ShareModal
+                      event={{
+                        id: "package1",
+                        slug: "demo",
+                        url: `${process.env.NEXT_PUBLIC_BASE_URL}/packages/demo`,
+                      }}
+                    />
                   </div>
                   <div className="flex flex-col gap-1">
                     <h4 className="font-bold text-xl">Ksh 50,000</h4>

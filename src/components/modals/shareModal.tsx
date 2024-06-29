@@ -36,7 +36,7 @@ export default function ShareModal(props: any) {
   return (
     <>
       <button
-        className="bg-slate-200 w-[30px] h-[30px] rounded-full flex items-center justify-center"
+        className="bg-slate-200/[.6] w-[30px] h-[30px] rounded-full flex items-center justify-center"
         onClick={openModal}
       >
         <IoMdShare size={16} />

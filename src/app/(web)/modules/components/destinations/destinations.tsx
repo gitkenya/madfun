@@ -1,14 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  IoChevronForwardOutline,
-  IoEye,
-  IoEyeOutline,
-  IoShare,
-} from "react-icons/io5";
-import { IoMdShare } from "react-icons/io";
-import { SlPlane } from "react-icons/sl";
+import { IoChevronForwardOutline, IoEyeOutline } from "react-icons/io5";
 import { BiSolidPlaneAlt } from "react-icons/bi";
+import ShareModal from "@/components/modals/shareModal";
 
 export default function Destinations() {
   const destinations: any[] = [1, 2, 3, 4, 5];
@@ -54,7 +48,13 @@ export default function Destinations() {
                   <span className="text-sm flex flex-row items-center gap-2">
                     <IoEyeOutline size={20} /> 20
                   </span>
-                  <IoMdShare size={20} />
+                  <ShareModal
+                    event={{
+                      id: "destination1",
+                      slug: "demo",
+                      url: `${process.env.NEXT_PUBLIC_BASE_URL}/packages/demo`,
+                    }}
+                  />
                 </div>
                 <div className="flex flex-row gap-2 items-center font-bold text-slate-800 p-2">
                   <BiSolidPlaneAlt size={20} className="text-slate-500" /> Dubai
