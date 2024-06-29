@@ -5,7 +5,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { usePathname } from "next/navigation";
-import { TfiClose, TfiAlignLeft } from "react-icons/tfi";
+import { TfiClose, TfiAlignLeft, TfiAlignRight } from "react-icons/tfi";
 import Image from "next/image";
 import Link from "next/link";
 import DarkModeToggle from "@/components/theme/theme";
@@ -35,22 +35,22 @@ export default function Navbar(props: any) {
         <>
           <div className="mx-auto max-w-[90rem] px-2 md:px-4">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              <div className="absolute inset-y-0 right-0 z-50 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-slate-800 focus:outline-none">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <TfiClose className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <TfiAlignLeft
+                    <TfiAlignRight
                       className="block h-6 w-6"
                       aria-hidden="true"
                     />
                   )}
                 </DisclosureButton>
               </div>
-              <div className="flex flex-1 items-center justify-start ps-12 sm:ps-0 sm:items-center sm:justify-between">
+              <div className="flex flex-1 items-center justify-start ps-2 sm:ps-0 sm:items-center sm:justify-between">
                 <Link
                   href="/"
                   className="flex items-center text-slate-600 font-extrabold uppercase"
@@ -119,7 +119,7 @@ export default function Navbar(props: any) {
                     </Link>
                   </div>
                 </div>
-                <div className="absolute inset-y-0 right-0 flex items-center gap-5 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div className="absolute inset-y-0 right-0 flex items-center pe-16 gap-5 sm:static sm:inset-auto sm:ml-6 sm:pe-0">
                   <Link
                     href="/"
                     className="md:hidden border border-slate-800 text-slate-800 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"

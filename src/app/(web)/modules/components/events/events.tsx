@@ -3,6 +3,7 @@ import Image from "next/image";
 import { IoChevronForwardOutline, IoShare } from "react-icons/io5";
 import { IoMdShare } from "react-icons/io";
 import { TfiSearch } from "react-icons/tfi";
+import ShareModal from "./modules/shareModal";
 
 export default function Events(props: any) {
   const { events, mode } = props;
@@ -103,9 +104,13 @@ export default function Events(props: any) {
                       </div>
                       200+ Going
                     </div>
-                    <button className="bg-slate-200 w-[30px] h-[30px] rounded-full flex items-center justify-center">
-                      <IoMdShare size={16} />
-                    </button>
+                    <ShareModal
+                      event={{
+                        id: "1",
+                        slug: "demo",
+                        url: `${process.env.NEXT_PUBLIC_BASE_URL}/events/demo`,
+                      }}
+                    />
                   </div>
                   <div className="flex flex-row justify-between items-center">
                     <h4 className="font-bold text-slate-800 text-xl">
