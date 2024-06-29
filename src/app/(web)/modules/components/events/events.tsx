@@ -12,9 +12,9 @@ export default function Events(props: any) {
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
         {mode === "page" ? (
           <div className="flex flex-col md:flex-row justify-between md:items-center">
-            <div className="flex items-center w-full max-w-sm md:max-w-md h-10 md:h-12 rounded bg-slate-100 border border-slate-300 overflow-hidden">
+            <div className="flex items-center w-full max-w-sm md:max-w-md h-10 md:h-12 rounded bg-slate-50 border border-slate-300 overflow-hidden">
               <input
-                className="peer flex-grow h-full outline-none text-sm text-slate-700 px-4 py-2 sm:py-3 bg-slate-100"
+                className="peer flex-grow h-full outline-none text-sm text-slate-700 px-4 py-2 sm:py-3 bg-slate-50"
                 type="text"
                 id="search"
                 placeholder="Search events..."
