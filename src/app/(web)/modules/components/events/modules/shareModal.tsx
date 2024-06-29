@@ -16,6 +16,11 @@ export default function ShareModal(props: any) {
       modalRef.current.showModal();
     }
   };
+  const closeModal = () => {
+    if (modalRef.current) {
+      modalRef.current.close();
+    }
+  };
 
   const copyToClipboard = async (text: string) => {
     try {
@@ -36,6 +41,7 @@ export default function ShareModal(props: any) {
       >
         <IoMdShare size={16} />
       </button>
+
       <dialog
         ref={modalRef}
         id={event?.id}
@@ -44,12 +50,13 @@ export default function ShareModal(props: any) {
         <div className="modal-box rounded-sm flex flex-col gap-5">
           <div className="flex flex-row items-center justify-between">
             <h3 className="font-extrabold text-xl">Share</h3>
-            <form method="dialog">
-              {/* if there is a button in form, it will close the modal */}
-              <button className="bg-slate-100 border border-slate-600 text-slate-600 rounded-full p-1.5">
-                <IoClose size={18} />
-              </button>
-            </form>
+
+            <button
+              className="bg-slate-100 border border-slate-600 text-slate-600 rounded-full p-1.5"
+              onClick={() => closeModal()}
+            >
+              <IoClose size={18} />
+            </button>
           </div>
           <div className="flex flex-row items-center justify-between gap-4">
             <div className="flex flex-col items-center justify-center gap-2 text-xs text-slate-500">
@@ -147,6 +154,9 @@ export default function ShareModal(props: any) {
             </div>
           </div>
         </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
       </dialog>
     </>
   );
