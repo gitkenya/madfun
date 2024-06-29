@@ -13,12 +13,6 @@ export default function Events(props: any) {
         {mode === "page" ? (
           <div className="flex flex-col md:flex-row justify-between md:items-center">
             <div className="flex items-center w-full max-w-sm md:max-w-md h-10 md:h-12 rounded bg-slate-100 border border-slate-300 overflow-hidden">
-              <button
-                type="submit"
-                className="transition-all duration-300 grid place-items-center h-full w-12 text-slate-700 border-r border-slate-300"
-              >
-                <TfiSearch />
-              </button>
               <input
                 className="peer flex-grow h-full outline-none text-sm text-slate-700 px-4 py-2 sm:py-3 bg-slate-100"
                 type="text"
@@ -26,6 +20,12 @@ export default function Events(props: any) {
                 placeholder="Search events..."
                 autoComplete="off"
               />
+              <button
+                type="submit"
+                className="transition-all duration-300 grid place-items-center h-full w-12 text-slate-700 border-l border-slate-300"
+              >
+                <TfiSearch />
+              </button>
             </div>
             <div className="flex flex-col md:flex-row md:items-center gap-4">
               <div className="flex flex-row items-center justify-between gap-4 px-2 pt-4 md:pt-0">
