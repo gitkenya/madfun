@@ -12,7 +12,6 @@ export default function DarkModeToggle() {
   if (!mounted) {
     return null;
   }
-  console.log(theme);
   return (
     <button
       type="button"
