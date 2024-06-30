@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Poppins, Inter, Great_Vibes } from "next/font/google";
 import localFont from "next/font/local";
 import "./global.scss";
+import { WebProvider } from "@/providers/web/web";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -84,7 +85,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${inter.variable} ${citadel.variable}`}
       >
-        {children}
+        <WebProvider>{children}</WebProvider>
         <SpeedInsights />
       </body>
     </html>
