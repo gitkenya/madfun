@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { IoChevronForwardOutline, IoShare } from "react-icons/io5";
-import { IoMdShare } from "react-icons/io";
+import { IoChevronForwardOutline } from "react-icons/io5";
 import { TfiSearch } from "react-icons/tfi";
 import ShareModal from "@/components/modals/shareModal";
 

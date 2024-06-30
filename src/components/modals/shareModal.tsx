@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { FiCheck, FiCopy } from "react-icons/fi";
+import { FiCopy } from "react-icons/fi";
 import { IoMdShare } from "react-icons/io";
 import { IoCheckmark, IoClose } from "react-icons/io5";
 
