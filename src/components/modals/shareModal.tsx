@@ -138,19 +138,26 @@ export default function ShareModal(props: any) {
           <div className="flex flex-col gap-4">
             <h4 className="font-bold text-sm">Copy Link</h4>
             <div className="flex flex-row justify-between items-center">
-              <div className="px-4 py-2 border border-slate-400 rounded w-full focus:outline-none text-sm text-slate-400">
+              <div className="px-4 py-2 border border-slate-400 rounded rounded-e-none w-full focus:outline-none text-sm text-slate-400">
                 {event?.url}
               </div>
-              <button
-                className=" absolute right-10 text-slate-400"
-                onClick={() => copyToClipboard(event?.url)}
+              <div
+                className={`tooltip ${
+                  copied ? "tooltip-open" : ""
+                } tooltip-top`}
+                data-tip={copied ? "Copied" : "Copy"}
               >
-                {copied ? (
-                  <IoCheckmark size={24} className="text-green-500" />
-                ) : (
-                  <FiCopy size={24} className="text-slate-400" />
-                )}
-              </button>
+                <button
+                  className="text-slate-400 flex items-center justify-center px-4 py-2 border border-l-0 border-slate-400 rounded rounded-s-none"
+                  onClick={() => copyToClipboard(event?.url)}
+                >
+                  {copied ? (
+                    <IoCheckmark size={20} className="text-green-500" />
+                  ) : (
+                    <FiCopy size={20} className="text-slate-400" />
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>
