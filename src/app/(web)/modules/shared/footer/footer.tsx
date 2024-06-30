@@ -151,7 +151,7 @@ export default function Footer() {
                   <h3 className="font-semibold text-lg text-slate-800 ">
                     Contact us
                   </h3>
-                  <ul className="flex flex-col gap-3 text-slate-600 border-b border-slate-200 pb-4">
+                  <ul className="flex flex-col gap-3 text-slate-600 border-b border-slate-200 pb-4 text-sm">
                     <li className="flex flex-row gap-4 items-start">
                       <FaMapMarkerAlt
                         size={20}

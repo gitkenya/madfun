@@ -76,9 +76,12 @@ export default function Hero() {
                         </h3>
                         <h4 className="font-bold text-xl">Events</h4>
                       </div>
-                      <div className="flex flex-row items-center gap-2 font-semibold">
+                      <Link
+                        href="/events"
+                        className="flex flex-row items-center gap-2 font-semibold text-sm tracking-wider"
+                      >
                         See All <IoChevronForward size={16} />
-                      </div>
+                      </Link>
                     </div>
                   </div>
                   <div className="w-full h-1/2 bg-slate-100 rounded-xl flex flex-row">
@@ -97,9 +100,12 @@ export default function Hero() {
                         <h3 className="font-medium text-lg">Movies</h3>
                         <h4 className="font-bold text-xl">Streaming</h4>
                       </div>
-                      <div className="flex flex-row items-center gap-2 font-semibold">
+                      <Link
+                        href="/streams"
+                        className="flex flex-row items-center gap-2 font-semibold text-sm tracking-wider"
+                      >
                         Watch <IoChevronForward size={16} />
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 </div>
