@@ -36,10 +36,10 @@ export default function ShareModal(props: any) {
   return (
     <>
       <button
-        className="bg-slate-200/[.6] w-[30px] h-[30px] rounded-full flex items-center justify-center"
+        className="transition-all duration-300 hover:bg-slate-200/[.6] w-[40px] h-[40px] rounded-tl-2xl border border-b-0 border-r-0 border-slate-200 flex items-center justify-center"
         onClick={openModal}
       >
-        <IoMdShare size={16} />
+        <IoMdShare size={20} />
       </button>
 
       <dialog

@@ -4,15 +4,48 @@ import Image from "next/image";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { MdEmail, MdLocalPhone } from "react-icons/md";
 import {
+  IoChevronForwardOutline,
+  IoLocation,
   IoLogoFacebook,
   IoLogoInstagram,
   IoLogoTwitter,
+  IoMail,
 } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
+import { IoMdCall } from "react-icons/io";
 export default function Footer() {
   return (
-    <section className="relative">
-      <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0">
+    <section className="relative bg-slate-800">
+      <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0 pt-6 sm:pt-12">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 border border-slate-700 p-5 rounded-lg">
+          <div className="flex flex-row justify-center items-center gap-3 sm:border-r sm:border-slate-700">
+            <div className="w-16 h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
+              <IoMdCall size={28} />
+            </div>
+            <div className="flex flex-col gap-2 text-slate-200">
+              <div className="font-semibold">Call us</div>
+              <div>+254 115 555 000</div>
+            </div>
+          </div>
+          <div className="flex flex-row justify-center items-center gap-3 sm:border-r sm:border-slate-700">
+            <div className="w-16 h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
+              <IoMail size={28} />
+            </div>
+            <div className="flex flex-col gap-2 text-slate-200">
+              <div className="font-semibold">Write to us</div>
+              <div>info@madfun.com</div>
+            </div>
+          </div>
+          <div className="flex flex-row justify-center items-center gap-3">
+            <div className="w-16 h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
+              <IoLocation size={28} />
+            </div>
+            <div className="flex flex-col gap-2 text-slate-200">
+              <div className="font-semibold">Address</div>
+              <div>4th floor, Kalson Towers, Nairobi</div>
+            </div>
+          </div>
+        </div>
         <div className="flex flex-col md:flex-row py-8">
           <div className="w-full md:w-1/3 md:py-6 md:pe-5 space-y-4">
             <Link
@@ -27,120 +60,64 @@ export default function Footer() {
                 alt="Madfun Logo"
               />
             </Link>
-            <p className="text-slate-600">
-              Madfun is a B2B and B2C Online Ticketing Platform which aims to
-              build a dynamic and service oriented Travel Market in the World
+            <p className="text-slate-300 font-light">
+              Madfun is an event and travel company offerring seamless solutions
+              for users to create & manage events, buy tickets, book flights and
+              accommodation with ease.
             </p>
             <Link
-              href="/"
-              className="bg-slate-800 inline-block w-auto text-slate-50 px-5 py-2 rounded-lg"
+              href="/events"
+              className="transition-colors duration-300 text-slate-200 hover:text-yellow-400 text-sm font-medium flex flex-row items-center gap-2"
             >
-              Partner with us
+              Read more about us <IoChevronForwardOutline size={20} />
             </Link>
           </div>
           <div className="w-full md:w-2/3 p-4 md:p-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="grid">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid mx-auto">
                 <div className="flex flex-col gap-y-2 sm:gap-y-5">
-                  <h3 className="font-semibold text-lg text-slate-800 ">
+                  <h3 className="font-semibold text-lg text-slate-200 ">
                     Quick links
                   </h3>
                   <ul className="flex flex-col gap-2">
                     <li>
                       <Link
                         href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
-                      >
-                        Check Movies Playing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
-                      >
-                        Book Flight
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
-                      >
-                        Explore Holiday destinations
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
-                      >
-                        Blogs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
-                      >
-                        About Events
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
+                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
                       >
                         About us
                       </Link>
                     </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="grid">
-                <div className="flex flex-col gap-y-2 sm:gap-y-5">
-                  <h3 className="font-semibold text-lg text-slate-800 ">
-                    Our Services
-                  </h3>
-                  <ul className="flex flex-col gap-2">
                     <li>
                       <Link
                         href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
+                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
                       >
-                        Movie tickets
+                        Events guide
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
+                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
                       >
-                        Event tickets
+                        Fun times
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
+                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
                       >
-                        Flight tickets
+                        Terms & Conditions
                       </Link>
                     </li>
                     <li>
                       <Link
                         href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
+                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
                       >
-                        Travel packages
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-600 hover:text-slate-700"
-                      >
-                        Holiday packages
+                        Privacy Policy
                       </Link>
                     </li>
                   </ul>
@@ -148,64 +125,36 @@ export default function Footer() {
               </div>
               <div className="grid">
                 <div className="flex flex-col gap-y-2 sm:gap-y-5">
-                  <h3 className="font-semibold text-lg text-slate-800 ">
-                    Contact us
+                  <h3 className="font-semibold text-lg text-slate-200 ">
+                    Subscribe
                   </h3>
-                  <ul className="flex flex-col gap-3 text-slate-600 border-b border-slate-200 pb-4 text-sm">
-                    <li className="flex flex-row gap-4 items-start">
-                      <FaMapMarkerAlt
-                        size={20}
-                        className="mt-1 text-slate-500"
-                      />
-                      4th Floor, Kalson towers
-                      <br />
-                      76738 - 00200, Nairobi
-                    </li>
-                    <li className="flex flex-row gap-4 items-start">
-                      <MdLocalPhone
-                        size={20}
-                        className="mt-0.5 text-slate-500"
-                      />{" "}
-                      +254 115 555 000
-                    </li>
-                    <li className="flex flex-row gap-4 items-start">
-                      <MdEmail size={20} className="mt-0.5 text-slate-500" />{" "}
-                      info@madfun.com
-                    </li>
-                  </ul>
-                  <div className="flex flex-row justify-start items-center gap-8">
-                    <Link
-                      href="https://facebook.com/wearemadfun"
-                      target="_blank"
-                      className="transition-all duration-300 text-slate-500 hover:text-indigo-800"
+                  <p className="font-light text-slate-200">
+                    Signup for our monthly newsletter to stay informed about
+                    travel and events
+                  </p>
+                  <div className="relative flex flex-row justify-between items-center">
+                    <input
+                      type="email"
+                      className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 rounded-lg py-5 px-4 sm:px-8 pe-16 focus:outline-none"
+                      placeholder="Email Address"
+                    />
+                    <button
+                      type="button"
+                      className="absolute right-0 mr-4 bg-slate-900 rounded-lg px-3 py-2 text-sm text-slate-50"
                     >
-                      <IoLogoFacebook size={28} />
-                    </Link>
-                    <Link
-                      href="https://x.com/weare_madfun"
-                      target="_blank"
-                      className="transition-all duration-300 text-slate-500 hover:text-slate-800"
-                    >
-                      <FaXTwitter size={26} />
-                    </Link>
-                    <Link
-                      href="https://instagram.com/wearemadfun"
-                      target="_blank"
-                      className="transition-all duration-300 text-slate-500 hover:text-orange-800"
-                    >
-                      <IoLogoInstagram size={28} />
-                    </Link>
+                      Subscribe
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-center justify-center px-4 py-4 border-t border-slate-200">
-          <p className="text-sm text-slate-500">
-            Copyright &copy; Madfun {moment(Date.now()).format("Y")}
-          </p>
-        </div>
+      </div>
+      <div className="w-full flex flex-row items-center justify-center px-4 py-4 bg-slate-900/40">
+        <p className="text-sm text-slate-400 font-light">
+          &copy; {moment(Date.now()).format("Y")} Madfun. All rights reserved
+        </p>
       </div>
     </section>
   );

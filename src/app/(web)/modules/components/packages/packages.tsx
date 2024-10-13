@@ -6,7 +6,7 @@ import ShareModal from "@/components/modals/shareModal";
 export default function Packages() {
   const packages: any[] = [1, 2, 3];
   return (
-    <section className="w-full py-8 bg-slate-100 mt-4">
+    <section className="w-full py-8 bg-slate-100">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
         <div className="w-full flex flex-row items-center justify-between">
           <h1 className="text-lg sm:text-3xl font-bold">Holiday Packages</h1>

@@ -17,19 +17,41 @@ import { SlPlane } from "react-icons/sl";
 export default function Navbar(props: any) {
   const pathname = usePathname();
   const navigation = [
-    { name: "Streams", href: "/streams", current: pathname === "/streams" },
-    { name: "Events", href: "/events", current: pathname === "/events" },
-    { name: "Travel", href: "/travel", current: pathname === "/travel" },
     {
-      name: "Marketplace",
-      href: "/marketplace",
-      current: pathname === "/marketplace",
+      id: "1",
+      name: "Events",
+      href: "/events",
+      current: pathname === "events",
+    },
+    {
+      id: "2",
+      name: "Flights",
+      href: "/flights",
+      current: pathname === "flights",
+    },
+    {
+      id: "3",
+      name: "Hotels",
+      href: "/hotels",
+      current: pathname === "hotels",
+    },
+    {
+      id: "4",
+      name: "Travel",
+      href: "/travel",
+      current: pathname === "travel",
+    },
+    {
+      id: "5",
+      name: "Streams",
+      href: "/streams",
+      current: pathname === "streams",
     },
   ];
   return (
     <Disclosure
       as="nav"
-      className="sticky w-full top-0 z-50 bg-slate-50 border-b border-slate-200"
+      className={`absolute w-full top-0 z-50 bg-gradient-to-b from-slate-800/20 to-transparent`}
     >
       {({ open }) => (
         <>
@@ -50,99 +72,66 @@ export default function Navbar(props: any) {
                   )}
                 </DisclosureButton>
               </div>
-              <div className="flex flex-1 items-center justify-start ps-2 sm:ps-0 sm:items-center sm:justify-between">
-                <Link
-                  href="/"
-                  className="flex items-center text-slate-600 font-extrabold uppercase"
-                >
-                  <Image
-                    className="w-[56px] h-[50px]"
-                    width={56}
-                    height={50}
-                    src="/assets/img/logos/logo.svg"
-                    alt="Madfun Logo"
-                  />
-                </Link>
-                <div className="hidden items-center sm:ml-6 sm:block">
-                  <div className="flex items-center space-x-4">
-                    <Link
-                      href="/streams"
-                      className={`transition-all duration-300 ${
-                        pathname === "streams" || pathname.includes("streams")
-                          ? "bg-slate-800 text-slate-50"
-                          : "text-slate-800"
-                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
-                        `}
-                    >
-                      <MdVideoLibrary size={18} />
-                      Streams
-                    </Link>
-                    <Link
-                      href="/events"
-                      className={`transition-all duration-300 ${
-                        pathname === "events" || pathname.includes("events")
-                          ? "bg-slate-800 text-slate-50"
-                          : "text-slate-800"
-                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
-                        `}
-                    >
-                      <BsCalendar2Check size={18} />
-                      Events
-                    </Link>
-                    <Link
-                      href="/travel"
-                      className={`transition-all duration-300 ${
-                        pathname === "travel" || pathname.includes("travel")
-                          ? "bg-slate-800 text-slate-50"
-                          : "text-slate-800"
-                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
-                        `}
-                    >
-                      <SlPlane size={18} />
-                      Travel{" "}
-                      <span className="bg-red-600 px-4 py-1 text-xs text-slate-50 rounded-full">
-                        New
-                      </span>
-                    </Link>
-                    <Link
-                      href="/marketplace"
-                      className={`transition-all duration-300 ${
-                        pathname === "marketplace" ||
-                        pathname.includes("marketplace")
-                          ? "bg-slate-800 text-slate-50"
-                          : "text-slate-800"
-                      } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
-                        `}
-                    >
-                      <IoBagHandleOutline size={18} />
-                      Marketplace
-                    </Link>
-                  </div>
-                </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pe-16 gap-5 sm:static sm:inset-auto sm:ml-6 sm:pe-0">
+              <div className="w-full flex flex-row items-center justify-between">
+                <div className="flex flex-row items-center gap-4">
                   <Link
                     href="/"
-                    className="md:hidden border border-slate-800 text-slate-800 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
+                    className="flex items-center text-white font-extrabold uppercase"
+                  >
+                    <Image
+                      className="w-[56px] h-[50px]"
+                      width={56}
+                      height={50}
+                      src="/assets/img/logos/logo.svg"
+                      alt="Madfun Logo"
+                    />
+                  </Link>
+                  <div className="hidden items-center sm:ml-6 sm:block">
+                    <div className="flex items-center space-x-4">
+                      {navigation.map((nav: any) => (
+                        <Link
+                          key={nav.id}
+                          href={nav.href}
+                          className={`transition-all duration-300 ${
+                            pathname === nav.pathname ||
+                            pathname.includes(nav.pathname)
+                              ? "bg-slate-800 text-slate-50"
+                              : "text-slate-50 hover:text-yellow-400"
+                          } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
+                        `}
+                        >
+                          {nav.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-5">
+                  <Link
+                    href="/"
+                    className="text-slate-50 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
+                  >
+                    Contact us
+                  </Link>
+                  <Link
+                    href="/"
+                    className="text-slate-50 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
                   >
                     <IoAdd size={18} />
-                    Create an event
+                    Create event
                   </Link>
-                  <div className="hidden md:flex gap-4">
-                    <Link
-                      href="/"
-                      className="border border-slate-800 text-slate-800 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
-                    >
-                      <IoAdd size={18} />
-                      Create an event
-                    </Link>
-                    <Link
-                      href="/"
-                      className="text-slate-800 text-sm px-6 py-2 rounded flex flex-row gap-2 items-center"
-                    >
-                      <IoPersonOutline size={18} />
-                      Signup / Login
-                    </Link>
-                  </div>
+                  <Link
+                    href="/"
+                    className="border border-slate-50 text-slate-50 text-sm px-6 py-2 rounded flex flex-row gap-2 items-center"
+                  >
+                    Login
+                  </Link>
+                  <Link
+                    href="/"
+                    className="bg-slate-50 text-slate-800 text-sm px-6 py-2 rounded flex flex-row gap-2 items-center"
+                  >
+                    Signup
+                  </Link>
                 </div>
               </div>
             </div>
