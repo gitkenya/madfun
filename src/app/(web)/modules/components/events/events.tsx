@@ -68,7 +68,7 @@ export default function Events(props: any) {
                   </span>
                 </Link>
                 <div className="space-y-2">
-                  <h2 className="font-semibold text-sm sm:text-lg">
+                  <h2 className="font-semibold text-sm sm:text-lg line-clamp-2">
                     {event.name}
                   </h2>
                   <h3 className="text-sm text-slate-500 flex flex-row items-center gap-2">
