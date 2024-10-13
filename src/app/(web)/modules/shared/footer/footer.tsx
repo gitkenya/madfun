@@ -70,21 +70,21 @@ export default function Footer() {
             </Link>
             <div className="flex flex-row gap-4">
               <Link
-                href=""
+                href="https://www.facebook.com/wearemadfun"
                 target="_blank"
                 className="transition-all duration-300 inline-flex flex-row items-center justify-center w-10 h-10 bg-slate-50/30 hover:bg-indigo-700 rounded-full text-slate-900 hover:text-white"
               >
                 <IoLogoFacebook className="w-6 h-6" />
               </Link>
               <Link
-                href=""
+                href="https://twitter.com/weare_madfun"
                 target="_blank"
                 className="transition-all duration-300 inline-flex flex-row items-center justify-center w-10 h-10 bg-slate-50/30 hover:bg-blue-400 rounded-full text-slate-900 hover:text-white"
               >
                 <IoLogoTwitter className="w-6 h-6" />
               </Link>
               <Link
-                href=""
+                href="https://www.instagram.com/wearemadfun/"
                 target="_blank"
                 className="transition-all duration-300 inline-flex flex-row items-center justify-center w-10 h-10 bg-slate-50/30 hover:bg-gradient-to-b hover:from-purple-600 hover:via-pink-600 hover:to-amber-600 rounded-full text-slate-900 hover:text-white"
               >
