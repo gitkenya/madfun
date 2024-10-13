@@ -94,6 +94,15 @@ export default function Events(props: any) {
             </div>
           ))}
         </div>
+
+        <div className="sm:hidden flex flex-row justify-center items-center">
+          <Link
+            href="/"
+            className="text-sm font-medium inline-flex flex-row items-center gap-2 bg-yellow-400 text-slate-700 rounded px-4 py-2"
+          >
+            View more <IoChevronForwardOutline size={20} />
+          </Link>
+        </div>
       </div>
     </section>
   );
