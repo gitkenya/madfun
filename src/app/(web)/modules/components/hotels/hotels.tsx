@@ -107,12 +107,12 @@ export default function Hotels(props: any) {
         <div className="w-full px-4">
           <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
             <TabList
-              className={`flex flex-row justify-center text-slate-500 text-sm sm:text-base overflow-x-auto`}
+              className={`flex flex-row justify-start sm:justify-center text-slate-500 text-sm sm:text-base overflow-x-auto`}
             >
               {filters?.map((filter: any) => (
                 <Tab
                   key={filter}
-                  className="transition-all duration-300 px-5 py-2 uppercase border-b border-slate-300 data-[focus]:outline-none data-[selected]:text-slate-800 data-[selected]:border-slate-700 data-[hover]:text-slate-700 data-[hover]:border-slate-700"
+                  className="transition-all duration-300 px-5 py-2 uppercase border-b border-slate-300 data-[focus]:outline-none data-[selected]:outline-none data-[selected]:text-slate-800 data-[selected]:border-slate-700 data-[hover]:text-slate-700 data-[hover]:border-slate-700"
                 >
                   {filter}
                 </Tab>

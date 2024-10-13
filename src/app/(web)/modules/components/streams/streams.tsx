@@ -4,12 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/effect-fade";
-import {
-  IoChevronForwardOutline,
-  IoPlayCircleOutline,
-  IoVideocam,
-} from "react-icons/io5";
+import { IoChevronForwardOutline, IoVideocam } from "react-icons/io5";
 import Link from "next/link";
+import LivestreamModal from "./modules/livestream";
 export default function Streams() {
   const slides = [
     {
@@ -39,10 +36,7 @@ export default function Streams() {
             You Can't miss
           </h2>
         </div>
-        <button className="transition-colors duration-300 rounded-full flex flex-col gap-2 text-white text-sm hover:text-yellow-400">
-          <IoPlayCircleOutline size={60} className="" />
-          <span>Preview</span>
-        </button>
+        <LivestreamModal />
         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-slate-900/50">
           <div className="w-full flex flex-row justify-between items-center py-2 sm:py-4 max-w-[90rem] mx-auto text-white text-sm sm:text-lg">
             <div className="flex flex-row items-center gap-3">
