@@ -19,14 +19,14 @@ export const metadata: Metadata = {
     canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`,
   },
   title: {
-    template: "%s - Madfun",
+    template: "%s",
     default: "Madfun | Events, Flights, Hotels and Travel",
   },
   description: meta.description,
 
   openGraph: {
     title: {
-      template: "%s - Madfun",
+      template: "%s",
       default: "Madfun | Events, Flights, Hotels and Travel",
     },
     description: meta.description,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: {
-      template: "%s - Madfun",
+      template: "%s",
       default: "Madfun | Events, Flights, Hotels and Travel",
     },
     description: meta.description,
