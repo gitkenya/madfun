@@ -8,7 +8,7 @@ export function WebProvider({ children }: { children: React.ReactNode }) {
     <>
       <ProgressBar
         height="1px"
-        color="#00DC82"
+        color="#fcf003"
         options={{ showSpinner: false }}
         startPosition={0.3}
         stopDelay={200}
