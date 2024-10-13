@@ -6,6 +6,7 @@ import { IoClose, IoPlayCircleOutline } from "react-icons/io5";
 
 export default function LivestreamModal(props: any) {
   const { event } = props;
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const modalRef = useRef<HTMLDialogElement>(null);
 
   const openModal = () => {
@@ -15,6 +16,9 @@ export default function LivestreamModal(props: any) {
   };
   const closeModal = () => {
     if (modalRef.current) {
+      if (iframeRef.current) {
+        iframeRef.current.src = iframeRef.current.src; // Reset the iframe src to pause the video
+      }
       modalRef.current.close();
     }
   };
@@ -33,17 +37,20 @@ export default function LivestreamModal(props: any) {
         ref={modalRef}
         id={event?.id}
         className="modal modal-bottom sm:modal-middle"
+        onClose={closeModal}
       >
         <div className="modal-box p-0 w-full sm:w-11/12 sm:min-w-[60rem] rounded-none flex flex-col gap-5">
           {/* Video Container */}
           <div className="w-full aspect-video">
             <iframe
+              ref={iframeRef} // Reference to iframe
               className="w-full h-full"
               src="https://www.youtube.com/embed/CgGh1fCQIqA"
               title="Kingdom World Tour"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
+              loading="lazy"
             ></iframe>
           </div>
         </div>
