@@ -30,7 +30,7 @@ export default function Events(props: any) {
     {
       id: "4",
       date: "24 Dec",
-      name: "Mpaka Events with a longer title that will adjust all cards in desktop and left card in mobile",
+      name: "Mpaka Event",
       price: "1500+",
       photo: "/assets/img/events/event-4.avif",
     },
