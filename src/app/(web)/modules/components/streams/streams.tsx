@@ -71,12 +71,12 @@ export default function Streams() {
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{
-          delay: 3000,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         loop={true}
         effect="fade"
-        speed={2000}
+        speed={1000}
         className="h-full"
       >
         {slides.map((slide: any) => (
