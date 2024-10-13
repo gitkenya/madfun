@@ -50,7 +50,7 @@ export default function Events(props: any) {
             View more <IoChevronForwardOutline size={20} />
           </Link>
         </div>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-4 sm:gap-5">
           {events?.map((event: any) => (
             <div key={event.id} className="grid">
               <div className="relative bg-slate-50 border border-slate-200 p-4 rounded-lg flex flex-col justify-between gap-4">
@@ -68,7 +68,9 @@ export default function Events(props: any) {
                   </span>
                 </Link>
                 <div className="space-y-2">
-                  <h2 className="font-semibold text-lg">{event.name}</h2>
+                  <h2 className="font-semibold text-sm sm:text-lg">
+                    {event.name}
+                  </h2>
                   <h3 className="text-sm text-slate-500 flex flex-row items-center gap-2">
                     <span className="">Play</span>
                     <span>
