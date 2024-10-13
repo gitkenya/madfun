@@ -5,14 +5,10 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { usePathname } from "next/navigation";
-import { TfiClose, TfiAlignLeft, TfiAlignRight } from "react-icons/tfi";
+import { TfiClose, TfiAlignRight } from "react-icons/tfi";
 import Image from "next/image";
 import Link from "next/link";
-import DarkModeToggle from "@/components/theme/theme";
-import { MdVideoLibrary } from "react-icons/md";
-import { IoAdd, IoBagHandleOutline, IoPersonOutline } from "react-icons/io5";
-import { BsCalendar2Check } from "react-icons/bs";
-import { SlPlane } from "react-icons/sl";
+import { IoAdd } from "react-icons/io5";
 
 export default function Navbar(props: any) {
   const pathname = usePathname();
@@ -20,31 +16,31 @@ export default function Navbar(props: any) {
     {
       id: "1",
       name: "Events",
-      href: "/events",
+      href: "/",
       current: pathname === "events",
     },
     {
       id: "2",
       name: "Flights",
-      href: "/flights",
+      href: "/",
       current: pathname === "flights",
     },
     {
       id: "3",
       name: "Hotels",
-      href: "/hotels",
+      href: "/",
       current: pathname === "hotels",
     },
     {
       id: "4",
       name: "Travel",
-      href: "/travel",
+      href: "/",
       current: pathname === "travel",
     },
     {
       id: "5",
       name: "Streams",
-      href: "/streams",
+      href: "/",
       current: pathname === "streams",
     },
   ];
