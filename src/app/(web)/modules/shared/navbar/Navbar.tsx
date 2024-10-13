@@ -72,7 +72,7 @@ export default function Navbar(props: any) {
                 <div className="flex flex-row items-center gap-4">
                   <Link
                     href="/"
-                    className="flex items-center text-white font-extrabold uppercase"
+                    className="flex items-center gap-4 text-xl text-white font-semibold font-poppins uppercase"
                   >
                     <Image
                       className="w-[56px] h-[50px]"
@@ -81,6 +81,7 @@ export default function Navbar(props: any) {
                       src="/assets/img/logos/logo.svg"
                       alt="Madfun Logo"
                     />
+                    <span className="sm:hidden">Madfun</span>
                   </Link>
                   <div className="hidden items-center sm:ml-6 sm:block">
                     <div className="flex items-center space-x-4">
@@ -134,7 +135,7 @@ export default function Navbar(props: any) {
           </div>
 
           <DisclosurePanel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2 bg-slate-50">
+            <div className="relative space-y-1 px-2 pb-3 pt-2 bg-slate-50 animate-in fade-in zoom-in sm:animate-none mx-4 rounded shadow-lg">
               {navigation.map((item, index) => (
                 <Link href={item.href} key={index}>
                   <DisclosureButton
@@ -154,6 +155,43 @@ export default function Navbar(props: any) {
                   </DisclosureButton>
                 </Link>
               ))}
+              <Link href="/">
+                <DisclosureButton
+                  as="span"
+                  className={`text-slate-800 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium`}
+                >
+                  Contact us
+                </DisclosureButton>
+              </Link>
+              <div className="absolute bottom-0 right-0">
+                <Link href="/">
+                  <DisclosureButton
+                    as="span"
+                    className={`flex flex-row gap-2 m-3 items-center justify-center bg-yellow-400 text-slate-800 rounded-md px-3 py-2 text-base font-medium`}
+                  >
+                    <IoAdd size={18} />
+                    Create event
+                  </DisclosureButton>
+                </Link>
+                <div className="flex flex-row gap-5 items-center m-3">
+                  <Link href="/">
+                    <DisclosureButton
+                      as="span"
+                      className="border border-slate-600 text-slate-800 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
+                    >
+                      Login
+                    </DisclosureButton>
+                  </Link>
+                  <Link href="/">
+                    <DisclosureButton
+                      as="span"
+                      className="bg-slate-800 text-slate-50 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
+                    >
+                      Signup
+                    </DisclosureButton>
+                  </Link>
+                </div>
+              </div>
             </div>
           </DisclosurePanel>
         </>
