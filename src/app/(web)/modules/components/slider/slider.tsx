@@ -28,9 +28,9 @@ export default function Slider() {
     },
   ];
   return (
-    <section className="relative w-full h-screen sm:h-[calc(100vh-200px)] bg-slate-800">
+    <section className="relative w-full h-[300px] sm:h-[calc(100vh-200px)] bg-slate-800">
       <div className="absolute flex flex-col items-center justify-center w-full h-full top-0 left-0 z-20 bg-gradient-to-b from-slate-900/60 via-slate-900/10 to-slate-900/10">
-        <div className="w-full max-w-[90rem] mx-auto flex flex-col items-center justify-center">
+        <div className="w-full px-4 max-w-[90rem] mx-auto flex flex-col items-center justify-center">
           <div className="w-full max-w-[50rem] bg-slate-50/60 px-4 py-5 rounded-lg text-slate-600 ">
             Search Modules
           </div>
@@ -58,6 +58,7 @@ export default function Slider() {
                 fill={true}
                 priority
                 alt="Madfun"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </SwiperSlide>

@@ -45,7 +45,7 @@ export default function Events(props: any) {
 
           <Link
             href="/"
-            className="text-sm font-medium flex flex-row items-center gap-2"
+            className="text-sm font-medium hidden sm:flex flex-row items-center gap-2"
           >
             View more <IoChevronForwardOutline size={20} />
           </Link>
@@ -61,6 +61,7 @@ export default function Events(props: any) {
                     width={600}
                     height={600}
                     alt="Events in Kenya Cinema Nairobi"
+                    priority
                   />
                   <span className="absolute top-0 left-0 m-6 min-w-20 text-center bg-slate-50 text-sm font-semibold text-red-600 px-2 py-1 rounded">
                     {event.date}

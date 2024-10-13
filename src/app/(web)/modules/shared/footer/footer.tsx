@@ -16,38 +16,38 @@ import { IoMdCall } from "react-icons/io";
 export default function Footer() {
   return (
     <section className="relative bg-slate-800">
-      <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0 pt-6 sm:pt-12">
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 border border-slate-700 p-5 rounded-lg">
-          <div className="flex flex-row justify-center items-center gap-3 sm:border-r sm:border-slate-700">
-            <div className="w-16 h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
-              <IoMdCall size={28} />
+      <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0 pt-10 sm:pt-16">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-0 border border-slate-700 p-5 rounded-lg">
+          <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
+            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
+              <IoMdCall className="w-6 sm:w-8 h-6 sm:h-8" />
             </div>
-            <div className="flex flex-col gap-2 text-slate-200">
+            <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
               <div className="font-semibold">Call us</div>
               <div>+254 115 555 000</div>
             </div>
           </div>
-          <div className="flex flex-row justify-center items-center gap-3 sm:border-r sm:border-slate-700">
-            <div className="w-16 h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
-              <IoMail size={28} />
+          <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
+            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
+              <IoMail className="w-6 sm:w-8 h-6 sm:h-8" />
             </div>
-            <div className="flex flex-col gap-2 text-slate-200">
+            <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
               <div className="font-semibold">Write to us</div>
               <div>info@madfun.com</div>
             </div>
           </div>
-          <div className="flex flex-row justify-center items-center gap-3">
-            <div className="w-16 h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
-              <IoLocation size={28} />
+          <div className="flex flex-row sm:justify-center items-center gap-3">
+            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
+              <IoLocation className="w-6 sm:w-8 h-6 sm:h-8" />
             </div>
-            <div className="flex flex-col gap-2 text-slate-200">
+            <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
               <div className="font-semibold">Address</div>
               <div>4th floor, Kalson Towers, Nairobi</div>
             </div>
           </div>
         </div>
         <div className="flex flex-col md:flex-row py-8">
-          <div className="w-full md:w-1/3 md:py-6 md:pe-5 space-y-4">
+          <div className="w-full md:w-1/3 p-4 sm:px-6 md:py-6 md:pe-5 space-y-4">
             <Link
               href="/"
               className="flex items-center text-slate-600 font-extrabold uppercase"
@@ -74,7 +74,7 @@ export default function Footer() {
           </div>
           <div className="w-full md:w-2/3 p-4 md:p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="grid mx-auto">
+              <div className="grid sm:mx-auto">
                 <div className="flex flex-col gap-y-2 sm:gap-y-5">
                   <h3 className="font-semibold text-lg text-slate-200 ">
                     Quick links

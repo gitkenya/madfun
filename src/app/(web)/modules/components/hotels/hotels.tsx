@@ -86,9 +86,11 @@ export default function Hotels(props: any) {
             in our handpicked stays
           </h2>
         </div>
-        <div className="w-full">
+        <div className="w-full px-4">
           <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-            <TabList className={`flex flex-row justify-center text-slate-500`}>
+            <TabList
+              className={`flex flex-row justify-center text-slate-500 text-sm sm:text-base overflow-x-auto`}
+            >
               <Tab className="transition-all duration-300 px-5 py-2 uppercase border-b border-slate-300 data-[selected]:text-slate-800 data-[selected]:border-slate-700 data-[hover]:text-slate-700 data-[hover]:border-slate-700">
                 All
               </Tab>
@@ -105,20 +107,23 @@ export default function Hotels(props: any) {
                 Apartments
               </Tab>
             </TabList>
-            <TabPanels className={`p-4`}>
+            <TabPanels className={`pt-4`}>
               <TabPanel>
                 <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-5 sm:gap-8">
                   {hotels?.map((hotel: any) => (
                     <div key={hotel.id} className="grid">
                       <div className="relative rounded-lg flex flex-col justify-between gap-4">
-                        <div className="relative">
-                          <Link className="w-full" href={`/`}>
+                        <div className="relative ">
+                          <Link
+                            className="relative flex w-full h-72 sm:h-96"
+                            href={`/`}
+                          >
                             <Image
-                              className="rounded-lg"
+                              className="rounded-lg object-cover"
                               src={hotel.photo}
-                              width={400}
-                              height={600}
+                              fill
                               alt={hotel.name}
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                           </Link>
                         </div>
@@ -127,20 +132,20 @@ export default function Hotels(props: any) {
                             <div className="font-semibold text-white sm:text-lg">
                               {hotel.name}
                             </div>
-                            <div className="flex flex-row items-end gap-3 text-white text-sm font-light">
-                              <div className="flex flex-row items-center gap-2">
+                            <div className="flex flex-row items-end gap-3 text-white text-xs font-normal">
+                              <div className="flex flex-row items-center gap-1.5">
                                 <span>
                                   <MdPersonOutline size={18} />
                                 </span>
                                 <span>{hotel.guests} Guest</span>
                               </div>
-                              <div className="flex flex-row items-center gap-2">
+                              <div className="flex flex-row items-center gap-1.5">
                                 <span>
                                   <MdOutlineHotel size={18} />
                                 </span>
                                 <span>{hotel.beds} Bed</span>
                               </div>
-                              <div className="flex flex-row items-center gap-1">
+                              <div className="flex flex-row items-center gap-1.5">
                                 <span>Ksh.</span>
                                 <span>{hotel.price}</span>
                               </div>

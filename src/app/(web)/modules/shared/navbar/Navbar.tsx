@@ -55,7 +55,7 @@ export default function Navbar(props: any) {
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 z-50 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
-                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-slate-800 focus:outline-none">
+                <DisclosureButton className="relative inline-flex items-center justify-center rounded-md p-2 text-slate-50 focus:outline-none">
                   <span className="absolute -inset-0.5" />
                   <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -102,7 +102,7 @@ export default function Navbar(props: any) {
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-5">
+                <div className="hidden sm:flex items-center gap-5">
                   <Link
                     href="/"
                     className="text-slate-50 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
@@ -134,7 +134,7 @@ export default function Navbar(props: any) {
           </div>
 
           <DisclosurePanel className="sm:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2">
+            <div className="space-y-1 px-2 pb-3 pt-2 bg-slate-50">
               {navigation.map((item, index) => (
                 <Link href={item.href} key={index}>
                   <DisclosureButton
