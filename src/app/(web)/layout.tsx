@@ -3,14 +3,14 @@ import Footer from "@/app/(web)/modules/shared/footer/footer";
 import { Metadata } from "next";
 
 const meta: any = {
-  title: "Madfun | Online Ticketing Platform",
+  title: "Madfun | Events, Flights, Hotels and Travel",
   description:
-    "Madfun is a B2B and B2C Online Ticketing Platform which aims to build a dynamic and service oriented Travel Market in the World",
+    "Madfun is an event and travel company offerring seamless solutions for users to create & manage events, buy tickets, book flights and accommodation with ease.",
   type: "website",
   card: "summary_large_image",
   site: "@madfun",
   creator: "@madfun",
-  images: "/assets/img/pages/home/banner.png",
+  images: "/assets/img/meta/meta-1.jpg",
   url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
 };
 export const metadata: Metadata = {
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
   },
   title: {
     template: "%s - Madfun",
-    default: "Madfun | Online Ticketing Platform",
+    default: "Madfun | Events, Flights, Hotels and Travel",
   },
   description: meta.description,
 
   openGraph: {
     title: {
       template: "%s - Madfun",
-      default: "Madfun | Online Ticketing Platform",
+      default: "Madfun | Events, Flights, Hotels and Travel",
     },
     description: meta.description,
     type: meta.type,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     title: {
       template: "%s - Madfun",
-      default: "Madfun | Online Ticketing Platform",
+      default: "Madfun | Events, Flights, Hotels and Travel",
     },
     description: meta.description,
     card: meta.card,
