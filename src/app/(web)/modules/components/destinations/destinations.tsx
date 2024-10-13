@@ -57,7 +57,7 @@ export default function Destinations() {
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
           <div className="flex flex-col gap-8 sm:pe-16">
-            <div className="flex flex-col gap-1 sm:gap-4">
+            <div className="font-poppins flex flex-col gap-1 sm:gap-3">
               <h2 className="text-lg sm:text-3xl font-bold uppercase">Top</h2>
               <h2 className="text-lg sm:text-3xl font-bold uppercase">
                 Destinations

@@ -5,7 +5,7 @@ export default function Insider(props: any) {
   const insiders = [
     {
       id: "1",
-      date: "24 Oct, 2024",
+      date: "24 Oct, 24",
       time: "5 Min",
       category: "Travel",
       title: "Top 10 Must-Visit Destinations for 2024",
@@ -13,7 +13,7 @@ export default function Insider(props: any) {
     },
     {
       id: "2",
-      date: "24 Oct, 2024",
+      date: "24 Oct, 24",
       time: "3 Min",
       category: "Events",
       title: "How to Plan the Perfect Event",
@@ -21,7 +21,7 @@ export default function Insider(props: any) {
     },
     {
       id: "3",
-      date: "24 Oct, 2024",
+      date: "24 Oct, 24",
       time: "10 Min",
       category: "Streams",
       title: "How to Host and Monetize Your Events Online",
@@ -44,7 +44,7 @@ export default function Insider(props: any) {
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[80rem] px-2 md:px-4 space-y-6 mt-2">
         <div className="w-full flex flex-row items-center justify-center">
-          <h2 className="text-lg sm:text-3xl font-bold uppercase">
+          <h2 className="text-lg sm:text-3xl font-bold uppercase font-poppins">
             Travel & Events Insider
           </h2>
         </div>
@@ -64,13 +64,15 @@ export default function Insider(props: any) {
                   </Link>
                   <div className="space-y-2">
                     <h2
-                      className={`font-medium uppercase ${categoryColor(
+                      className={`font-semibold uppercase tracking-[0.28em] text-sm ${categoryColor(
                         insider.category
                       )}`}
                     >
                       {insider.category}
                     </h2>
-                    <h3 className="font-semibold text-lg">{insider.title}</h3>
+                    <h3 className="font-semibold text-lg font-poppins">
+                      {insider.title}
+                    </h3>
                   </div>
                 </div>
                 <div className="">

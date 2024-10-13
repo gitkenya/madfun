@@ -1,17 +1,14 @@
 import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdEmail, MdLocalPhone } from "react-icons/md";
 import {
   IoChevronForwardOutline,
   IoLocation,
   IoLogoFacebook,
-  IoLogoInstagram,
   IoLogoTwitter,
   IoMail,
 } from "react-icons/io5";
-import { FaXTwitter } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
 import { IoMdCall } from "react-icons/io";
 export default function Footer() {
   return (
@@ -23,7 +20,7 @@ export default function Footer() {
               <IoMdCall className="w-6 sm:w-8 h-6 sm:h-8" />
             </div>
             <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
-              <div className="font-semibold">Call us</div>
+              <div className="font-poppins font-semibold">Call us</div>
               <div>+254 115 555 000</div>
             </div>
           </div>
@@ -32,7 +29,7 @@ export default function Footer() {
               <IoMail className="w-6 sm:w-8 h-6 sm:h-8" />
             </div>
             <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
-              <div className="font-semibold">Write to us</div>
+              <div className="font-poppins font-semibold">Write to us</div>
               <div>info@madfun.com</div>
             </div>
           </div>
@@ -41,7 +38,7 @@ export default function Footer() {
               <IoLocation className="w-6 sm:w-8 h-6 sm:h-8" />
             </div>
             <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
-              <div className="font-semibold">Address</div>
+              <div className="font-poppins font-semibold">Address</div>
               <div>4th floor, Kalson Towers, Nairobi</div>
             </div>
           </div>
@@ -53,9 +50,9 @@ export default function Footer() {
               className="flex items-center text-slate-600 font-extrabold uppercase"
             >
               <Image
-                className="w-[56px] h-[50px]"
-                width={56}
-                height={50}
+                className="w-[45px] h-[45px]"
+                width={45}
+                height={45}
                 src="/assets/img/logos/logo.svg"
                 alt="Madfun Logo"
               />
@@ -71,12 +68,35 @@ export default function Footer() {
             >
               Read more about us <IoChevronForwardOutline size={20} />
             </Link>
+            <div className="flex flex-row gap-4">
+              <Link
+                href=""
+                target="_blank"
+                className="transition-all duration-300 inline-flex flex-row items-center justify-center w-10 h-10 bg-slate-50/30 hover:bg-indigo-700 rounded-full text-slate-900 hover:text-white"
+              >
+                <IoLogoFacebook className="w-6 h-6" />
+              </Link>
+              <Link
+                href=""
+                target="_blank"
+                className="transition-all duration-300 inline-flex flex-row items-center justify-center w-10 h-10 bg-slate-50/30 hover:bg-blue-400 rounded-full text-slate-900 hover:text-white"
+              >
+                <IoLogoTwitter className="w-6 h-6" />
+              </Link>
+              <Link
+                href=""
+                target="_blank"
+                className="transition-all duration-300 inline-flex flex-row items-center justify-center w-10 h-10 bg-slate-50/30 hover:bg-gradient-to-b hover:from-purple-600 hover:via-pink-600 hover:to-amber-600 rounded-full text-slate-900 hover:text-white"
+              >
+                <RiInstagramFill className="w-6 h-6" />
+              </Link>
+            </div>
           </div>
           <div className="w-full md:w-2/3 p-4 md:p-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="grid sm:mx-auto">
                 <div className="flex flex-col gap-y-2 sm:gap-y-5">
-                  <h3 className="font-semibold text-lg text-slate-200 ">
+                  <h3 className="font-poppins font-semibold text-lg text-slate-200 ">
                     Quick links
                   </h3>
                   <ul className="flex flex-col gap-2">
@@ -125,7 +145,7 @@ export default function Footer() {
               </div>
               <div className="grid">
                 <div className="flex flex-col gap-y-2 sm:gap-y-5">
-                  <h3 className="font-semibold text-lg text-slate-200 ">
+                  <h3 className="font-poppins font-semibold text-lg text-slate-200 ">
                     Subscribe
                   </h3>
                   <p className="font-light text-slate-200">

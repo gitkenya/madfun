@@ -93,7 +93,7 @@ export default function Navbar(props: any) {
                             pathname.includes(nav.pathname)
                               ? "bg-slate-800 text-slate-50"
                               : "text-slate-50 hover:text-yellow-400"
-                          } rounded px-4 py-2 text-sm font-medium flex flex-row items-center gap-2
+                          } rounded px-4 py-2 font-normal flex flex-row items-center gap-2
                         `}
                         >
                           {nav.name}
@@ -105,26 +105,26 @@ export default function Navbar(props: any) {
                 <div className="hidden sm:flex items-center gap-5">
                   <Link
                     href="/"
-                    className="text-slate-50 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
+                    className="text-slate-50 px-4 py-2 rounded flex flex-row gap-2 items-center"
                   >
                     Contact us
                   </Link>
                   <Link
                     href="/"
-                    className="text-slate-50 text-sm px-4 py-2 rounded flex flex-row gap-2 items-center"
+                    className="text-slate-50 px-4 py-2 rounded flex flex-row gap-2 items-center"
                   >
                     <IoAdd size={18} />
                     Create event
                   </Link>
                   <Link
                     href="/"
-                    className="border border-slate-50 text-slate-50 text-sm px-6 py-2 rounded flex flex-row gap-2 items-center"
+                    className="border border-slate-50 text-slate-50 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
                   >
                     Login
                   </Link>
                   <Link
                     href="/"
-                    className="bg-slate-50 text-slate-800 text-sm px-6 py-2 rounded flex flex-row gap-2 items-center"
+                    className="bg-slate-50 text-slate-800 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
                   >
                     Signup
                   </Link>

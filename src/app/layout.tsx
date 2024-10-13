@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Poppins, Inter, Great_Vibes } from "next/font/google";
+import { Poppins, Inter, Barlow } from "next/font/google";
 import localFont from "next/font/local";
 import "./global.scss";
 import { WebProvider } from "@/providers/web/web";
@@ -14,6 +14,16 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+const barlow = Barlow({
+  subsets: ["latin"],
+  display: "swap",
+  style: ["normal"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  fallback: ["system-ui", "arial"],
+  preload: true,
+  variable: "--font-barlow",
+});
+
 const inter = Inter({
   subsets: ["latin"],
   fallback: ["system-ui", "arial"],
@@ -21,14 +31,6 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const citadel = localFont({
-  src: [
-    {
-      path: "../../public/assets/fonts/citadel/citadel.ttf",
-    },
-  ],
-  variable: "--font-citadel",
-});
 const meta: any = {
   title: "Madfun | Events, Flights, Hotels and Travel",
   description:
@@ -83,7 +85,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body
-        className={`${poppins.variable} ${inter.variable} ${citadel.variable}`}
+        className={`${poppins.variable} ${inter.variable} ${barlow.variable}`}
       >
         <WebProvider>{children}</WebProvider>
         <SpeedInsights />

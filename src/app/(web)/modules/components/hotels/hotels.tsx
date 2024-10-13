@@ -78,7 +78,7 @@ export default function Hotels(props: any) {
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-2">
-        <div className="w-full flex flex-col gap-3 items-center justify-center">
+        <div className="w-full flex flex-col gap-3 items-center justify-center font-poppins">
           <h2 className="text-lg sm:text-3xl font-bold uppercase sm:max-w-lg text-center leading">
             Experience Luxury & Comfort
           </h2>
@@ -129,7 +129,7 @@ export default function Hotels(props: any) {
                         </div>
                         <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/10 via-slate-900/10 to-slate-900/60 rounded-lg flex flex-col justify-end">
                           <div className="flex flex-col gap-1.5 px-5 py-3">
-                            <div className="font-semibold text-white sm:text-lg">
+                            <div className="font-poppins font-semibold text-white sm:text-lg">
                               {hotel.name}
                             </div>
                             <div className="flex flex-row items-end gap-3 text-white text-xs font-normal">
