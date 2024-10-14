@@ -146,8 +146,8 @@ export default function Navbar(props: any) {
                     href="/"
                     className={`transition-all duration-300 border  px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
                       pathname === "/"
-                        ? "border-white text-white hover:border-yellow-400 hover:text-yellow-400"
-                        : "border-slate-700 text-slate-70 hover:border-red-500 hover:text-red-500"
+                        ? "border-white text-white hover:border-slate-300 hover:text-slate-300"
+                        : "border-slate-700 text-slate-700 hover:border-slate-600 hover:text-slate-600"
                     }`}
                   >
                     Login
@@ -156,8 +156,8 @@ export default function Navbar(props: any) {
                     href="/"
                     className={`transition-all duration-300 px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
                       pathname === "/"
-                        ? "bg-white text-slate-800 hover:bg-red-600 hover:text-white"
-                        : "bg-slate-800 text-white hover:bg-red-600"
+                        ? "bg-white text-slate-800 hover:bg-slate-300"
+                        : "bg-slate-800 text-white hover:bg-slate-600"
                     }`}
                   >
                     Signup
