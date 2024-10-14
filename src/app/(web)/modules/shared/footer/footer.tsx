@@ -63,7 +63,7 @@ export default function Footer() {
               accommodation with ease.
             </p>
             <Link
-              href="/events"
+              href="/"
               className="transition-colors duration-300 text-slate-200 hover:text-yellow-400 text-sm font-medium flex flex-row items-center gap-2"
             >
               Read more about us <IoChevronForwardOutline size={20} />
