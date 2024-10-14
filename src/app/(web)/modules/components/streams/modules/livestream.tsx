@@ -39,7 +39,7 @@ export default function LivestreamModal(props: any) {
         className="modal modal-bottom sm:modal-middle"
         onClose={closeModal}
       >
-        <div className="modal-box p-0 w-full sm:w-11/12 sm:min-w-[60rem] rounded-none flex flex-col gap-5">
+        <div className="modal-box p-0 bg-transparent w-full sm:w-11/12 sm:min-w-[60rem] rounded-none flex flex-col gap-5">
           {/* Video Container */}
           <div className="w-full aspect-video">
             <iframe
