@@ -30,7 +30,7 @@ export default function Events(props: any) {
     {
       id: "4",
       date: "24 Dec",
-      name: "Mpaka Event",
+      name: "Mpaka Event concert with a longer event title",
       price: "1500+",
       photo: "/assets/img/events/event-4.avif",
     },
