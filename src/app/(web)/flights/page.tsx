@@ -11,7 +11,7 @@ export default function Page() {
             fill
             priority
             alt="Madfun Flights"
-            sizes="(max-width: 768px) 600px, (max-width: 1200px) 1200px, 600px"
+            sizes="(max-width: 768px) 600px, (max-width: 1200px) 1200px, 1600px"
           />
         </div>
       </div>
