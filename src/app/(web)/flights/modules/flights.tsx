@@ -7,7 +7,7 @@ export default function Flights() {
         Flights
         <IoEllipse size={14} className="text-yellow-400 mb-[0.4rem]" />
       </h1>
-      <div className="w-full p-4 rounded-lg bg-white grid grid-cols-5">
+      <div className="w-full p-4 rounded-lg bg-white grid grid-cols-5 gap-4">
         <div className="col-span-4 flex flex-col gap-4">
           <div className="flex flex-row justify-between items-center">
             <div className="flex flex-row items-center gap-5">
@@ -65,7 +65,11 @@ export default function Flights() {
             <div className="w-full p-2 py-5 rounded-lg border border-slate-200"></div>
           </div>
         </div>
-        <div></div>
+        <div className="flex flex-col justify-end">
+          <button className="transition-all duration-300 w-full bg-slate-800 hover:bg-slate-950 text-white rounded-lg px-4 py-3 text-center">
+            Search
+          </button>
+        </div>
       </div>
     </div>
   );
