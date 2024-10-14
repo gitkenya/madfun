@@ -32,7 +32,7 @@ export default function Slider() {
     <section className="relative w-full h-[300px] sm:h-[calc(100vh-200px)] bg-slate-800">
       <div className="absolute flex flex-col items-center justify-center w-full h-full top-0 left-0 z-20 bg-gradient-to-b from-slate-900/60 via-slate-900/10 to-slate-900/10">
         <div className="w-full px-4 max-w-[90rem] mx-auto flex flex-col items-center justify-center">
-          <div className="hidden sm:block w-full max-w-[50rem] rounded-lg text-slate-600 ">
+          <div className="hidden sm:block w-full max-w-[65rem] rounded-lg text-slate-600 ">
             <SearchBar />
           </div>
         </div>
