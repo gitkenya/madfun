@@ -17,37 +17,41 @@ export default function Navbar(props: any) {
       id: "1",
       name: "Events",
       href: "/",
-      current: pathname === "events",
+      current: pathname === "/events",
     },
     {
       id: "2",
       name: "Flights",
-      href: "/",
-      current: pathname === "flights",
+      href: "/flights",
+      current: pathname === "/flights",
     },
     {
       id: "3",
       name: "Hotels",
       href: "/",
-      current: pathname === "hotels",
+      current: pathname === "/hotels",
     },
     {
       id: "4",
       name: "Travel",
       href: "/",
-      current: pathname === "travel",
+      current: pathname === "/travel",
     },
     {
       id: "5",
       name: "Streams",
       href: "/",
-      current: pathname === "streams",
+      current: pathname === "/streams",
     },
   ];
   return (
     <Disclosure
       as="nav"
-      className={`absolute w-full top-0 z-50 bg-gradient-to-b from-slate-800/20 to-transparent`}
+      className={`absolute w-full top-0 z-50 ${
+        pathname === "/"
+          ? "bg-gradient-to-b from-slate-800/20 to-transparent"
+          : "bg-white"
+      }`}
     >
       {({ open }) => (
         <>
@@ -89,11 +93,18 @@ export default function Navbar(props: any) {
                         <Link
                           key={nav.id}
                           href={nav.href}
-                          className={`transition-all duration-300 ${
-                            pathname === nav.pathname ||
-                            pathname.includes(nav.pathname)
-                              ? "bg-slate-800 text-slate-50"
-                              : "text-slate-50 hover:text-yellow-400"
+                          className={`relative transition-all duration-300 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full before:absolute before:-bottom-3 before:left-0 before:w-0 before:h-0.5 ${
+                            nav.current
+                              ? `before:w-full ${
+                                  pathname === "/"
+                                    ? "text-slate-50 hover:text-yellow-400 before:bg-slate-50"
+                                    : "text-slate-700 hover:text-slate-800 before:bg-slate-800 "
+                                } `
+                              : `${
+                                  pathname === "/"
+                                    ? "text-slate-50 hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                                    : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
+                                }`
                           } rounded px-4 py-2 font-normal flex flex-row items-center gap-2
                         `}
                         >
@@ -106,26 +117,42 @@ export default function Navbar(props: any) {
                 <div className="hidden sm:flex items-center gap-5">
                   <Link
                     href="/"
-                    className="text-slate-50 px-4 py-2 rounded flex flex-row gap-2 items-center"
+                    className={`${
+                      pathname === "/"
+                        ? "text-slate-50 hover:text-yellow-400"
+                        : "text-slate-700 hover:text-slate-800"
+                    } px-4 py-2 rounded flex flex-row gap-2 items-center`}
                   >
                     Contact us
                   </Link>
                   <Link
                     href="/"
-                    className="text-slate-50 px-4 py-2 rounded flex flex-row gap-2 items-center"
+                    className={`${
+                      pathname === "/"
+                        ? "text-slate-50 hover:text-yellow-400"
+                        : "text-slate-700 hover:text-slate-800"
+                    } px-4 py-2 rounded flex flex-row gap-2 items-center`}
                   >
                     <IoAdd size={18} />
                     Create event
                   </Link>
                   <Link
                     href="/"
-                    className="border border-slate-50 text-slate-50 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
+                    className={`border  px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
+                      pathname === "/"
+                        ? "border-slate-50 text-slate-50"
+                        : "border-slate-700 text-slate-70"
+                    }`}
                   >
                     Login
                   </Link>
                   <Link
                     href="/"
-                    className="bg-slate-50 text-slate-800 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
+                    className={`px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
+                      pathname === "/"
+                        ? "bg-slate-50 text-slate-800"
+                        : "bg-slate-800 text-slate-50"
+                    }`}
                   >
                     Signup
                   </Link>
