@@ -145,7 +145,7 @@ export default function Hotels(props: any) {
                               <div className="font-poppins font-semibold text-white sm:text-lg">
                                 {hotel.name}
                               </div>
-                              <div className="flex flex-row items-end gap-3 text-white text-xs font-normal">
+                              <div className="flex flex-row items-end gap-3 text-white text-sm font-normal">
                                 <div className="flex flex-row items-center gap-1.5">
                                   <span>
                                     <MdPersonOutline size={18} />
@@ -160,7 +160,9 @@ export default function Hotels(props: any) {
                                 </div>
                                 <div className="flex flex-row items-center gap-1.5">
                                   <span>Ksh.</span>
-                                  <span>{hotel.price}</span>
+                                  <span className="line-clamp-1">
+                                    {hotel.price}
+                                  </span>
                                 </div>
                               </div>
                             </div>
