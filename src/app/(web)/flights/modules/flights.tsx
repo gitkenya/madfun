@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { IoEllipse, IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
 
@@ -88,6 +88,7 @@ export default function Flights() {
                 options={locations}
                 placeholder="From"
                 unstyled
+                instanceId={useId()}
                 components={{ DropdownIndicator: CustomDropdownIndicator }}
                 className="w-full"
                 classNames={{
@@ -108,6 +109,7 @@ export default function Flights() {
                 options={locations}
                 placeholder="To"
                 unstyled
+                instanceId={useId()}
                 components={{ DropdownIndicator: CustomDropdownIndicator }}
                 className="w-full"
                 classNames={{
@@ -130,6 +132,7 @@ export default function Flights() {
                 options={locations}
                 placeholder="Departure"
                 unstyled
+                instanceId={useId()}
                 components={{ DropdownIndicator: CustomDropdownIndicator }}
                 className="w-full"
                 classNames={{
@@ -150,6 +153,7 @@ export default function Flights() {
                 options={locations}
                 placeholder="Return"
                 unstyled
+                instanceId={useId()}
                 components={{ DropdownIndicator: CustomDropdownIndicator }}
                 className="w-full"
                 classNames={{
@@ -172,6 +176,7 @@ export default function Flights() {
                 options={locations}
                 placeholder="Travelers & class"
                 unstyled
+                instanceId={useId()}
                 components={{ DropdownIndicator: CustomDropdownIndicator }}
                 className="w-full"
                 classNames={{

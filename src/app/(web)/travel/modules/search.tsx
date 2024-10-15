@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useId, useState } from "react";
 import { IoEllipse, IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
 
@@ -36,6 +36,7 @@ export default function SearchForm() {
             options={locations}
             placeholder="Destination"
             unstyled
+            instanceId={useId()}
             components={{ DropdownIndicator: CustomDropdownIndicator }}
             className="w-full"
             classNames={{
@@ -57,6 +58,7 @@ export default function SearchForm() {
             options={locations}
             placeholder="Number of travellers"
             unstyled
+            instanceId={useId()}
             components={{ DropdownIndicator: CustomDropdownIndicator }}
             className="w-full"
             classNames={{

@@ -47,7 +47,7 @@ export default function LivestreamModal(props: any) {
               className="w-full h-full"
               src="https://www.youtube.com/embed/CgGh1fCQIqA"
               title="Kingdom World Tour"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
               loading="lazy"
