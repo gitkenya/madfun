@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 import { Poppins, Barlow } from "next/font/google";
 import "./global.scss";
 import { WebProvider } from "@/providers/web/web";
@@ -79,6 +80,7 @@ export default function RootLayout({
       <body className={`${poppins.variable} ${barlow.variable}`}>
         <WebProvider>{children}</WebProvider>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
