@@ -16,7 +16,7 @@ export default function Hotels(props: any) {
       type: "hotels",
       price: "70,000/ Night",
       name: "Trivia Hotel",
-      photo: "/assets/img/hotels/hotel-1.jpg",
+      photo: "/assets/img/hotels/hd/hotel-1.jpg",
     },
     {
       id: "2",
@@ -25,7 +25,7 @@ export default function Hotels(props: any) {
       type: "villas",
       price: "70,000/ Night",
       name: "Trivia Villa",
-      photo: "/assets/img/hotels/hotel-2.jpg",
+      photo: "/assets/img/hotels/hd/hotel-2.jpg",
     },
     {
       id: "3",
@@ -34,7 +34,7 @@ export default function Hotels(props: any) {
       type: "resorts",
       price: "70,000/ Night",
       name: "Trivia Resort",
-      photo: "/assets/img/hotels/hotel-3.jpg",
+      photo: "/assets/img/hotels/hd/hotel-3.jpg",
     },
     {
       id: "4",
@@ -43,7 +43,7 @@ export default function Hotels(props: any) {
       type: "apartments",
       price: "70,000/ Night",
       name: "Trivia Apartment",
-      photo: "/assets/img/hotels/hotel-4.jpg",
+      photo: "/assets/img/hotels/hd/hotel-4.jpg",
     },
     {
       id: "5",
@@ -52,7 +52,7 @@ export default function Hotels(props: any) {
       type: "hotels",
       price: "70,000/ Night",
       name: "Trivia Hotel",
-      photo: "/assets/img/hotels/hotel-5.jpg",
+      photo: "/assets/img/hotels/hd/hotel-5.jpg",
     },
     {
       id: "6",
@@ -61,7 +61,7 @@ export default function Hotels(props: any) {
       type: "resorts",
       price: "70,000/ Night",
       name: "Trivia Resort",
-      photo: "/assets/img/hotels/hotel-6.jpg",
+      photo: "/assets/img/hotels/hd/hotel-6.jpg",
     },
     {
       id: "7",
@@ -70,7 +70,7 @@ export default function Hotels(props: any) {
       type: "villas",
       price: "70,000/ Night",
       name: "Trivia Villa",
-      photo: "/assets/img/hotels/hotel-7.jpg",
+      photo: "/assets/img/hotels/hd/hotel-7.jpg",
     },
     {
       id: "8",
@@ -79,7 +79,7 @@ export default function Hotels(props: any) {
       type: "apartments",
       price: "70,000/ Night",
       name: "Trivia Apartment",
-      photo: "/assets/img/hotels/hotel-8.jpg",
+      photo: "/assets/img/hotels/hd/hotel-8.jpg",
     },
   ];
 
@@ -162,7 +162,7 @@ export default function Hotels(props: any) {
                                 src={hotel.photo}
                                 fill
                                 alt={hotel.name}
-                                sizes="(max-width: 768px) 600px, (max-width: 1200px) 1200px, 600px"
+                                sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
                               />
                             </Link>
                           </div>
