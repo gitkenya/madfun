@@ -105,8 +105,8 @@ export default function Hotels(props: any) {
 
   // Define individual item variants
   const itemVariants = {
-    hidden: { opacity: 0, y: -5 },
-    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, x: -5 },
+    show: { opacity: 1, x: 0 },
   };
 
   return (
