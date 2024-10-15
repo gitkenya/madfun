@@ -26,7 +26,7 @@ export default function Streams() {
     },
   ];
   return (
-    <section className="relative w-full h-[200px] sm:h-96 bg-slate-800">
+    <section className="relative w-full h-[240px] sm:h-96 bg-slate-800">
       <div className="absolute flex flex-col gap-5 items-center justify-center w-full h-full top-0 left-0 z-20 bg-gradient-to-b from-slate-900/80 via-slate-900/20 to-slate-900/80">
         <div className="flex flex-col items-center justify-center font-poppins">
           <h2 className="font-extrabold text-white text-lg sm:text-4xl uppercase">
