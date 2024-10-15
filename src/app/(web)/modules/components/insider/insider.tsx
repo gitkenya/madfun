@@ -48,10 +48,10 @@ export default function Insider(props: any) {
             Travel & Events Insider
           </h2>
         </div>
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5">
+        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5">
           {insiders?.map((insider: any) => (
             <div key={insider.id} className="grid">
-              <div className="relative bg-white border border-slate-200 p-4 rounded-lg flex flex-col justify-between gap-4">
+              <div className="relative bg-white border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-between gap-4">
                 <div className="flex flex-col gap-4">
                   <Link className="w-full" href={`/`}>
                     <Image
@@ -64,13 +64,13 @@ export default function Insider(props: any) {
                   </Link>
                   <div className="space-y-2">
                     <h2
-                      className={`font-semibold uppercase tracking-[0.28em] text-sm ${categoryColor(
+                      className={`font-semibold uppercase tracking-[0.28em] sm:tracking-[0.28em] text-sm ${categoryColor(
                         insider.category
                       )}`}
                     >
                       {insider.category}
                     </h2>
-                    <h3 className="font-semibold text-lg font-poppins">
+                    <h3 className="font-semibold sm:text-lg font-poppins">
                       {insider.title}
                     </h3>
                   </div>
