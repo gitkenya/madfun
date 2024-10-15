@@ -3,13 +3,13 @@ import { useId, useState } from "react";
 import { IoEllipse, IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
 
-export default function SearchForm() {
+export default function SearchForm(props: any) {
+  const { destinations } = props;
   const [selectedLocation, setSelectedLocation] = useState(1);
-  const locations: any[] = [
-    { value: 1, label: "Nairobi" },
-    { value: 2, label: "Mombasa" },
-    { value: 3, label: "Kisumu" },
-  ];
+  const locations: any[] = destinations.map((destination: any) => ({
+    value: destination.id,
+    label: destination.name,
+  }));
   const handleLocationChange = (event: any) => {
     setSelectedLocation(event.value);
   };

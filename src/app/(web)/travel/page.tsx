@@ -7,50 +7,14 @@ import {
   IoPersonOutline,
   IoTimeOutline,
 } from "react-icons/io5";
+import { createClient } from "@/utils/supabase/server";
 export const revalidate = 604800;
-export default function Page() {
-  const destinations = [
-    {
-      id: "1",
-      name: "Maldives",
-      period: "7 days",
-      price: "60,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-1.jpg",
-    },
-    {
-      id: "2",
-      name: "Capetown",
-      period: "7 days",
-      price: "50,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-2.jpg",
-    },
-    {
-      id: "3",
-      name: "Capetown",
-      period: "7 days",
-      price: "60,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-3.jpg",
-    },
-    {
-      id: "4",
-      name: "Sychelles",
-      period: "7 days",
-      price: "75,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-4.jpg",
-    },
-    {
-      id: "5",
-      name: "Spain",
-      period: "7 days",
-      price: "80,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-5.jpg",
-    },
-  ];
+export default async function Page() {
+  const supabase = await createClient();
+  const { data: destinations } = await supabase
+    .from("destinations")
+    .select("*")
+    .order("id", { ascending: true });
   return (
     <section className="w-full mt-12">
       <div className="w-full relative min-h-[280px]">
@@ -64,7 +28,7 @@ export default function Page() {
         />
         <div className="absolute flex flex-col items-center justify-center top-0 left-0 w-full h-full rounded-xl bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/20 z-20">
           <div className="w-full max-w-[50rem] mx-auto">
-            <SearchForm />
+            <SearchForm destinations={destinations} />
           </div>
           <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-slate-900/50">
             <div className="w-full flex flex-row justify-between items-center py-2 sm:py-4 max-w-[80rem] mx-auto text-white text-sm sm:text-base">
@@ -75,7 +39,7 @@ export default function Page() {
                 <span className="font-semibold">Discover Malaysia</span>
               </div>
               <Link
-                href="/"
+                href="/travel"
                 className="font-normal flex flex-row items-center gap-2"
               >
                 Book now <IoChevronForwardOutline size={18} />
@@ -98,15 +62,16 @@ export default function Page() {
               unforgettable memories
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 sm:col-span-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 sm:col-span-3 gap-3 sm:gap-5">
             {destinations?.map((destination: any) => (
-              <div
+              <Link
                 key={destination.id}
+                href={`/travel/${destination.slug}`}
                 className="relative bg-slate-50 rounded-lg"
               >
                 <Image
                   className="rounded-lg"
-                  src={destination.photo}
+                  src={`/assets/img/destinations/${destination.photo}`}
                   width={600}
                   height={400}
                   alt={`Travel with Madfun - ${destination.name}`}
@@ -116,27 +81,29 @@ export default function Page() {
                     <div className="font-semibold text-white sm:text-lg font-poppins">
                       {destination.name}
                     </div>
-                    <div className="flex flex-row items-end gap-3 text-white text-sm">
-                      <div className="flex flex-row items-center gap-2">
-                        <span>
-                          <IoTimeOutline size={16} />
-                        </span>
-                        <span>{destination.period}</span>
-                      </div>
-                      <div className="flex flex-row items-center gap-2">
-                        <span>
-                          <IoPersonOutline size={16} />
-                        </span>
-                        <span>{destination.persons}</span>
+                    <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
+                      <div className="flex flex-row items-end gap-3">
+                        <div className="flex flex-row items-center gap-2">
+                          <span>
+                            <IoTimeOutline size={16} />
+                          </span>
+                          <span>{destination.period}</span>
+                        </div>
+                        <div className="flex flex-row items-center gap-2">
+                          <span>
+                            <IoPersonOutline size={16} />
+                          </span>
+                          <span>{destination.persons}</span>
+                        </div>
                       </div>
                       <div className="flex flex-row items-center gap-1">
                         <span>Ksh.</span>
-                        <span>{destination.price}</span>
+                        <span>{destination.price.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

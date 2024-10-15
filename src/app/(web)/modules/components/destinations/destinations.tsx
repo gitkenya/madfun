@@ -6,49 +6,8 @@ import {
   IoTimeOutline,
 } from "react-icons/io5";
 
-export default function Destinations() {
-  const destinations = [
-    {
-      id: "1",
-      name: "Maldives",
-      period: "7 days",
-      price: "60,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-1.jpg",
-    },
-    {
-      id: "2",
-      name: "Capetown",
-      period: "7 days",
-      price: "50,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-2.jpg",
-    },
-    {
-      id: "3",
-      name: "Capetown",
-      period: "7 days",
-      price: "60,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-3.jpg",
-    },
-    {
-      id: "4",
-      name: "Sychelles",
-      period: "7 days",
-      price: "75,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-4.jpg",
-    },
-    {
-      id: "5",
-      name: "Spain",
-      period: "7 days",
-      price: "80,000",
-      persons: "1",
-      photo: "/assets/img/destinations/destination-5.jpg",
-    },
-  ];
+export default function Destinations(props: any) {
+  const { destinations } = props;
   return (
     <section className="w-full py-8 sm:py-12 bg-white">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
@@ -79,13 +38,14 @@ export default function Destinations() {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 sm:col-span-3 gap-3 sm:gap-5">
             {destinations?.map((destination: any) => (
-              <div
+              <Link
                 key={destination.id}
+                href={`/travel/${destination.slug}`}
                 className="relative bg-slate-50 rounded-lg"
               >
                 <Image
                   className="rounded-lg"
-                  src={destination.photo}
+                  src={`/assets/img/destinations/${destination.photo}`}
                   width={600}
                   height={400}
                   alt={`Travel with Madfun - ${destination.name}`}
@@ -112,12 +72,12 @@ export default function Destinations() {
                       </div>
                       <div className="flex flex-row items-center gap-1">
                         <span>Ksh.</span>
-                        <span>{destination.price}</span>
+                        <span>{destination.price.toLocaleString()}</span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
