@@ -52,7 +52,7 @@ export default function Page() {
   ];
   return (
     <section className="w-full mt-12">
-      <div className="w-full relative min-h-[300px]">
+      <div className="w-full relative min-h-[280px]">
         <Image
           className="object-cover"
           src="/assets/img/travel/travel-banner.jpg"
