@@ -53,8 +53,14 @@ export default function Destinations() {
     <section className="w-full py-8 sm:py-12 bg-white">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
-          <div className="flex flex-col gap-8 sm:pe-16">
-            <div className="font-poppins flex flex-col gap-1 sm:gap-3">
+          <div className="flex flex-col gap-4 sm:gap-8 sm:pe-16">
+            <div className="font-poppins hidden sm:flex flex-col gap-1 sm:gap-3">
+              <h2 className="text-lg sm:text-3xl font-bold uppercase">Top</h2>
+              <h2 className="text-lg sm:text-3xl font-bold uppercase">
+                Destinations
+              </h2>
+            </div>
+            <div className="font-poppins sm:hidden flex flex-row gap-1 sm:gap-3">
               <h2 className="text-lg sm:text-3xl font-bold uppercase">Top</h2>
               <h2 className="text-lg sm:text-3xl font-bold uppercase">
                 Destinations
@@ -71,7 +77,7 @@ export default function Destinations() {
               More to explore <IoChevronForwardOutline size={20} />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 sm:col-span-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 sm:col-span-3 gap-3 sm:gap-5">
             {destinations?.map((destination: any) => (
               <div
                 key={destination.id}
@@ -89,18 +95,20 @@ export default function Destinations() {
                     <div className="font-semibold text-white sm:text-lg font-poppins">
                       {destination.name}
                     </div>
-                    <div className="flex flex-row items-end gap-3 text-white text-sm">
-                      <div className="flex flex-row items-center gap-2">
-                        <span>
-                          <IoTimeOutline size={16} />
-                        </span>
-                        <span>{destination.period}</span>
-                      </div>
-                      <div className="flex flex-row items-center gap-2">
-                        <span>
-                          <IoPersonOutline size={16} />
-                        </span>
-                        <span>{destination.persons}</span>
+                    <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
+                      <div className="flex flex-row items-end gap-3">
+                        <div className="flex flex-row items-center gap-2">
+                          <span>
+                            <IoTimeOutline size={16} />
+                          </span>
+                          <span>{destination.period}</span>
+                        </div>
+                        <div className="flex flex-row items-center gap-2">
+                          <span>
+                            <IoPersonOutline size={16} />
+                          </span>
+                          <span>{destination.persons}</span>
+                        </div>
                       </div>
                       <div className="flex flex-row items-center gap-1">
                         <span>Ksh.</span>

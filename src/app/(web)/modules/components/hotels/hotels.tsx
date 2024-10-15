@@ -111,7 +111,7 @@ export default function Hotels(props: any) {
 
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
-      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-2">
+      <div className="mx-auto max-w-[90rem] px-2 sm:px-4 space-y-6 mt-2">
         <div className="w-full flex flex-col gap-3 items-center justify-center font-poppins">
           <h2 className="text-lg sm:text-3xl font-bold uppercase sm:max-w-lg text-center leading">
             Experience Luxury & Comfort
@@ -120,7 +120,7 @@ export default function Hotels(props: any) {
             in our handpicked stays
           </h2>
         </div>
-        <div className="w-full px-4">
+        <div className="w-full px-2 sm:px-4">
           <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
             <TabList
               className={`flex flex-row justify-start sm:justify-center text-slate-500 text-sm sm:text-base overflow-x-auto`}
@@ -143,7 +143,7 @@ export default function Hotels(props: any) {
                     initial="hidden"
                     animate="show"
                     transition={{ duration: 0.8, ease: "easeIn" }}
-                    className="w-full grid grid-cols-1 sm:grid-cols-4 gap-5 sm:gap-8"
+                    className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-8"
                   >
                     {filterHotels(filter)?.map((hotel: any) => (
                       <motion.div
@@ -154,7 +154,7 @@ export default function Hotels(props: any) {
                         <div className="relative rounded-lg flex flex-col justify-between gap-4">
                           <div className="relative ">
                             <Link
-                              className="relative flex w-full h-72 sm:h-96"
+                              className="relative flex w-full h-48 sm:h-96"
                               href={`/`}
                             >
                               <Image
@@ -167,22 +167,24 @@ export default function Hotels(props: any) {
                             </Link>
                           </div>
                           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/10 via-slate-900/10 to-slate-900/60 rounded-lg flex flex-col justify-end">
-                            <div className="flex flex-col gap-1.5 px-5 py-3">
+                            <div className="flex flex-col gap-1.5 px-3 sm:px-5 py-3">
                               <div className="font-poppins font-semibold text-white sm:text-lg">
                                 {hotel.name}
                               </div>
-                              <div className="flex flex-row items-end gap-3 text-white text-sm font-normal">
-                                <div className="flex flex-row items-center gap-1.5">
-                                  <span>
-                                    <MdPersonOutline size={18} />
-                                  </span>
-                                  <span>{hotel.guests} Guest</span>
-                                </div>
-                                <div className="flex flex-row items-center gap-1.5">
-                                  <span>
-                                    <MdOutlineHotel size={18} />
-                                  </span>
-                                  <span>{hotel.beds} Bed</span>
+                              <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
+                                <div className="flex flex-row items-end gap-2 sm:gap-3 text-white text-sm font-normal">
+                                  <div className="flex flex-row items-center gap-1.5">
+                                    <span>
+                                      <MdPersonOutline size={18} />
+                                    </span>
+                                    <span>{hotel.guests} Guest</span>
+                                  </div>
+                                  <div className="flex flex-row items-center gap-1.5">
+                                    <span>
+                                      <MdOutlineHotel size={18} />
+                                    </span>
+                                    <span>{hotel.beds} Bed</span>
+                                  </div>
                                 </div>
                                 <div className="flex flex-row items-center gap-1.5">
                                   <span>Ksh.</span>

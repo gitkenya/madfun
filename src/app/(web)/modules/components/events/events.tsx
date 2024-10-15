@@ -52,7 +52,7 @@ export default function Events(props: any) {
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-4 sm:gap-5">
           {events?.map((event: any) => (
             <div key={event.id} className="grid">
-              <div className="relative bg-slate-50 border border-slate-200 p-4 rounded-lg flex flex-col justify-start gap-4">
+              <div className="relative bg-slate-50 border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-start gap-4">
                 <Link className="w-full" href={`/`}>
                   <Image
                     className="rounded-lg"
