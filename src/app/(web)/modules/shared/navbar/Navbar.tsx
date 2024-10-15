@@ -55,7 +55,7 @@ export default function Navbar(props: any) {
     {
       id: "4",
       name: "Travel",
-      href: "/",
+      href: "/travel",
       current: pathname === "/travel",
     },
     {

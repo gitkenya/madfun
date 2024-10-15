@@ -2,12 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import {
   IoChevronForwardOutline,
-  IoEyeOutline,
   IoPersonOutline,
   IoTimeOutline,
 } from "react-icons/io5";
-import { BiSolidPlaneAlt } from "react-icons/bi";
-import ShareModal from "@/components/modals/shareModal";
 
 export default function Destinations() {
   const destinations = [
@@ -68,7 +65,7 @@ export default function Destinations() {
               unforgettable memories
             </p>
             <Link
-              href="/"
+              href="/travel"
               className="text-sm font-medium flex flex-row items-center gap-2"
             >
               More to explore <IoChevronForwardOutline size={20} />
@@ -89,7 +86,7 @@ export default function Destinations() {
                 />
                 <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/10 via-slate-900/10 to-slate-900/60 rounded-lg flex flex-col justify-end">
                   <div className="flex flex-col gap-1.5 px-5 py-3">
-                    <div className="font-semibold text-white sm:text-lg">
+                    <div className="font-semibold text-white sm:text-lg font-poppins">
                       {destination.name}
                     </div>
                     <div className="flex flex-row items-end gap-3 text-white text-sm font-light">
