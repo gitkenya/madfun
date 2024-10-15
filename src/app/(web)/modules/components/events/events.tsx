@@ -38,7 +38,7 @@ export default function Events(props: any) {
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-2">
-        <div className="w-full flex flex-row items-center justify-between">
+        <div className="w-full flex flex-row items-center justify-center sm:justify-between">
           <h1 className="font-poppins text-lg sm:text-3xl font-bold uppercase">
             Exciting Upcoming events
           </h1>

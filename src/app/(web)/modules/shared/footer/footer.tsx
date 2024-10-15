@@ -14,32 +14,34 @@ export default function Footer() {
   return (
     <section className="relative bg-slate-800">
       <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0 pt-10 sm:pt-16">
-        <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-0 border border-slate-700 p-5 rounded-lg">
-          <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
-            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
-              <IoMdCall className="w-6 sm:w-8 h-6 sm:h-8" />
+        <div className="px-2 sm:px-6">
+          <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-0 border border-slate-700 p-5 rounded-lg">
+            <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-500 rounded flex flex-row items-center justify-center text-slate-800">
+                <IoMdCall className="w-5 sm:w-6 h-5 sm:h-6" />
+              </div>
+              <div className="flex flex-col gap-1 text-slate-200 text-sm sm:text-base">
+                <div className="font-poppins font-semibold">Call us</div>
+                <div>+254 115 555 000</div>
+              </div>
             </div>
-            <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
-              <div className="font-poppins font-semibold">Call us</div>
-              <div>+254 115 555 000</div>
+            <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-500 rounded flex flex-row items-center justify-center text-slate-800">
+                <IoMail className="w-5 sm:w-6 h-5 sm:h-6" />
+              </div>
+              <div className="flex flex-col gap-1 text-slate-200 text-sm sm:text-base">
+                <div className="font-poppins font-semibold">Write to us</div>
+                <div>info@madfun.com</div>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
-            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
-              <IoMail className="w-6 sm:w-8 h-6 sm:h-8" />
-            </div>
-            <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
-              <div className="font-poppins font-semibold">Write to us</div>
-              <div>info@madfun.com</div>
-            </div>
-          </div>
-          <div className="flex flex-row sm:justify-center items-center gap-3">
-            <div className="w-12 sm:w-16 h-12 sm:h-16 bg-slate-700 rounded-lg flex flex-row items-center justify-center text-slate-200">
-              <IoLocation className="w-6 sm:w-8 h-6 sm:h-8" />
-            </div>
-            <div className="flex flex-col gap-1 sm:gap-2 text-slate-200 text-sm sm:text-base">
-              <div className="font-poppins font-semibold">Address</div>
-              <div>4th floor, Kalson Towers, Nairobi</div>
+            <div className="flex flex-row sm:justify-center items-center gap-3">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-500 rounded flex flex-row items-center justify-center text-slate-800">
+                <IoLocation className="w-5 sm:w-6 h-5 sm:h-6" />
+              </div>
+              <div className="flex flex-col gap-1 text-slate-200 text-sm sm:text-base">
+                <div className="font-poppins font-semibold">Address</div>
+                <div>4th floor, Kalson Towers, Nairobi</div>
+              </div>
             </div>
           </div>
         </div>
