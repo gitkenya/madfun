@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Poppins, Inter, Barlow } from "next/font/google";
-import localFont from "next/font/local";
+import { Poppins, Barlow } from "next/font/google";
 import "./global.scss";
 import { WebProvider } from "@/providers/web/web";
 const poppins = Poppins({
@@ -22,13 +21,6 @@ const barlow = Barlow({
   fallback: ["system-ui", "arial"],
   preload: true,
   variable: "--font-barlow",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  fallback: ["system-ui", "arial"],
-  preload: true,
-  variable: "--font-inter",
 });
 
 const meta: any = {
@@ -84,9 +76,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="light">
-      <body
-        className={`${poppins.variable} ${inter.variable} ${barlow.variable}`}
-      >
+      <body className={`${poppins.variable} ${barlow.variable}`}>
         <WebProvider>{children}</WebProvider>
         <SpeedInsights />
       </body>

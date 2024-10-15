@@ -10,7 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["var(--font-inter)"],
         poppins: ["var(--font-poppins)"],
         barlow: ["var(--font-barlow)"],
       },
