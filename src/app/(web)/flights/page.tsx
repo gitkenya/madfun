@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Flights from "./modules/flights";
+export const revalidate = 604800;
 export default function Page() {
   return (
     <section className="w-full py-8">

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { IoChevronForwardOutline, IoEllipse } from "react-icons/io5";
-import { TfiSearch } from "react-icons/tfi";
 import ShareModal from "@/components/modals/shareModal";
 
 export default function Events(props: any) {

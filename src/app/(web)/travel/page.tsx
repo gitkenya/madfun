@@ -7,6 +7,7 @@ import {
   IoPersonOutline,
   IoTimeOutline,
 } from "react-icons/io5";
+export const revalidate = 604800;
 export default function Page() {
   const destinations = [
     {
