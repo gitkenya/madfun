@@ -166,7 +166,7 @@ export default function Hotels(props: any) {
                               />
                             </Link>
                           </div>
-                          <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/10 via-slate-900/10 to-slate-900/60 rounded-lg flex flex-col justify-end">
+                          <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/40 sm:from-slate-900/10 via-slate-900/50 sm:via-slate-900/10 to-slate-900/50 sm:to-slate-900/60 rounded-lg flex flex-col justify-end">
                             <div className="flex flex-col gap-1.5 px-3 sm:px-5 py-3">
                               <div className="font-poppins font-semibold text-white sm:text-lg">
                                 {hotel.name}
