@@ -9,9 +9,30 @@ import { TfiClose, TfiAlignRight } from "react-icons/tfi";
 import Image from "next/image";
 import Link from "next/link";
 import { IoAdd } from "react-icons/io5";
+import { useEffect, useState } from "react";
 
 export default function Navbar(props: any) {
   const pathname = usePathname();
+  const [navmode, setMode] = useState("");
+  useEffect(() => {
+    if (document.documentElement.scrollTop > 0) {
+      setMode("floating");
+    }
+    function onScroll() {
+      let navpos = document.documentElement.scrollTop;
+      if (navpos > 0) {
+        setMode("floating");
+      } else {
+        setMode("");
+      }
+    }
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
   const navigation = [
     {
       id: "1",
@@ -47,10 +68,14 @@ export default function Navbar(props: any) {
   return (
     <Disclosure
       as="nav"
-      className={`absolute w-full top-0 z-50 ${
+      className={`fixed w-full transition-all duration-300 top-0 z-50 ${
         pathname === "/"
-          ? "bg-gradient-to-b from-slate-800/20 to-transparent"
-          : "bg-white"
+          ? `bg-gradient-to-b ${
+              navmode === "floating"
+                ? "from-white to-white"
+                : "from-slate-800/20 to-transparent"
+            } `
+          : `bg-white`
       }`}
     >
       {({ open }) => (
@@ -61,7 +86,13 @@ export default function Navbar(props: any) {
                 {/* Mobile menu button*/}
                 <DisclosureButton
                   className={`relative inline-flex items-center justify-center rounded-md p-2 ${
-                    pathname === "/" ? "text-white" : "text-slate-800"
+                    pathname === "/"
+                      ? `${
+                          navmode === "floating"
+                            ? "text-slate-800"
+                            : "text-white"
+                        }`
+                      : "text-slate-800"
                   } focus:outline-none`}
                 >
                   <span className="absolute -inset-0.5" />
@@ -81,7 +112,13 @@ export default function Navbar(props: any) {
                   <Link
                     href="/"
                     className={`flex items-center gap-4 text-xl ${
-                      pathname === "/" ? "text-white" : "text-slate-800"
+                      pathname === "/"
+                        ? `${
+                            navmode === "floating"
+                              ? "text-slate-800"
+                              : "text-white"
+                          }`
+                        : "text-slate-800"
                     }  font-semibold font-poppins uppercase`}
                   >
                     <Image
@@ -108,7 +145,11 @@ export default function Navbar(props: any) {
                                 } `
                               : `${
                                   pathname === "/"
-                                    ? "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                                    ? `${
+                                        navmode === "floating"
+                                          ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
+                                          : "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                                      }`
                                     : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                                 }`
                           } rounded px-4 py-2 font-normal flex flex-row items-center gap-2
@@ -123,30 +164,42 @@ export default function Navbar(props: any) {
                 <div className="hidden sm:flex items-center gap-5">
                   <Link
                     href="/"
-                    className={`${
+                    className={`relative transition-all duration-300 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full before:absolute before:-bottom-3 before:left-0 before:w-0 before:h-0.5 ${
                       pathname === "/"
-                        ? "text-white hover:text-yellow-400"
-                        : "text-slate-700 hover:text-slate-800"
+                        ? `${
+                            navmode === "floating"
+                              ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
+                              : "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                          }`
+                        : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                     } px-4 py-2 rounded flex flex-row gap-2 items-center`}
                   >
                     Contact us
                   </Link>
                   <Link
                     href="/"
-                    className={`${
+                    className={`relative transition-all duration-300 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full before:absolute before:-bottom-3 before:left-0 before:w-0 before:h-0.5 ${
                       pathname === "/"
-                        ? "text-white hover:text-yellow-400"
-                        : "text-slate-700 hover:text-slate-800"
+                        ? `${
+                            navmode === "floating"
+                              ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
+                              : "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                          }`
+                        : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                     } px-4 py-2 rounded flex flex-row gap-2 items-center`}
                   >
-                    <IoAdd size={18} />
+                    <IoAdd size={20} />
                     Create event
                   </Link>
                   <Link
                     href="/"
                     className={`transition-all duration-300 border  px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
                       pathname === "/"
-                        ? "border-white text-white hover:border-slate-300 hover:text-slate-300"
+                        ? `${
+                            navmode === "floating"
+                              ? "border-slate-700 text-slate-700 hover:border-slate-500 hover:text-slate-600"
+                              : "border-white text-white hover:border-slate-300 hover:text-slate-300"
+                          }`
                         : "border-slate-700 text-slate-700 hover:border-slate-600 hover:text-slate-600"
                     }`}
                   >
@@ -156,7 +209,11 @@ export default function Navbar(props: any) {
                     href="/"
                     className={`transition-all duration-300 px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
                       pathname === "/"
-                        ? "bg-white text-slate-800 hover:bg-slate-300"
+                        ? `${
+                            navmode === "floating"
+                              ? "bg-slate-800 text-white hover:bg-slate-600"
+                              : "bg-white text-slate-800 hover:bg-slate-300"
+                          }`
                         : "bg-slate-800 text-white hover:bg-slate-600"
                     }`}
                   >
@@ -168,7 +225,11 @@ export default function Navbar(props: any) {
           </div>
 
           <DisclosurePanel className="sm:hidden">
-            <div className="relative space-y-1 px-2 pb-3 pt-2 bg-white animate-in fade-in zoom-in sm:animate-none mx-4 rounded shadow-lg">
+            <div
+              className={`relative space-y-1 px-2 pb-3 pt-2 bg-white animate-in fade-in zoom-in sm:animate-none m-4 mt-2 rounded ${
+                navmode === "floating" ? "border border-slate-200" : "shadow-lg"
+              }`}
+            >
               {navigation.map((item, index) => (
                 <Link href={item.href} key={index}>
                   <DisclosureButton
