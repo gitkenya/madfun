@@ -4,12 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 export async function GET() {
   try {
     const supabase = await createClient();
-    const { data, error } = await supabase
-      .from("users")
-      .select("id")
-      .limit(1)
-      .single();
-
+    const { data, error } = await supabase.from("users").select("id").limit(1);
     if (error) {
       return NextResponse.json(
         {
