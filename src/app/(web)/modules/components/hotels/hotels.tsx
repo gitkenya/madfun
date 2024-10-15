@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { IoPersonOutline } from "react-icons/io5";
+import { motion, stagger } from "framer-motion";
 import { MdOutlineHotel, MdPersonOutline } from "react-icons/md";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 
@@ -93,6 +93,22 @@ export default function Hotels(props: any) {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1, // Stagger the animation of each child by 0.1s
+      },
+    },
+  };
+
+  // Define individual item variants
+  const itemVariants = {
+    hidden: { opacity: 0, y: -5 },
+    show: { opacity: 1, y: 0 },
+  };
+
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-2">
@@ -122,9 +138,19 @@ export default function Hotels(props: any) {
             <TabPanels className={`pt-4`}>
               {filters?.map((filter: any) => (
                 <TabPanel key={filter}>
-                  <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-5 sm:gap-8">
+                  <motion.div
+                    variants={containerVariants} // Attach stagger behavior to the parent
+                    initial="hidden"
+                    animate="show"
+                    transition={{ duration: 0.8, ease: "easeIn" }}
+                    className="w-full grid grid-cols-1 sm:grid-cols-4 gap-5 sm:gap-8"
+                  >
                     {filterHotels(filter)?.map((hotel: any) => (
-                      <div key={hotel.id} className="grid">
+                      <motion.div
+                        key={hotel.id}
+                        className="grid"
+                        variants={itemVariants}
+                      >
                         <div className="relative rounded-lg flex flex-col justify-between gap-4">
                           <div className="relative ">
                             <Link
@@ -168,9 +194,9 @@ export default function Hotels(props: any) {
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
-                  </div>
+                  </motion.div>
                 </TabPanel>
               ))}
             </TabPanels>
