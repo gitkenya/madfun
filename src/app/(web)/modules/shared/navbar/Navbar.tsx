@@ -38,31 +38,31 @@ export default function Navbar(props: any) {
       id: "1",
       name: "Events",
       href: "/",
-      current: pathname === "/events",
+      current: pathname === "/events" || pathname.includes("events"),
     },
     {
       id: "2",
       name: "Flights",
       href: "/flights",
-      current: pathname === "/flights",
+      current: pathname === "/flights" || pathname.includes("flights"),
     },
     {
       id: "3",
       name: "Hotels",
       href: "/",
-      current: pathname === "/hotels",
+      current: pathname === "/hotels" || pathname.includes("hotels"),
     },
     {
       id: "4",
       name: "Travel",
       href: "/travel",
-      current: pathname === "/travel",
+      current: pathname === "/travel" || pathname.includes("travel"),
     },
     {
       id: "5",
       name: "Streams",
       href: "/",
-      current: pathname === "/streams",
+      current: pathname === "/streams" || pathname.includes("streams"),
     },
   ];
   return (
