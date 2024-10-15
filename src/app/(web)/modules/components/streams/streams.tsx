@@ -82,7 +82,7 @@ export default function Streams() {
                 fill={true}
                 priority
                 alt="Madfun"
-                sizes="(max-width: 768px) 600px, (max-width: 1200px) 1200px, 1200px"
+                sizes="(max-width: 768px) 1200px, (max-width: 1200px) 1800px, 1800px"
               />
             </div>
           </SwiperSlide>
