@@ -89,7 +89,7 @@ export default function Destinations() {
                     <div className="font-semibold text-white sm:text-lg font-poppins">
                       {destination.name}
                     </div>
-                    <div className="flex flex-row items-end gap-3 text-white text-sm font-light">
+                    <div className="flex flex-row items-end gap-3 text-white text-sm">
                       <div className="flex flex-row items-center gap-2">
                         <span>
                           <IoTimeOutline size={16} />
