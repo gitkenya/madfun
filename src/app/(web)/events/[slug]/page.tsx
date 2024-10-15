@@ -6,7 +6,7 @@ import SelectTickets from "./modules/form";
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <section className="w-full bg-slate-100 py-4 sm:py-8">
-      <div className="mx-auto max-w-[90rem] px-4 space-y-16">
+      <div className="mx-auto max-w-[85rem] px-4 space-y-16">
         <div className="md:flex gap-6">
           <div className="w-full md:w-1/2">
             <div className="bg-slate-50 rounded-lg md:rounded-xl">

@@ -80,7 +80,7 @@ export default function Navbar(props: any) {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto max-w-[90rem] px-2 md:px-4">
+          <div className="mx-auto max-w-[85rem] px-2 sm:px-0">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 z-50 flex items-center sm:hidden">
                 {/* Mobile menu button*/}

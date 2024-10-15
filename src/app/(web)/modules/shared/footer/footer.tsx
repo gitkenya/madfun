@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <section className="relative bg-slate-800">
       <div className="max-w-[85rem] w-full mx-auto px-4 sm:px-0 pt-10 sm:pt-16">
-        <div className="px-2 sm:px-6">
+        <div className="px-2 sm:px-0">
           <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-0 border border-slate-700 p-5 rounded-lg">
             <div className="flex flex-row sm:justify-center items-center gap-3 sm:border-r sm:border-slate-700">
               <div className="w-10 sm:w-12 h-10 sm:h-12 bg-gray-500 rounded flex flex-row items-center justify-center text-slate-800">
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-col md:flex-row py-8">
-          <div className="w-full md:w-1/3 p-4 sm:px-6 md:py-6 md:pe-5 space-y-4">
+          <div className="w-full md:w-1/3 p-4 sm:px-0 md:py-6 md:pe-5 space-y-4">
             <Link
               href="/"
               className="flex items-center text-slate-600 font-extrabold uppercase"

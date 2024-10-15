@@ -111,7 +111,7 @@ export default function Hotels(props: any) {
 
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
-      <div className="mx-auto max-w-[90rem] px-2 sm:px-4 space-y-6 mt-2">
+      <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">
         <div className="w-full flex flex-col gap-3 items-center justify-center font-poppins">
           <h2 className="text-lg sm:text-3xl font-bold uppercase sm:max-w-lg text-center leading">
             Experience Luxury & Comfort
@@ -120,7 +120,7 @@ export default function Hotels(props: any) {
             in our handpicked stays
           </h2>
         </div>
-        <div className="w-full px-2 sm:px-4">
+        <div className="w-full px-2 sm:px-0">
           <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
             <TabList
               className={`flex flex-row justify-start sm:justify-center text-slate-500 text-sm sm:text-base overflow-x-auto`}
@@ -154,7 +154,7 @@ export default function Hotels(props: any) {
                         <div className="relative rounded-lg flex flex-col justify-between gap-4">
                           <div className="relative ">
                             <Link
-                              className="relative flex w-full h-48 sm:h-96"
+                              className="relative flex w-full h-48 sm:h-[24rem]"
                               href={`/`}
                             >
                               <Image

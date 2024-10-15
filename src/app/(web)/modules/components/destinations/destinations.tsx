@@ -10,7 +10,7 @@ export default function Destinations(props: any) {
   const { destinations } = props;
   return (
     <section className="w-full py-8 sm:py-12 bg-white">
-      <div className="mx-auto max-w-[90rem] px-2 md:px-4 space-y-6 mt-6">
+      <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-6">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
           <div className="flex flex-col gap-4 sm:gap-8 sm:pe-16">
             <div className="font-poppins hidden sm:flex flex-col gap-1 sm:gap-3">
