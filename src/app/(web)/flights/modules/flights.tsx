@@ -8,6 +8,7 @@ import {
 } from "react-icons/io5";
 import { HiOutlineSwitchHorizontal } from "react-icons/hi";
 import { GiCommercialAirplane } from "react-icons/gi";
+import { FiMinusCircle } from "react-icons/fi";
 import Select, { components } from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -92,7 +93,7 @@ export default function Flights(props: any) {
   }));
   useState(() => {
     setSelectedOrigin(origins[0]);
-    setSelectedFlightType(flightTypes[0]);
+    setSelectedFlightType(flightTypes[1]);
     setSelectedFlightStop(flightStops[0]);
     setSelectedFlightClass(flightClasses[0]);
   });
@@ -173,7 +174,7 @@ export default function Flights(props: any) {
               </div>
               <div className="w-1/2">
                 <label className="flex flex-row justify-between items-center uppercase text-slate-400 text-sm ps-4">
-                  <span>To</span>
+                  <span className="">To</span>
                 </label>
               </div>
             </div>
@@ -204,7 +205,7 @@ export default function Flights(props: any) {
                   filterOption={filterOption}
                 />
                 <button
-                  className="text-white bg-slate-900 p-1.5 rounded-full"
+                  className={` text-white bg-slate-900 p-1.5 rounded-full`}
                   onClick={() => switchLocations()}
                 >
                   <HiOutlineSwitchHorizontal size={16} />
@@ -282,6 +283,7 @@ export default function Flights(props: any) {
               <DatePicker
                 id="return-input"
                 selected={returnDate}
+                disabled={selectedFlightType === 1}
                 minDate={
                   departureDate
                     ? new Date(
@@ -302,6 +304,8 @@ export default function Flights(props: any) {
               >
                 {returnDate ? (
                   moment(returnDate).format("D MMM")
+                ) : selectedFlightType === 1 ? (
+                  <FiMinusCircle size={20} />
                 ) : (
                   <IoAddOutline size={20} />
                 )}
