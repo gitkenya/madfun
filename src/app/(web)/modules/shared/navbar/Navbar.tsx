@@ -210,8 +210,37 @@ export default function Navbar(props: any) {
                     Create event
                   </Link>
                   {user ? (
-                    <div className="w-12 h-12 flex flex-row items-center justify-center rounded-full bg-slate-800 text-slate-300 font-extrabold tracking-widest">
-                      {setInitials(user.user_metadata.name)}
+                    <div className="dropdown dropdown-end">
+                      <div
+                        tabIndex={0}
+                        role="button"
+                        className="w-12 h-12 flex flex-row items-center justify-center rounded-full bg-slate-800 text-slate-300 font-extrabold tracking-widest"
+                      >
+                        {setInitials(user.user_metadata.name)}
+                      </div>
+                      <div
+                        tabIndex={0}
+                        className="dropdown-content rounded menu bg-white mt-2 z-[1] w-52 p-2 shadow"
+                      >
+                        <div className="flex flex-col pb-1 border-b border-slate-100">
+                          <Link
+                            href="/"
+                            className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                          >
+                            My Account
+                          </Link>
+
+                          <Link
+                            href="/"
+                            className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                          >
+                            Manage Events
+                          </Link>
+                        </div>
+                        <button className="mt-1 w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start">
+                          Logout
+                        </button>
+                      </div>
                     </div>
                   ) : (
                     <div className="flex flex-row gap-5">
