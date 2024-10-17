@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoAdd } from "react-icons/io5";
 import { useEffect, useState } from "react";
+import SignOut from "@/app/(auth)/logout/logout";
 
 export default function Navbar(props: any) {
   const pathname = usePathname();
@@ -81,6 +82,10 @@ export default function Navbar(props: any) {
     }
 
     return initials;
+  };
+
+  const signOut = async () => {
+    const res = await SignOut();
   };
 
   return (
@@ -237,7 +242,10 @@ export default function Navbar(props: any) {
                             Manage Events
                           </Link>
                         </div>
-                        <button className="mt-1 w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start">
+                        <button
+                          className="mt-1 w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                          onClick={() => signOut()}
+                        >
                           Logout
                         </button>
                       </div>
