@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
       const response = await ZeptoMailer({
         to: userData.email!,
         replyTo: process.env.ZEPTO_MAIL_SMTP_FROM!,
-        subject: "Account Password Changed",
+        subject: "Madfun Account Password Changed",
         html: await render(UpdatedPassword(userData)),
       });
       return NextResponse.json(

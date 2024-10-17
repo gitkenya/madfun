@@ -226,11 +226,11 @@ const sectionsBorders = {
 };
 
 const sectionBorder = {
-  borderBottom: "1px solid rgb(202,202,207)",
+  borderBottom: "1px solid rgb(252,231,134)",
   width: "249px",
 };
 
 const sectionCenter = {
-  borderBottom: "1px solid #252f3d",
+  borderBottom: "2px solid #ffd100",
   width: "102px",
 };

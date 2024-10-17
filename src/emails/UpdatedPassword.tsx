@@ -10,6 +10,7 @@ import {
   Row,
   Column,
   Text,
+  Img,
 } from "@react-email/components";
 import * as React from "react";
 import moment from "moment";
@@ -17,7 +18,7 @@ import moment from "moment";
 const baseUrl =
   process.env.NODE_ENV === "production"
     ? process.env.NEXT_PUBLIC_BASE_URL
-    : "https://www.tuhustle.com";
+    : "https://madfun.lexacle.com";
 
 export default function UpdatedPassword(props: any) {
   return (
@@ -28,27 +29,38 @@ export default function UpdatedPassword(props: any) {
         <Container style={container}>
           <Section style={coverSection}>
             <Section style={titleSection}>
-              <Text style={textH}>TUHUSTLE FREELANCE PLATFORM</Text>
-              <Text style={textP}>
-                The Ultimate Freelance Platform where opportunities meet talent
-              </Text>
+              <Row>
+                <Column style={logo}>
+                  <Img
+                    src={`${baseUrl}/assets/img/logos/logo-512.png`}
+                    alt="Madfun"
+                    width="80"
+                    height="80"
+                  />
+                </Column>
+                <Column>
+                  <Text style={textH}>MADFUN 🎉</Text>
+                  <Text style={textP}>
+                    Events, Flights, and Exclusive Travel Experiences
+                  </Text>
+                </Column>
+              </Row>
             </Section>
             <Section style={upperSection}>
               <Heading style={h1}>Your Account Password was changed</Heading>
-              <Text style={mainText}>Hello {props.fname},</Text>
-              <Text style={mainText}>
-                This email is to inform you that the password for your Tuhustle
+              <Text style={text}>Hello {props.first_name},</Text>
+              <Text style={text}>
+                This email is to inform you that the password for your Madfun
                 account has recently been updated. Please use the new password
-                you created to sign in to your Tuhustle account.
+                you created to sign in to your Madfun account.
               </Text>
-              <Text style={mainText}>
-                <span style={boldText}>
+              <Text style={text}>
+                <span style={textB}>
                   If you did not initiate this password change
                 </span>
                 , please contact us immediately by replying to this email to
                 report unauthorized access and secure your account.
               </Text>
-              <Text style={mainText}>Happy Job Hunting!</Text>
 
               <Section style={sectionsBorders}>
                 <Row>
@@ -60,7 +72,7 @@ export default function UpdatedPassword(props: any) {
               <Text style={text}>
                 Sincerely,
                 <br />
-                The Tuhustle Team
+                The Madfun Team
               </Text>
             </Section>
           </Section>
@@ -73,9 +85,8 @@ export default function UpdatedPassword(props: any) {
                   fontFamily: "'Open Sans', 'Helvetica Neue', Arial",
                 }}
               >
-                © {moment(new Date()).format("YYYY")} Tuhustle, All Rights
-                Reserved <br />
-                Nairobi, Kenya
+                © {moment(new Date()).format("YYYY")} Madfun, All Rights
+                Reserved
               </Text>
             </Row>
           </Section>
@@ -84,17 +95,22 @@ export default function UpdatedPassword(props: any) {
     </Html>
   );
 }
+const logo = {
+  width: "90px",
+};
 
 const main = {
   backgroundColor: "#fff",
   color: "#212121",
   padding: "20px 0px 20px 0px",
+  width: "100%",
+  margin: "0",
 };
 
 const container = {
   padding: "15px",
   margin: "0 auto",
-  backgroundColor: "#eee",
+  backgroundColor: "#ffd100",
   width: "580px",
   maxWidth: "100%",
 };
@@ -106,22 +122,6 @@ const h1 = {
   fontSize: "20px",
   fontWeight: "bold",
   marginBottom: "15px",
-};
-
-const link = {
-  color: "#2754C5",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "14px",
-  textDecoration: "underline",
-};
-
-const text = {
-  color: "#333",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "14px",
-  margin: "24px 0",
 };
 
 const textH = {
@@ -154,18 +154,55 @@ const coverSection = { backgroundColor: "#fff" };
 
 const upperSection = { padding: "25px 35px" };
 
-const boldText = {
-  fontWeight: "bold",
+const lowerSection = { padding: "25px 35px" };
+
+const text = {
+  fontSize: "16px",
+  fontFamily:
+    "'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+  fontWeight: "300",
+  color: "#404040",
+  lineHeight: "26px",
+};
+
+const textB = {
+  fontWeight: "600",
+};
+
+const textUl = {
+  fontSize: "14px",
+  fontFamily:
+    "'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+  fontWeight: "300",
+  color: "#404040",
+  lineHeight: "26px",
+  padding: "0px 15px",
+};
+
+const button = {
+  backgroundColor: "#000000",
+  borderRadius: "4px",
+  color: "#fff",
+  fontFamily: "'Open Sans', 'Helvetica Neue', Arial",
+  fontSize: "24px",
+  letterSpacing: "5px",
+  fontWeight: "700",
+  textDecoration: "none",
+  textAlign: "center" as const,
+  display: "block",
+  width: "220px",
+  padding: "14px 7px",
+};
+
+const anchor = {
+  textDecoration: "none",
+  color: "#ffd100",
 };
 
 const footer = {
-  maxWidth: "100%",
+  maxWidth: "580px",
   margin: "0 auto",
-  padding: "0 5px",
-  textAlign: "center" as const,
 };
-
-const mainText = { ...text, marginBottom: "14px" };
 
 const sectionsBorders = {
   width: "100%",
@@ -173,11 +210,11 @@ const sectionsBorders = {
 };
 
 const sectionBorder = {
-  borderBottom: "1px solid rgb(202,202,207)",
+  borderBottom: "1px solid rgb(252,231,134)",
   width: "249px",
 };
 
 const sectionCenter = {
-  borderBottom: "1px solid #252f3d",
+  borderBottom: "2px solid #ffd100",
   width: "102px",
 };

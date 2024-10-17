@@ -102,7 +102,8 @@ export async function ResendCode(reqData: any): Promise<any> {
           success: true,
           info: {
             title: "Request successful!",
-            message: "Please check your email for the password reset code.",
+            message:
+              "Please check your email for the account password reset code.",
             resetData: user.user,
           },
         };
@@ -114,7 +115,7 @@ export async function ResendCode(reqData: any): Promise<any> {
           info: {
             title: "Reset code not sent!",
             message:
-              "The password reset code was not be sent. Please try again later.",
+              "The password reset code was not be sent. Please try again later or contact us.",
           },
         };
       }

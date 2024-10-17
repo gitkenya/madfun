@@ -216,14 +216,14 @@ export default function ResetForm() {
             <div className="relative flex flex-row items-center justify-between">
               <input
                 type="text"
-                className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none"
+                className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
                 id="reset_code"
                 name="reset_code"
                 placeholder=""
                 required
               />
               <button
-                className="transition-colors duration-300 flex flex-row items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 px-4 py-1.5 rounded absolute right-2 text-sm text-white disabled:opacity-50"
+                className="transition-colors duration-300 flex flex-row items-center justify-center gap-2 bg-slate-800 hover:bg-slate-900 px-4 py-1.5 rounded absolute right-2 text-sm text-white"
                 disabled={loading}
                 onClick={() => resendCode()}
               >
@@ -231,7 +231,7 @@ export default function ResetForm() {
                   <ReactLoading
                     className=""
                     type="spin"
-                    color="#ffe77a"
+                    color="#ffd100"
                     width={20}
                     height={20}
                   />
@@ -300,7 +300,7 @@ export default function ResetForm() {
           <div className="grid mt-4 text-sm">
             <Link
               href="/login"
-              className="transition-all duration-300 flex items-center gap-2 text-sm text-blue-800 hover:text-blue-600 dark:text-primary-500 dark:hover:text-primary-400 ms-2"
+              className="transition-all duration-300 flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-slate-600 ms-2"
             >
               <IoArrowBack size={16} />
               Back to Login

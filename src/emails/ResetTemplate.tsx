@@ -55,9 +55,13 @@ export default function Email(props: any) {
                 </Text>
                 <Button style={button}>{props.code}</Button>
                 <Text style={text}>
-                  Your Verification Code Expires at{" "}
+                  Your Verification Code Expires on{" "}
                   <span style={textB}>
-                    {moment(props.expires_at).format("Do MMM YYYY h:mm a")}
+                    {moment(props.expires_at).format("Do MMM YYYY")}
+                  </span>{" "}
+                  at{" "}
+                  <span style={textB}>
+                    {moment(props.expires_at).format("h:mm a")}
                   </span>{" "}
                   after which you will need to request for a new code
                 </Text>
@@ -94,7 +98,7 @@ export default function Email(props: any) {
               <Text
                 style={{
                   textAlign: "center",
-                  color: "#706a7b",
+                  color: "#040b17",
                   fontFamily: "'Open Sans', 'Helvetica Neue', Arial",
                 }}
               >
@@ -224,11 +228,11 @@ const sectionsBorders = {
 };
 
 const sectionBorder = {
-  borderBottom: "1px solid rgb(202,202,207)",
+  borderBottom: "1px solid rgb(252,231,134)",
   width: "249px",
 };
 
 const sectionCenter = {
-  borderBottom: "1px solid #252f3d",
+  borderBottom: "2px solid #ffd100",
   width: "102px",
 };
