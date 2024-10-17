@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import UpdatedPassword from "@/emails/UpdatedPassword";
 import { supabase } from "@/utils/supabase/admin";
 import { ZeptoMailer } from "@/lib/mailers/zepto";
-import { ResendMailer } from "@/lib/mailers/resend";
 import { render } from "@react-email/components";
 
 export async function POST(req: NextRequest) {
