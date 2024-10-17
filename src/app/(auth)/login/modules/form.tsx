@@ -58,7 +58,7 @@ export default function LoginForm() {
               icon: " ",
               duration: 5000,
             });
-            router.push("/account");
+            router.push("/");
           }
         }}
       >

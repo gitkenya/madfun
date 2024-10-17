@@ -66,6 +66,23 @@ export default function Navbar(props: any) {
       current: pathname === "/streams" || pathname.includes("streams"),
     },
   ];
+
+  const setInitials = (fullName: string) => {
+    let names = fullName
+        .trim()
+        .split(" ")
+        .filter((name) => name !== ""),
+      initials = "";
+    if (names.length > 0) {
+      initials = names[0].substring(0, 1).toUpperCase();
+    }
+    if (names.length > 1) {
+      initials += names[names.length - 1].substring(0, 1).toUpperCase();
+    }
+
+    return initials;
+  };
+
   return (
     <Disclosure
       as="nav"
@@ -192,34 +209,42 @@ export default function Navbar(props: any) {
                     <IoAdd size={20} />
                     Create event
                   </Link>
-                  <Link
-                    href="/login"
-                    className={`transition-all duration-300 border  px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
-                      pathname === "/"
-                        ? `${
-                            navmode === "floating"
-                              ? "border-slate-700 text-slate-700 hover:border-slate-500 hover:text-slate-600"
-                              : "border-white text-white hover:border-slate-300 hover:text-slate-300"
-                          }`
-                        : "border-slate-700 text-slate-700 hover:border-slate-600 hover:text-slate-600"
-                    }`}
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/register"
-                    className={`transition-all duration-300 px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
-                      pathname === "/"
-                        ? `${
-                            navmode === "floating"
-                              ? "bg-slate-800 text-white hover:bg-slate-600"
-                              : "bg-white text-slate-800 hover:bg-slate-300"
-                          }`
-                        : "bg-slate-800 text-white hover:bg-slate-600"
-                    }`}
-                  >
-                    Signup
-                  </Link>
+                  {user ? (
+                    <div className="w-12 h-12 flex flex-row items-center justify-center rounded-full bg-slate-800 text-slate-300 font-extrabold tracking-widest">
+                      {setInitials(user.user_metadata.name)}
+                    </div>
+                  ) : (
+                    <div className="flex flex-row gap-5">
+                      <Link
+                        href="/login"
+                        className={`transition-all duration-300 border  px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
+                          pathname === "/"
+                            ? `${
+                                navmode === "floating"
+                                  ? "border-slate-700 text-slate-700 hover:border-slate-500 hover:text-slate-600"
+                                  : "border-white text-white hover:border-slate-300 hover:text-slate-300"
+                              }`
+                            : "border-slate-700 text-slate-700 hover:border-slate-600 hover:text-slate-600"
+                        }`}
+                      >
+                        Login
+                      </Link>
+                      <Link
+                        href="/register"
+                        className={`transition-all duration-300 px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
+                          pathname === "/"
+                            ? `${
+                                navmode === "floating"
+                                  ? "bg-slate-800 text-white hover:bg-slate-600"
+                                  : "bg-white text-slate-800 hover:bg-slate-300"
+                              }`
+                            : "bg-slate-800 text-white hover:bg-slate-600"
+                        }`}
+                      >
+                        Signup
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
