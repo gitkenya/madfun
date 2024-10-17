@@ -5,7 +5,8 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/effect-fade";
 import SearchBar from "./modules/search";
-export default function Slider() {
+export default function Slider(props: any) {
+  const { flight_types, location_types, flight_stops, flight_classes } = props;
   const slides = [
     {
       id: "1",
@@ -33,7 +34,12 @@ export default function Slider() {
       <div className="absolute flex flex-col items-center justify-center w-full h-full top-0 left-0 z-20 bg-gradient-to-b from-slate-900/60 via-slate-900/10 to-slate-900/10">
         <div className="w-full px-4 max-w-[85rem] mx-auto flex flex-col items-center justify-center">
           <div className="hidden sm:block w-full max-w-[65rem] rounded-lg text-slate-600 ">
-            <SearchBar />
+            <SearchBar
+              flight_types={flight_types}
+              location_types={location_types}
+              flight_stops={flight_stops}
+              flight_classes={flight_classes}
+            />
           </div>
         </div>
       </div>

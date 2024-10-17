@@ -12,9 +12,31 @@ export default async function Home() {
     .from("destinations")
     .select("*")
     .order("id", { ascending: true });
+
+  const { data: flight_types } = await supabase
+    .from("flight_types")
+    .select("*")
+    .order("id", { ascending: true });
+  const { data: locations } = await supabase
+    .from("locations")
+    .select("*, countries(*)")
+    .order("id", { ascending: true });
+  const { data: flight_stops } = await supabase
+    .from("flight_stops")
+    .select("*")
+    .order("id", { ascending: true });
+  const { data: flight_classes } = await supabase
+    .from("flight_classes")
+    .select("*")
+    .order("id", { ascending: true });
   return (
     <>
-      <Slider />
+      <Slider
+        flight_types={flight_types}
+        location_types={locations}
+        flight_stops={flight_stops}
+        flight_classes={flight_classes}
+      />
       <Events />
       <Destinations destinations={destinations} />
       <Hotels />
