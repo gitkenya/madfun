@@ -222,7 +222,7 @@ export default function RegisterForm(props: any) {
               className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none"
               id="register_name"
               name="register_name"
-              placeholder="Jennifer Maina"
+              placeholder="Jane Doe"
               required
             />
           </div>
@@ -255,7 +255,7 @@ export default function RegisterForm(props: any) {
               className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none"
               id="register_email"
               name="register_email"
-              placeholder="jennifer@example.com"
+              placeholder="jane@example.com"
               required
               onKeyUp={validateEmail}
             />
