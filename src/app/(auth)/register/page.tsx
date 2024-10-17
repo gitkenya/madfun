@@ -12,7 +12,7 @@ const meta: any = {
   card: "summary_large_image",
   site: "@madfun",
   creator: "@madfun",
-  images: "/assets/img/pages/auth/register/meta.jpg",
+  images: "/assets/img/meta/meta-1.jpg",
   url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
 };
 export const generateMetadata = async (): Promise<Metadata> => {

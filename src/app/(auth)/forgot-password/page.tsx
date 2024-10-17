@@ -4,14 +4,14 @@ import moment from "moment";
 import Slider from "./modules/slider";
 
 const meta: any = {
-  title: "Access to your Account | Madfun",
+  title: "Access your Account | Madfun",
   description:
     "Madfun is an event and travel company offerring seamless solutions for users to create & manage events, buy tickets, book flights and accommodation with ease.",
   type: "website",
   card: "summary_large_image",
-  site: "@tuhustle",
-  creator: "@tuhustle",
-  images: "/assets/img/pages/auth/forgot-password/meta.jpg",
+  site: "@madfun",
+  creator: "@madfun",
+  images: "/assets/img/meta/meta-1.jpg",
   url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
 };
 export const generateMetadata = async (): Promise<Metadata> => {

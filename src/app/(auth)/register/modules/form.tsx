@@ -56,7 +56,7 @@ export default function RegisterForm(props: any) {
     // Call the function with your class name and desired alt text
     updateAltTagsByClass(
       "react-international-phone-flag-emoji",
-      "Tuhustle - Freelance Platform"
+      "Madfun - Events, Flights, Hotels and Travel Experiences"
     );
   }, []);
 

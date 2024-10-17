@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import ResetForm from "./modules/form";
-import Link from "next/link";
-import { IoArrowBack } from "react-icons/io5";
 import moment from "moment";
 import Slider from "./modules/slider";
 
@@ -12,9 +9,9 @@ const meta: any = {
     "Madfun is an event and travel company offerring seamless solutions for users to create & manage events, buy tickets, book flights and accommodation with ease.",
   type: "website",
   card: "summary_large_image",
-  site: "@tuhustle",
-  creator: "@tuhustle",
-  images: "/assets/img/pages/auth/reset-password/meta.jpg",
+  site: "@madfun",
+  creator: "@madfun",
+  images: "/assets/img/meta/meta-1.jpg",
   url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
 };
 export const generateMetadata = async (): Promise<Metadata> => {
