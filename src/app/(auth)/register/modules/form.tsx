@@ -26,14 +26,32 @@ export default function RegisterForm(props: any) {
   const [passMode, setPassMode] = useState("password");
   const [emailVal, setEmailVal] = useState("");
   const [selectedGender, setSelectedGender] = useState(null);
+  const [selectedYear, setSelectedYear] = useState(null);
   const genders: any[] = [
     { value: 1, label: "Male" },
     { value: 2, label: "Female" },
     { value: 3, label: "I'd rather not say" },
   ];
 
+  const currentYear = new Date().getFullYear();
+  const minAge = 6;
+  const maxAge = 100;
+
+  const years: any[] = [];
+
+  for (let age = maxAge; age >= minAge; age--) {
+    const year = currentYear - age;
+    years.push({ value: year, label: year });
+  }
+
+  console.log(years);
+
   const handleGenderChange = (event: any) => {
     setSelectedGender(event.value);
+  };
+
+  const handleYearChange = (event: any) => {
+    setSelectedYear(event.value);
   };
 
   const CustomDropdownIndicator = (props: any) => {
@@ -117,9 +135,12 @@ export default function RegisterForm(props: any) {
         className="form"
         action={async (formData) => {
           // Input Validation
+          const phone = formData.get("register_phone") as string;
           const email = formData.get("register_email") as string;
           const pass1 = formData.get("register_password") as string;
           const pass2 = formData.get("register_confirm") as string;
+          console.log(phone);
+          console.log(phone.length);
           if (!validator.isEmail(email)) {
             toast.error("Invalid Email Address", {
               description: "Please enter a correct email address and try again",
@@ -353,13 +374,28 @@ export default function RegisterForm(props: any) {
             >
               Year of Birth
             </label>
-            <input
-              type="number"
-              className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none"
-              id="register_yob"
+            <Select
+              defaultValue={selectedYear}
+              onChange={handleYearChange}
+              options={years}
+              placeholder="Year of Birth"
+              unstyled
               name="register_yob"
-              placeholder="eg 1996"
               required
+              instanceId={useId()}
+              components={{ DropdownIndicator: CustomDropdownIndicator }}
+              className="w-full"
+              classNames={{
+                control: () =>
+                  "appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none",
+                menu: () =>
+                  "p-1 mt-1 border min-w-[200px] sm:max-h-[200px] overflow-y-hidden left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-2.5 px-4 focus:outline-none",
+                option: () =>
+                  "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                menuList: () => "cursor-pointer text-base",
+                placeholder: () => "text-slate-600",
+                dropdownIndicator: () => "pt-1",
+              }}
             />
           </div>
         </div>
