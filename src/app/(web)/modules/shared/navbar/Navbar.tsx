@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar(props: any) {
   const pathname = usePathname();
+  const { user } = props;
   const [navmode, setMode] = useState("");
   useEffect(() => {
     if (document.documentElement.scrollTop > 0) {
