@@ -44,8 +44,6 @@ export default function RegisterForm(props: any) {
     years.push({ value: year, label: year });
   }
 
-  console.log(years);
-
   const handleGenderChange = (event: any) => {
     setSelectedGender(event.value);
   };
@@ -134,16 +132,27 @@ export default function RegisterForm(props: any) {
       <form
         className="form"
         action={async (formData) => {
+          const fPhone = async (field: string) => {
+            const res = field.replace(/\s/g, "");
+            return res;
+          };
           // Input Validation
-          const phone = formData.get("register_phone") as string;
+          const phone = await fPhone(formData.get("register_phone") as string);
           const email = formData.get("register_email") as string;
           const pass1 = formData.get("register_password") as string;
           const pass2 = formData.get("register_confirm") as string;
-          console.log(phone);
-          console.log(phone.length);
+
           if (!validator.isEmail(email)) {
             toast.error("Invalid Email Address", {
               description: "Please enter a correct email address and try again",
+              position: "bottom-right",
+              icon: " ",
+              duration: 5000,
+            });
+          } else if (phone.length < 13) {
+            toast.error("Invalid Phone Number!", {
+              description:
+                "Please ensure that you typed your phone number correctly and try again.",
               position: "bottom-right",
               icon: " ",
               duration: 5000,
