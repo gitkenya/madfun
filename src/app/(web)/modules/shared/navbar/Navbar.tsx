@@ -11,11 +11,14 @@ import Link from "next/link";
 import { IoAdd } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import SignOut from "@/app/(auth)/logout/logout";
+import ReactLoading from "react-loading";
 
 export default function Navbar(props: any) {
   const pathname = usePathname();
   const { user } = props;
   const [navmode, setMode] = useState("");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [loadingSignOut, setLoadingSignOut] = useState(false);
   useEffect(() => {
     if (document.documentElement.scrollTop > 0) {
       setMode("floating");
@@ -35,6 +38,9 @@ export default function Navbar(props: any) {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
+  const toggleDropdown = () => {
+    setIsDropdownOpen((prevState) => !prevState);
+  };
   const navigation = [
     {
       id: "1",
@@ -85,7 +91,12 @@ export default function Navbar(props: any) {
   };
 
   const signOut = async () => {
-    const res = await SignOut();
+    setIsDropdownOpen(false);
+    setLoadingSignOut(true);
+    await SignOut();
+    setTimeout(() => {
+      setLoadingSignOut(false);
+    }, 1000);
   };
 
   return (
@@ -220,35 +231,48 @@ export default function Navbar(props: any) {
                         tabIndex={0}
                         role="button"
                         className="w-12 h-12 flex flex-row items-center justify-center rounded-full bg-slate-800 text-slate-300 font-extrabold tracking-widest"
+                        onClick={toggleDropdown}
                       >
-                        {setInitials(user.user_metadata.name)}
+                        {loadingSignOut ? (
+                          <ReactLoading
+                            className=""
+                            type="spin"
+                            color="#ffd100"
+                            width={28}
+                            height={28}
+                          />
+                        ) : (
+                          setInitials(user.user_metadata.name)
+                        )}
                       </div>
-                      <div
-                        tabIndex={0}
-                        className="dropdown-content rounded menu bg-white mt-2 z-[1] w-52 p-2 shadow"
-                      >
-                        <div className="flex flex-col pb-1 border-b border-slate-100">
-                          <Link
-                            href="/"
-                            className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
-                          >
-                            My Account
-                          </Link>
-
-                          <Link
-                            href="/"
-                            className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
-                          >
-                            Manage Events
-                          </Link>
-                        </div>
-                        <button
-                          className="mt-1 w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
-                          onClick={() => signOut()}
+                      {isDropdownOpen && (
+                        <div
+                          tabIndex={0}
+                          className="dropdown-content rounded menu bg-white mt-2 z-[1] w-52 p-2 shadow"
                         >
-                          Logout
-                        </button>
-                      </div>
+                          <div className="flex flex-col pb-1 border-b border-slate-100">
+                            <Link
+                              href="/"
+                              className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                            >
+                              My Account
+                            </Link>
+
+                            <Link
+                              href="/"
+                              className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                            >
+                              Manage Events
+                            </Link>
+                          </div>
+                          <button
+                            className="mt-1 w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                            onClick={() => signOut()}
+                          >
+                            Logout
+                          </button>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="flex flex-row gap-5">
