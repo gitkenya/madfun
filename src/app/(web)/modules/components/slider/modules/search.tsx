@@ -1,9 +1,9 @@
 "use client";
 import { useId, useState } from "react";
-import { IoEllipse, IoChevronDownOutline } from "react-icons/io5";
+import { IoChevronDownOutline } from "react-icons/io5";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import Select, { components } from "react-select";
-import FlightSearch from "../../search/flights";
+import FlightSearch from "@/app/(web)/modules/components/search/flights";
 export default function SearchBar(props: any) {
   const { flight_types, location_types, flight_stops, flight_classes } = props;
   const [selectedIndex, setSelectedIndex] = useState(0);

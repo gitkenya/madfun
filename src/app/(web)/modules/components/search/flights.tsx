@@ -300,7 +300,7 @@ export default function FlightSearch(props: any) {
               {returnDate ? (
                 moment(returnDate).format("D MMM")
               ) : selectedFlightType === 1 ? (
-                <FiMinusCircle size={20} />
+                <FiMinusCircle size={20} className="text-slate-300" />
               ) : (
                 <IoAddOutline size={20} />
               )}
