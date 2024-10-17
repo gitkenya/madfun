@@ -13,3 +13,17 @@
     text-wrap: balance;
   }
 }
+
+.phone-input
+  .react-international-phone-country-selector
+  .react-international-phone-country-selector-button {
+  width: 64px;
+  outline: none;
+  @apply appearance-none block w-full h-full outline-none text-sm border border-slate-200 border-r-0 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none rounded-e-none;
+}
+.phone-input
+  .react-international-phone-country-selector
+  .react-international-phone-country-selector-dropdown:focus-visible {
+  @apply bg-slate-200 border py-2.5 max-h-[200px] overflow-y-auto
+  outline-none;
+}

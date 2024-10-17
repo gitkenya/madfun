@@ -192,7 +192,7 @@ export default function Navbar(props: any) {
                     Create event
                   </Link>
                   <Link
-                    href="/"
+                    href="/login"
                     className={`transition-all duration-300 border  px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
                       pathname === "/"
                         ? `${
@@ -206,7 +206,7 @@ export default function Navbar(props: any) {
                     Login
                   </Link>
                   <Link
-                    href="/"
+                    href="/register"
                     className={`transition-all duration-300 px-6 py-1.5 rounded flex flex-row gap-2 items-center ${
                       pathname === "/"
                         ? `${
@@ -268,7 +268,7 @@ export default function Navbar(props: any) {
                   </DisclosureButton>
                 </Link>
                 <div className="flex flex-row gap-5 items-center m-3">
-                  <Link href="/">
+                  <Link href="/login">
                     <DisclosureButton
                       as="span"
                       className="border border-slate-600 text-slate-800 px-6 py-1.5 rounded flex flex-row gap-2 items-center"
@@ -276,7 +276,7 @@ export default function Navbar(props: any) {
                       Login
                     </DisclosureButton>
                   </Link>
-                  <Link href="/">
+                  <Link href="/register">
                     <DisclosureButton
                       as="span"
                       className="bg-slate-800 text-white px-6 py-1.5 rounded flex flex-row gap-2 items-center"

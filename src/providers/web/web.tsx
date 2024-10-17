@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { ThemeProvider } from "next-themes";
+import Sonner from "@/components/sonner/sonner";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 export function WebProvider({ children }: { children: React.ReactNode }) {
@@ -21,6 +22,7 @@ export function WebProvider({ children }: { children: React.ReactNode }) {
       >
         {children}
       </ThemeProvider>
+      <Sonner />
     </>
   );
 }
