@@ -73,8 +73,11 @@ export default function Events(props: any) {
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-4 sm:gap-5">
           {loadingEvents
             ? Array.from({ length: 4 }).map((_, index) => (
-                <div className="relative min-h-[420px] bg-slate-50 border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-start gap-4">
-                  <div className="w-full min-h-[300px] bg-slate-200 rounded-lg animate-pulse"></div>
+                <div
+                  key={index}
+                  className="relative min-h-[240px] sm:min-h-[420px] bg-slate-50 border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-start gap-4"
+                >
+                  <div className="w-full min-h-[150px] sm:min-h-[300px] bg-slate-200 rounded-lg animate-pulse"></div>
                   <div className="w-full min-h-[20px] bg-slate-200 rounded animate-pulse"></div>
                   <div className="w-36 min-h-[20px] bg-slate-200 rounded animate-pulse"></div>
                 </div>
