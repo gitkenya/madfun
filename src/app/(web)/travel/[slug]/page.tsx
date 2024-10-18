@@ -143,7 +143,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <div className="join join-vertical w-full">
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" defaultChecked />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 1: Departure
                 </div>
                 <div className="collapse-content">
@@ -157,7 +157,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 2: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
@@ -171,7 +171,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 3: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
@@ -185,7 +185,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 4: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
@@ -199,7 +199,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 5: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
@@ -213,7 +213,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 6: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
@@ -227,7 +227,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" />
-                <div className="collapse-title text-xl font-medium">
+                <div className="collapse-title text-lg font-medium font-poppins">
                   Day 7: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
