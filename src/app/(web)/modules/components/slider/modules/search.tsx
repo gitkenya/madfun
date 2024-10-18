@@ -47,24 +47,24 @@ export default function SearchBar(props: any) {
   };
   return (
     <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-      <TabList>
+      <TabList className={`flex flex-row justify-between sm:flex-none`}>
         <Tab
-          className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
+          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
         >
           Events
         </Tab>
         <Tab
-          className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
+          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
         >
           Flights
         </Tab>
         <Tab
-          className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
+          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
         >
           Hotels
         </Tab>
         <Tab
-          className={`px-3 sm:px-6 py-2 sm:py-3 text-sm sm:text-base data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
+          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
         >
           Travel Experiences
         </Tab>
