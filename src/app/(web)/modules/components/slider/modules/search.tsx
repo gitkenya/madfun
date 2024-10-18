@@ -47,9 +47,9 @@ export default function SearchBar(props: any) {
   };
   return (
     <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
-      <TabList className={`flex flex-row justify-between sm:flex-none`}>
+      <TabList className={`flex flex-row justify-between sm:justify-start`}>
         <Tab
-          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
+          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base rounded-tl-lg bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
         >
           Events
         </Tab>
@@ -64,7 +64,7 @@ export default function SearchBar(props: any) {
           Hotels
         </Tab>
         <Tab
-          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
+          className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base rounded-tr-lg bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}
         >
           Travel Experiences
         </Tab>
@@ -255,8 +255,8 @@ export default function SearchBar(props: any) {
             selectedIndex === 0 ? "rounded-tl-none" : ""
           }`}
         >
-          <div className="grid grid-cols-3 py-3">
-            <div className="flex flex-row items-center border-r border-slate-200">
+          <form className="grid grid-cols-1 sm:grid-cols-4 gap-3 py-3">
+            <div className="col-span-2 px-3">
               <Select
                 defaultValue={selectedLocation}
                 onChange={handleLocationChange}
@@ -268,7 +268,7 @@ export default function SearchBar(props: any) {
                 className="w-full"
                 classNames={{
                   control: () =>
-                    "appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded py-2 px-4 focus:outline-none",
+                    "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
                   menu: () =>
                     "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                   option: () =>
@@ -279,7 +279,7 @@ export default function SearchBar(props: any) {
                 }}
               />
             </div>
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center ps-3">
               <Select
                 defaultValue={selectedLocation}
                 onChange={handleLocationChange}
@@ -291,7 +291,7 @@ export default function SearchBar(props: any) {
                 className="w-full"
                 classNames={{
                   control: () =>
-                    "appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded py-2 px-4 focus:outline-none",
+                    "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
                   menu: () =>
                     "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                   option: () =>
@@ -307,15 +307,15 @@ export default function SearchBar(props: any) {
                 Search
               </button>
             </div>
-          </div>
+          </form>
         </TabPanel>
         <TabPanel
           className={`bg-white rounded-lg max-w-[50rem] ${
             selectedIndex === 0 ? "rounded-tl-none" : ""
           }`}
         >
-          <div className="grid grid-cols-3 py-3">
-            <div className="flex flex-row items-center border-r border-slate-200">
+          <form className="grid grid-cols-1 sm:grid-cols-4 gap-3 py-3">
+            <div className="col-span-2 px-3">
               <Select
                 defaultValue={selectedLocation}
                 onChange={handleLocationChange}
@@ -327,7 +327,7 @@ export default function SearchBar(props: any) {
                 className="w-full"
                 classNames={{
                   control: () =>
-                    "appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded py-2 px-4 focus:outline-none",
+                    "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
                   menu: () =>
                     "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                   option: () =>
@@ -338,7 +338,7 @@ export default function SearchBar(props: any) {
                 }}
               />
             </div>
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center ps-3">
               <Select
                 defaultValue={selectedLocation}
                 onChange={handleLocationChange}
@@ -350,7 +350,7 @@ export default function SearchBar(props: any) {
                 className="w-full"
                 classNames={{
                   control: () =>
-                    "appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded py-2 px-4 focus:outline-none",
+                    "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
                   menu: () =>
                     "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                   option: () =>
@@ -366,7 +366,7 @@ export default function SearchBar(props: any) {
                 Search
               </button>
             </div>
-          </div>
+          </form>
         </TabPanel>
       </TabPanels>
     </TabGroup>
