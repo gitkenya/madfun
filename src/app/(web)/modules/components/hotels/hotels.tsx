@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { motion, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 import { MdOutlineHotel, MdPersonOutline } from "react-icons/md";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 
