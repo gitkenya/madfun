@@ -45,7 +45,7 @@ export default function Navbar(props: any) {
     {
       id: "1",
       name: "Events",
-      href: "/",
+      href: `${process.env.NEXT_PUBLIC_SITE_URL}/events`,
       current: pathname === "/events" || pathname.includes("events"),
     },
     {

@@ -1,10 +1,14 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { IoChevronForwardOutline, IoEllipse } from "react-icons/io5";
 import ShareModal from "@/components/modals/shareModal";
+import { useEffect, useState } from "react";
+import moment from "moment";
 
-export default async function Events(props: any) {
-  const events = [
+export default function Events(props: any) {
+  const [events, setEvents] = useState<any>([]);
+  const demoEvents = [
     {
       id: "1",
       date: "14 Dec",
@@ -34,28 +38,50 @@ export default async function Events(props: any) {
       photo: "/assets/img/events/event-4.avif",
     },
   ];
-  /*
-  const reqData = await fetch(
-    `https://api.v1.interactive.madfun.com/v1/api/event/view`,
-    {
-      method: "post",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        api_key: "4ba0e1aae090cdefc1887d2689b25e3f",
-        source: "MOBILE",
-        limit: 4,
-        page: 1,
-        sort: "",
-        pastEvent: 0,
-        eventID: "",
-      }),
-    }
-  );
-  const resData = await reqData.json();
-  */
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const reqData = await fetch(
+          `https://api.v1.interactive.madfun.com/v1/api/event/view`,
+          {
+            method: "POST",
+            headers: {
+              accept: "application/json",
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              api_key: "4ba0e1aae090cdefc1887d2689b25e3f",
+              source: "MOBILE",
+              limit: 4,
+              page: 1,
+              sort: "",
+              pastEvent: 0,
+              eventID: "",
+            }),
+          }
+        );
+        if (reqData.ok) {
+          const resData = await reqData.json();
+          console.log(resData);
+          if (resData.code === "Success") {
+            const {
+              data: { data },
+            } = resData;
+            console.log(data);
+            setEvents(data); // Set the fetched events
+          }
+        } else {
+          console.error("Failed to fetch events");
+        }
+      } catch (error) {
+        console.error("An error occurred while fetching events:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">
@@ -65,7 +91,7 @@ export default async function Events(props: any) {
           </h1>
 
           <Link
-            href="/"
+            href={`${process.env.NEXT_PUBLIC_SITE_URL}/events`}
             className="text-sm font-medium hidden sm:flex flex-row items-center gap-2"
           >
             View more <IoChevronForwardOutline size={20} />
@@ -73,40 +99,44 @@ export default async function Events(props: any) {
         </div>
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-x-2 gap-y-4 sm:gap-5">
           {events?.map((event: any) => (
-            <div key={event.id} className="grid">
+            <div key={event.eventID} className="grid">
               <div className="relative bg-slate-50 border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-start gap-4">
-                <Link className="w-full" href={`/`}>
-                  <Image
+                <Link
+                  className="w-full"
+                  href={`${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`}
+                >
+                  <img
                     className="rounded-lg"
-                    src={event.photo}
+                    src={event.posterURL}
                     width={600}
                     height={600}
                     alt="Events in Kenya Cinema Nairobi"
-                    priority
                   />
                   <span className="absolute top-0 left-0 m-6 min-w-20 text-center bg-slate-50 text-sm font-semibold text-red-600 px-2 py-1 rounded">
-                    {event.date}
+                    {moment(event.start_date).format("D MMM")}
                   </span>
                 </Link>
                 <div className="space-y-2">
                   <h2 className="font-semibold text-sm sm:text-lg line-clamp-2">
-                    {event.name}
+                    {event.eventName}
                   </h2>
                   <h3 className="text-sm text-slate-500 flex flex-row items-center gap-2">
                     <span className="">Play</span>
                     <span>
                       <IoEllipse size={8} />
                     </span>
-                    <span className="">Ksh {event.price}</span>
+                    <span className="">
+                      {event.currency} {event.minAmount}
+                    </span>
                   </h3>
                 </div>
                 <div className="absolute right-0 bottom-0">
                   <div className="flex flex-row justify-between items-center">
                     <ShareModal
                       event={{
-                        id: "event1",
-                        slug: "demo",
-                        url: `${process.env.NEXT_PUBLIC_BASE_URL}/events/eventID`,
+                        id: `${event.eventID}`,
+                        slug: `${event.eventID}`,
+                        url: `${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`,
                       }}
                     />
                   </div>
