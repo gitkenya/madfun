@@ -68,7 +68,6 @@ export default function Gallery(props: any) {
       <Swiper
         modules={[Autoplay, Navigation]}
         spaceBetween={20}
-        slidesPerView={3}
         autoplay={{
           delay: 3000,
           disableOnInteraction: true,
@@ -76,6 +75,16 @@ export default function Gallery(props: any) {
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
+        }}
+        breakpoints={{
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
         }}
         loop={true}
         effect="fade"
@@ -98,7 +107,7 @@ export default function Gallery(props: any) {
                 fill={true}
                 priority
                 alt="Madfun"
-                sizes="(max-width: 768px) 600px, (max-width: 1200px) 1200px, 1200px"
+                sizes="(max-width: 768px) 600px, (max-width: 1200px) 600px, 600px"
               />
             </div>
           </SwiperSlide>
