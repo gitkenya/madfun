@@ -3,7 +3,7 @@ import Image from "next/image";
 import { IoChevronForwardOutline, IoEllipse } from "react-icons/io5";
 import ShareModal from "@/components/modals/shareModal";
 
-export default function Events(props: any) {
+export default async function Events(props: any) {
   const events = [
     {
       id: "1",
@@ -34,6 +34,28 @@ export default function Events(props: any) {
       photo: "/assets/img/events/event-4.avif",
     },
   ];
+  /*
+  const reqData = await fetch(
+    `https://api.v1.interactive.madfun.com/v1/api/event/view`,
+    {
+      method: "post",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        api_key: "4ba0e1aae090cdefc1887d2689b25e3f",
+        source: "MOBILE",
+        limit: 4,
+        page: 1,
+        sort: "",
+        pastEvent: 0,
+        eventID: "",
+      }),
+    }
+  );
+  const resData = await reqData.json();
+  */
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">

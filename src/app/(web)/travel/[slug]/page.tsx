@@ -1,15 +1,26 @@
 import Image from "next/image";
 import { createClient } from "@/utils/supabase/server";
 import Itinerary from "./modules/itinerary";
-import { IoPersonOutline, IoTimeOutline } from "react-icons/io5";
+import {
+  IoCheckmark,
+  IoClose,
+  IoPersonOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
+import BookingForm from "./modules/form";
 export default async function Page({ params }: { params: { slug: string } }) {
   const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const { data: destination } = await supabase
     .from("destinations")
     .select("*")
     .eq("slug", params.slug)
     .order("id", { ascending: true })
     .single();
+
   return (
     <section className="w-full mt-16 sm:mt-20">
       <div className="w-full max-w-[85rem] mx-auto relative min-h-[240px] sm:min-h-[300px] sm:rounded-xl mt-0 mb-6 sm:mt-6">
@@ -54,41 +65,72 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-      <div className="w-full max-w-[85rem] mx-auto py-6 sm:py-12 flex flex-col sm:flex-row gap-5">
-        <div className="w-full sm:w-2/3">
+      <div className="w-full max-w-[85rem] mx-auto py-6 sm:py-12 px-4 sm:px-0 flex flex-col sm:flex-row gap-5">
+        <div className="w-full sm:w-7/12">
           <h2 className="text-lg sm:text-2xl font-semibold font-poppins">
             About the Experience
           </h2>
-          <p>
+          <p className="mt-4">
             Malaysia is one of those cities that never gets old, a captivating
             tourist destination that seamlessly blends modern urban centers with
             rich cultural heritage and natural beauty. No matter how many times
             you've been, you'll always discover something new and exciting to
             see, do, and eat.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-12">
-            <h3>Price Includes</h3>
-            <ul>
-              <li>✔️ Breakfast at the hotel</li>
-              <li>✔️ Breakfast at the hotel</li>
-              <li>✔️ Breakfast at the hotel</li>
-              <li>✔️ Breakfast at the hotel</li>
-            </ul>
+          <div className="flex flex-col gap-5 my-6">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-12 text-slate-500">
+              <h3>Price Includes</h3>
+              <ul>
+                <li className="flex flex-row items-center gap-2">
+                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  Breakfast at the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  Breakfast at the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  Breakfast at the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  Breakfast at the hotel
+                </li>
+              </ul>
+            </div>
+            <span className="bg-slate-100 h-px w-full"></span>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-12 text-slate-500">
+              <h3>Price Excludes</h3>
+              <ul>
+                <li className="flex flex-row items-center gap-2">
+                  <IoClose size={20} className="text-red-400" /> Breakfast at
+                  the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoClose size={20} className="text-red-400" /> Breakfast at
+                  the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoClose size={20} className="text-red-400" /> Breakfast at
+                  the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoClose size={20} className="text-red-400" /> Breakfast at
+                  the hotel
+                </li>
+                <li className="flex flex-row items-center gap-2">
+                  <IoClose size={20} className="text-red-400" /> Breakfast at
+                  the hotel
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-12">
-            <h3>Price Excludes</h3>
-            <ul>
-              <li>❌ Breakfast at the hotel</li>
-              <li>❌ Breakfast at the hotel</li>
-              <li>❌ Breakfast at the hotel</li>
-              <li>❌ Breakfast at the hotel</li>
-              <li>❌ Breakfast at the hotel</li>
-            </ul>
-          </div>
-          <h3 className="text-lg sm:text-2xl font-semibold font-poppins">
+
+          <h3 className="text-lg sm:text-2xl font-semibold font-poppins mb-4">
             Itinerary
           </h3>
-          <div className="">
+          <div className="mb-6">
             <div className="join join-vertical w-full">
               <div className="collapse collapse-arrow join-item border-base-300 border">
                 <input type="radio" name="my-accordion-4" defaultChecked />
@@ -190,8 +232,22 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </div>
             </div>
           </div>
+
+          <h3 className="text-lg sm:text-2xl font-semibold font-poppins mb-4">
+            Gallery
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3"></div>
         </div>
-        <div className="w-full sm:w-1/3">Booking Form</div>
+        <div className="w-full rounded-lg sm:w-5/12">
+          <BookingForm user={user ? user : null} />
+        </div>
+      </div>
+      <div className="w-full bg-slate-100">
+        <div className="w-full max-w-[85rem] mx-auto py-6 sm:py-12 px-4 sm:px-0 flex flex-col sm:flex-row gap-5">
+          <h2 className="font-bold text-lg sm:text-3xl text-slate-800 font-poppins">
+            Other Destinations
+          </h2>
+        </div>
       </div>
     </section>
   );
