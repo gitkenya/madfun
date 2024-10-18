@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { createClient } from "@/utils/supabase/server";
-import Itinerary from "./modules/itinerary";
+
 import {
   IoCheckmark,
   IoClose,
@@ -10,6 +10,58 @@ import {
 import BookingForm from "./modules/form";
 import Link from "next/link";
 import Gallery from "./modules/gallery";
+import type { Metadata } from "next";
+
+type Props = {
+  params: { slug: string };
+};
+
+export const generateMetadata = async (props: Props): Promise<Metadata> => {
+  const { params } = props;
+  const supabase = await createClient();
+  const { data: destination } = await supabase
+    .from("destinations")
+    .select("*")
+    .eq("slug", params.slug)
+    .order("id", { ascending: true })
+    .single();
+
+  const meta: any = {
+    title: `Madfun | Discover ${destination.name}`,
+    description: `${destination.name} is one of those cities that never gets old, a
+              captivating tourist destination that seamlessly blends modern
+              urban centers`,
+    type: "website",
+    card: "summary_large_image",
+    site: "@madfun",
+    creator: "@madfun",
+    images: `/assets/img/travel/packages/${destination.banner}`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+  };
+  return {
+    title: meta.title,
+    description: meta.description,
+    alternates: {
+      canonical: `/travel/${destination?.slug}`,
+    },
+    openGraph: {
+      title: meta.title,
+      description: meta.description,
+      type: meta.type,
+      images: meta.images,
+      url: `${meta.url}/travel/${destination?.slug}`,
+    },
+    twitter: {
+      title: meta.title,
+      description: meta.description,
+      card: meta.card,
+      site: meta.site,
+      creator: meta.creator,
+      images: meta.images,
+    },
+  };
+};
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const supabase = await createClient();
   const {
