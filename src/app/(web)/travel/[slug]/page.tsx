@@ -9,6 +9,7 @@ import {
 } from "react-icons/io5";
 import BookingForm from "./modules/form";
 import Link from "next/link";
+import Gallery from "./modules/gallery";
 export default async function Page({ params }: { params: { slug: string } }) {
   const supabase = await createClient();
   const {
@@ -244,7 +245,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <h3 className="text-lg sm:text-2xl font-semibold font-poppins mb-4">
             Gallery
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3"></div>
+          <div className="w-full">
+            <Gallery />
+          </div>
         </div>
         <div className="w-full rounded-lg sm:w-5/12">
           <BookingForm user={user ? user : null} />
