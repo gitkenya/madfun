@@ -8,6 +8,7 @@ import {
   IoTimeOutline,
 } from "react-icons/io5";
 import BookingForm from "./modules/form";
+import Link from "next/link";
 export default async function Page({ params }: { params: { slug: string } }) {
   const supabase = await createClient();
   const {
@@ -20,6 +21,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
     .eq("slug", params.slug)
     .order("id", { ascending: true })
     .single();
+
+  const { data: destinations } = await supabase
+    .from("destinations")
+    .select("*")
+    .neq("slug", params.slug)
+    .order("id", { ascending: true })
+    .limit(4);
 
   return (
     <section className="w-full mt-16 sm:mt-20">
@@ -243,10 +251,54 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </div>
       <div className="w-full bg-slate-100">
-        <div className="w-full max-w-[85rem] mx-auto py-6 sm:py-12 px-4 sm:px-0 flex flex-col sm:flex-row gap-5">
+        <div className="w-full max-w-[85rem] mx-auto py-6 sm:py-12 px-4 sm:px-0 flex flex-col gap-5">
           <h2 className="font-bold text-lg sm:text-3xl text-slate-800 font-poppins">
             Other Destinations
           </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
+            {destinations?.map((des: any) => (
+              <Link
+                key={des.id}
+                href={`/travel/${des.slug}`}
+                className="relative bg-slate-50 rounded-lg"
+              >
+                <Image
+                  className="rounded-lg"
+                  src={`/assets/img/destinations/${des.photo}`}
+                  width={600}
+                  height={400}
+                  alt={`Travel with Madfun - ${des.name}`}
+                />
+                <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/10 via-slate-900/10 to-slate-900/60 rounded-lg flex flex-col justify-end">
+                  <div className="flex flex-col gap-1.5 px-5 py-3">
+                    <div className="font-semibold text-white sm:text-lg font-poppins">
+                      {des.name}
+                    </div>
+                    <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
+                      <div className="flex flex-row items-end gap-3">
+                        <div className="flex flex-row items-center gap-2">
+                          <span>
+                            <IoTimeOutline size={16} />
+                          </span>
+                          <span>{des.period}</span>
+                        </div>
+                        <div className="flex flex-row items-center gap-2">
+                          <span>
+                            <IoPersonOutline size={16} />
+                          </span>
+                          <span>{des.persons}</span>
+                        </div>
+                      </div>
+                      <div className="flex flex-row items-center gap-1">
+                        <span>Ksh.</span>
+                        <span>{des.price.toLocaleString()}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>
