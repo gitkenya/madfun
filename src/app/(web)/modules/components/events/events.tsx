@@ -116,7 +116,7 @@ export default function Events(props: any) {
                         <ShareModal
                           event={{
                             id: `${event.eventID}`,
-                            slug: `${event.eventID}`,
+                            slug: `${event.eventName}`,
                             url: `${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`,
                           }}
                         />

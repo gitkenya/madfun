@@ -61,8 +61,11 @@ export default function ShareModal(props: any) {
           <div className="flex flex-row items-center justify-between gap-4">
             <div className="flex flex-col items-center justify-center gap-2 text-xs text-slate-500">
               <Link
-                href="https://whatsapp.com"
+                href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                  event.slug
+                )}%20-%20https://madfun.com/event/${event.id}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-slate-100 p-0 sm:p-3 rounded-full"
               >
                 <Image
@@ -76,8 +79,9 @@ export default function ShareModal(props: any) {
             </div>
             <div className="flex flex-col items-center justify-center gap-2 text-xs text-slate-500">
               <Link
-                href="https://facebook.com"
+                href={`https://www.facebook.com/sharer/sharer.php?u=https://madfun.com/event/${event.id}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-slate-100 p-0 sm:p-3 rounded-full"
               >
                 <Image
@@ -91,8 +95,9 @@ export default function ShareModal(props: any) {
             </div>
             <div className="flex flex-col items-center justify-center gap-2 text-xs text-slate-500">
               <Link
-                href="https://instagram.com"
+                href={`https://madfun.com/event/${event.id}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-slate-100 p-0 sm:p-3 rounded-full"
               >
                 <Image
@@ -106,8 +111,11 @@ export default function ShareModal(props: any) {
             </div>
             <div className="flex flex-col items-center justify-center gap-2 text-xs text-slate-500">
               <Link
-                href="https://telegram.org"
+                href={`https://t.me/share/url?text=${encodeURIComponent(
+                  event.slug
+                )}&url=https://madfun.com/event/${event.id}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-slate-100 p-0 sm:p-3 rounded-full"
               >
                 <Image
@@ -121,8 +129,9 @@ export default function ShareModal(props: any) {
             </div>
             <div className="flex flex-col items-center justify-center gap-2 text-xs text-slate-500">
               <Link
-                href="https://madfun.com"
+                href={`https://madfun.com/event/${event.id}`}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-slate-100 p-0 sm:p-3 rounded-full"
               >
                 <Image
