@@ -341,59 +341,44 @@ export default function FlightSearch(props: any) {
         </div>
       </div>
       <div className="bg-slate-100 rounded-b-lg flex flex-col sm:flex-row justify-between">
-        <div className="px-4 py-2 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
-          <div className="flex flex-row gap-2 items-center py-2 sm:pe-8 sm:border-r sm:border-slate-300">
-            <div>
-              <input
-                id="flight-hotel"
-                type="checkbox"
-                name="flight-hotel"
-                className="checkbox rounded border-slate-800"
-              />
-            </div>
+        <div className="px-4 py-6 sm:py-2 flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-5">
+          <div className="flex flex-row gap-2 items-center px-4 sm:ps-0 sm:pe-8 sm:border-r sm:border-slate-300">
+            <input
+              id="flight-hotel"
+              type="checkbox"
+              name="flight-hotel"
+              className="checkbox rounded border-slate-800"
+            />
+
             <label htmlFor="flight-hotel" className="cursor-pointer">
               Flight + Hotel
             </label>
           </div>
           <div className="flex flex-row gap-2 justify-start sm:items-center py-2 px-4 sm:pe-8 sm:border-r sm:border-slate-300">
-            <div>
-              <input
-                id="airport-transfer"
-                type="checkbox"
-                name="airport-transfer"
-                className="checkbox rounded border-slate-800"
-              />
-            </div>
+            <input
+              id="airport-transfer"
+              type="checkbox"
+              name="airport-transfer"
+              className="checkbox rounded border-slate-800"
+            />
             <label htmlFor="airport-transfer" className="cursor-pointer">
               Airport Transfer
             </label>
           </div>
           <div className="flex flex-row gap-2 items-center px-4">
-            <Select
-              defaultValue={selectedFlightStop}
-              onChange={handleFlightStopChange}
-              options={flightStops}
-              placeholder="Stops"
-              unstyled
-              instanceId={useId()}
-              components={{ DropdownIndicator: CustomDropdownIndicator }}
-              className="w-full"
-              classNames={{
-                control: () =>
-                  "appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 rounded py-2 px-4 focus:outline-none",
-                menu: () =>
-                  "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
-                option: () =>
-                  "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
-                menuList: () => "cursor-pointer text-base",
-                placeholder: () => "text-base text-slate-600",
-                dropdownIndicator: () => "pt-1",
-              }}
+            <input
+              id="flight-stop"
+              type="checkbox"
+              name="flight-stop"
+              className="checkbox rounded border-slate-800"
             />
+            <label htmlFor="flight-stop" className="cursor-pointer">
+              Non-Stop
+            </label>
           </div>
         </div>
         <div>
-          <button className="transition-colors duration-300 w-full sm:w-auto bg-slate-900 hover:bg-slate-700 text-white px-8 py-3 h-full rounded-b-lg sm:rounded-br-lg sm:rounded-bl-none flex flex-row items-center justify-center gap-4 font-poppins text-sm">
+          <button className="transition-colors duration-300 w-full sm:w-auto bg-slate-900 hover:bg-slate-700 text-white px-8 py-4 sm:py-3 h-full rounded-b-lg sm:rounded-br-lg sm:rounded-bl-none flex flex-row items-center justify-center gap-4 font-poppins text-sm">
             <span>Request Quote</span>
             <span>
               <IoChevronForwardOutline />
