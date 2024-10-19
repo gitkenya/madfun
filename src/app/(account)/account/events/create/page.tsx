@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { createClient } from "@/utils/supabase/server";
 import Navbar from "@/app/(account)/modules/shared/navbar/navbar";
+import Mockup from "./modules/mockup";
 
 export default async function Page() {
   const supabase = createClient();
@@ -17,25 +17,7 @@ export default async function Page() {
           Create Event Form
         </div>
         <div className="w-full hidden sm:flex flex-col items-center justify-center sm:w-2/5 sm:border-l sm:border-slate-300 dark:border-slate-800">
-          <div className="mockup-phone bg-slate-300 dark:bg-slate-700 border-slate-400/20 dark:border-slate-600">
-            <div className="camera bg-slate-300 dark:bg-slate-700"></div>
-            <div className="display bg-slate-100 dark:bg-slate-500">
-              <div className="artboard artboard-demo phone-1 bg-slate-100 dark:bg-slate-800">
-                <div className="flex flex-col items-center justify-center gap-4">
-                  <Image
-                    className="rounded"
-                    src="/assets/img/logos/logo.svg"
-                    width={80}
-                    height={80}
-                    alt="Madfun"
-                  />
-                  <div className="text-slate-500 dark:text-slate-400">
-                    Madfun Event Preview
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Mockup />
         </div>
       </div>
     </section>
