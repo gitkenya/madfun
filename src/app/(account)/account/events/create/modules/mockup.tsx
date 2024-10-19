@@ -32,8 +32,9 @@ export default function Mockup(props: any) {
                 alt="Madfun"
               />
             </motion.div>
-            <div className="text-slate-500 dark:text-slate-400">
-              Madfun Event Preview
+            <div className="text-slate-500 dark:text-slate-400 text-center">
+              Your Event Preview
+              <br /> will appear here
             </div>
           </div>
         </div>
