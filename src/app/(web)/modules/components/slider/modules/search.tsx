@@ -1,12 +1,28 @@
 "use client";
 import { useId, useState } from "react";
-import { IoChevronDownOutline } from "react-icons/io5";
-import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import {
+  IoChevronDownOutline,
+  IoCloseOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
+import {
+  Tab,
+  TabGroup,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  DialogBackdrop,
+} from "@headlessui/react";
 import Select, { components } from "react-select";
 import FlightSearch from "@/app/(web)/modules/components/search/flights";
 import ReactLoading from "react-loading";
 import { toast } from "sonner";
 import { FiSearch } from "react-icons/fi";
+import Link from "next/link";
+import moment from "moment";
 
 export default function SearchBar(props: any) {
   const { flight_types, location_types, flight_stops, flight_classes } = props;
@@ -19,6 +35,16 @@ export default function SearchBar(props: any) {
   const [searchEventKey, setSearchEventKey] = useState("");
   const [searchingEvents, setSearchingEvents] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(locations[0]);
+  const [eventSearchResults, setEventSearchResults] = useState<any[]>([]);
+  const [isEventsOpen, setEventsOpen] = useState(false);
+
+  const openEventsModal = () => {
+    setEventsOpen(true);
+  };
+
+  const closeEventsModal = () => {
+    setEventsOpen(false);
+  };
 
   const handleLocationChange = (event: any) => {
     setSelectedLocation(event.value);
@@ -113,7 +139,6 @@ export default function SearchBar(props: any) {
                   );
                   if (reqData.ok) {
                     const resData = await reqData.json();
-                    console.log(resData);
                     if (resData.code === "Success") {
                       const {
                         data: { data },
@@ -136,7 +161,8 @@ export default function SearchBar(props: any) {
                           icon: " ",
                           duration: 5000,
                         });
-                        console.log(filteredEvents); // Handle the filtered events (e.g., set them in state)
+                        setEventSearchResults(filteredEvents);
+                        openEventsModal();
                       } else {
                         toast.info("No matching events found", {
                           description: `No results match your search query.`,
@@ -236,6 +262,73 @@ export default function SearchBar(props: any) {
                 )}
               </button>
             </div>
+            <Dialog
+              open={isEventsOpen}
+              as="div"
+              className="relative z-50 focus:outline-none"
+              onClose={closeEventsModal}
+            >
+              <DialogBackdrop className="fixed inset-0 bg-black/30" />
+              <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div className="flex flex-col min-h-full items-center justify-end sm:justify-center">
+                  <DialogPanel
+                    transition
+                    className="w-full max-w-2xl rounded-lg bg-white backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+                  >
+                    <DialogTitle
+                      as="h3"
+                      className="p-4 rounded-t-lg font-semibold text-lg bg-slate-300 text-slate-800 flex flex-row items-center justify-between"
+                    >
+                      {eventSearchResults.length} Events found
+                      <button
+                        className="transition-colors duration-300 w-10 h-10 rounded-full bg-slate-100 text-slate-400 flex flex-row items-center justify-center hover:bg-slate-200 hover:text-slate-600"
+                        onClick={closeEventsModal}
+                      >
+                        <IoCloseOutline size={20} />
+                      </button>
+                    </DialogTitle>
+                    <div className="w-full flex flex-col gap-4 p-4 overflow-y-auto max-h-[calc(100vh-240px)]">
+                      {eventSearchResults?.map((event: any) => (
+                        <Link
+                          key={event.eventID}
+                          className="transition-colors duration-300 p-4 rounded-lg bg-slate-100 hover:bg-slate-200 flex flex-row items-center gap-4"
+                          href={`${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`}
+                        >
+                          <img
+                            className="rounded-lg"
+                            src={event.posterURL}
+                            width={100}
+                            height={100}
+                            alt="Events in Kenya Cinema Nairobi"
+                          />
+                          <div className="flex flex-col gap-2">
+                            <h4 className="font-bold uppercase">
+                              {event.eventName}
+                            </h4>
+                            <p className="flex flex-row items-center gap-2">
+                              <span className="bg-red-500/20 text-sm font-semibold text-red-600 px-2 py-1 rounded">
+                                {moment(event.start_date).format("D MMM")}
+                              </span>
+                              <span className="flex flex-row items-center gap-1 bg-yellow-400 text-xs font-normal text-slate-800 px-2 py-1 rounded">
+                                <IoLocationOutline size={18} /> {event.venue}
+                              </span>
+                            </p>
+                            <p className="line-clamp-2 text-sm">
+                              {
+                                new DOMParser().parseFromString(
+                                  event.aboutEvent.replace(/<[^>]*>/g, ""),
+                                  "text/html"
+                                ).documentElement.textContent
+                              }
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </DialogPanel>
+                </div>
+              </div>
+            </Dialog>
           </form>
         </TabPanel>
         <TabPanel
