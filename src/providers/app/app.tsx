@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import Sonner from "@/components/sonner/sonner";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
-export function WebProvider({ children }: { children: React.ReactNode }) {
+export function AppProvider({ children }: { children: React.ReactNode }) {
   return (
     <>
       <ProgressBar

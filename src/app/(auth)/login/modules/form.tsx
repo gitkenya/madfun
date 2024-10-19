@@ -13,7 +13,7 @@ export default function LoginForm() {
   const ref = useRef<HTMLFormElement>(null);
   const [passMode, setPassMode] = useState("password");
   return (
-    <div className="w-full px-12">
+    <div className="w-full px-4 sm:px-12">
       <div className="mb-6 flex items-center gap-4">
         <Image
           className=""
@@ -58,7 +58,13 @@ export default function LoginForm() {
               icon: " ",
               duration: 5000,
             });
-            router.push("/");
+            const redirectURL = localStorage.getItem("mf_redirectURL");
+            if (redirectURL) {
+              router.push(redirectURL);
+              localStorage.removeItem("mf_redirectURL");
+            } else {
+              router.push("/");
+            }
           }
         }}
       >
@@ -118,13 +124,13 @@ export default function LoginForm() {
               Forgot Password?
             </Link>
           </div>
-          <div className="flex flex-row gap-4 items-center text-sm">
+          <div className="hidden flex-row gap-4 items-center text-sm">
             <span className="border-b border-slate-300 w-full" />
             <span className="whitespace-nowrap">Or login with</span>
 
             <span className="border-b border-slate-300 w-full" />
           </div>
-          <div className="flex flex-row gap-4 font-medium">
+          <div className="hidden flex-row gap-4 font-medium">
             <button className="w-full flex flex-row items-center justify-center gap-4 px-4 py-2 rounded-lg border border-slate-200 bg-white">
               <span>
                 <Image

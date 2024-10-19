@@ -3,7 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { Poppins, Barlow } from "next/font/google";
 import "./global.scss";
-import { WebProvider } from "@/providers/web/web";
+import { AppProvider } from "@/providers/app/app";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -76,9 +76,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
-      <body className={`${poppins.variable} ${barlow.variable}`}>
-        <WebProvider>{children}</WebProvider>
+    <html lang="en">
+      <body
+        className={`${poppins.variable} ${barlow.variable} font-barlow bg-slate-50 dark:bg-slate-900`}
+      >
+        <AppProvider>{children}</AppProvider>
         <SpeedInsights />
         <Analytics />
       </body>

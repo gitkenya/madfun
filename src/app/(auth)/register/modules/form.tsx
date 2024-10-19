@@ -175,7 +175,13 @@ export default function RegisterForm(props: any) {
                 icon: " ",
                 duration: 5000,
               });
-              router.push("/");
+              const redirectURL = localStorage.getItem("mf_redirectURL");
+              if (redirectURL) {
+                router.push(redirectURL);
+                localStorage.removeItem("mf_redirectURL");
+              } else {
+                router.push("/");
+              }
               const response = await fetch(
                 `${process.env.NEXT_PUBLIC_BASE_URL}/api/emails/welcome`,
                 {
@@ -345,67 +351,70 @@ export default function RegisterForm(props: any) {
               </span>
             </div>
           </div>
-          <div className="w-full mb-3">
-            <label
-              className="block uppercase tracking-wide text-slate-800 text-xs mb-2"
-              htmlFor="register_gender"
-            >
-              Gender
-            </label>
-            <Select
-              defaultValue={selectedGender}
-              onChange={handleGenderChange}
-              options={genders}
-              placeholder="Gender"
-              unstyled
-              name="register_gender"
-              required
-              instanceId={useId()}
-              components={{ DropdownIndicator: CustomDropdownIndicator }}
-              className="w-full"
-              classNames={{
-                control: () =>
-                  "appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none",
-                menu: () =>
-                  "p-1 mt-1 border min-w-[200px] left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-2.5 px-4 focus:outline-none",
-                option: () =>
-                  "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
-                menuList: () => "cursor-pointer text-base",
-                placeholder: () => "text-slate-600",
-                dropdownIndicator: () => "pt-1",
-              }}
-            />
-          </div>
-          <div className="w-full mb-3">
-            <label
-              className="block uppercase tracking-wide text-slate-800 text-xs mb-2"
-              htmlFor="register_yob"
-            >
-              Year of Birth
-            </label>
-            <Select
-              defaultValue={selectedYear}
-              onChange={handleYearChange}
-              options={years}
-              placeholder="Year of Birth"
-              unstyled
-              name="register_yob"
-              required
-              instanceId={useId()}
-              components={{ DropdownIndicator: CustomDropdownIndicator }}
-              className="w-full"
-              classNames={{
-                control: () =>
-                  "appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none",
-                menu: () =>
-                  "p-1 mt-1 border min-w-[200px] sm:max-h-[200px] overflow-y-hidden left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-2.5 px-4 focus:outline-none",
-                option: () =>
-                  "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
-                menuList: () => "cursor-pointer text-base",
-                placeholder: () => "text-slate-600",
-                dropdownIndicator: () => "pt-1",
-              }}
-            />
+          <div className="sm:col-span-2 grid grid-cols-2 gap-3">
+            <div className="w-full mb-3">
+              <label
+                className="block uppercase tracking-wide text-slate-800 text-xs mb-2"
+                htmlFor="register_gender"
+              >
+                Gender
+              </label>
+              <Select
+                defaultValue={selectedGender}
+                onChange={handleGenderChange}
+                options={genders}
+                placeholder="Gender"
+                unstyled
+                name="register_gender"
+                required
+                instanceId={useId()}
+                components={{ DropdownIndicator: CustomDropdownIndicator }}
+                className="w-full"
+                classNames={{
+                  control: () =>
+                    "appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none",
+                  menu: () =>
+                    "p-1 mt-1 border min-w-[200px] left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-2.5 px-4 focus:outline-none",
+                  option: () =>
+                    "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                  menuList: () => "cursor-pointer text-base",
+                  placeholder: () => "text-slate-600",
+                  dropdownIndicator: () => "pt-1",
+                }}
+              />
+            </div>
+
+            <div className="w-full mb-3">
+              <label
+                className="block uppercase tracking-wide text-slate-800 text-xs mb-2"
+                htmlFor="register_yob"
+              >
+                Year of Birth
+              </label>
+              <Select
+                defaultValue={selectedYear}
+                onChange={handleYearChange}
+                options={years}
+                placeholder="Year of Birth"
+                unstyled
+                name="register_yob"
+                required
+                instanceId={useId()}
+                components={{ DropdownIndicator: CustomDropdownIndicator }}
+                className="w-full"
+                classNames={{
+                  control: () =>
+                    "appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-2.5 px-4 focus:outline-none",
+                  menu: () =>
+                    "p-1 mt-1 border min-w-[200px] sm:max-h-[200px] overflow-y-hidden left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-2.5 px-4 focus:outline-none",
+                  option: () =>
+                    "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                  menuList: () => "cursor-pointer text-base",
+                  placeholder: () => "text-slate-600",
+                  dropdownIndicator: () => "pt-1",
+                }}
+              />
+            </div>
           </div>
         </div>
         <div className="w-full flex flex-row gap-2 my-3 items-center">

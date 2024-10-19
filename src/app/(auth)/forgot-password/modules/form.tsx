@@ -13,7 +13,7 @@ export default function ForgotForm() {
   const ref = useRef<HTMLFormElement>(null);
   const [passMode, setPassMode] = useState("password");
   return (
-    <div className="w-full px-12">
+    <div className="w-full px-4 sm:px-12">
       <div className="mb-6 flex items-center gap-4">
         <Image
           className=""

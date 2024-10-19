@@ -5,6 +5,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next-nprogress-bar";
 import { TfiClose, TfiAlignRight } from "react-icons/tfi";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +16,7 @@ import ReactLoading from "react-loading";
 
 export default function Navbar(props: any) {
   const pathname = usePathname();
+  const router = useRouter();
   const { user } = props;
   const [navmode, setMode] = useState("");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -97,6 +99,17 @@ export default function Navbar(props: any) {
     setTimeout(() => {
       setLoadingSignOut(false);
     }, 1000);
+  };
+
+  const routeEvents = () => {
+    if (user) {
+      router.push("/account/events/create");
+      localStorage.removeItem("mf_redirectURL");
+      router;
+    } else {
+      localStorage.setItem("mf_redirectURL", "/account/events/create");
+      router.push("/login");
+    }
   };
 
   return (
@@ -210,8 +223,7 @@ export default function Navbar(props: any) {
                   >
                     Contact us
                   </Link>
-                  <Link
-                    href="/"
+                  <button
                     className={`relative transition-all duration-300 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full before:absolute before:-bottom-3 before:left-0 before:w-0 before:h-0.5 ${
                       pathname === "/"
                         ? `${
@@ -221,10 +233,11 @@ export default function Navbar(props: any) {
                           }`
                         : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                     } px-4 py-2 rounded flex flex-row gap-2 items-center`}
+                    onClick={() => routeEvents()}
                   >
                     <IoAdd size={20} />
                     Create event
-                  </Link>
+                  </button>
                   {user ? (
                     <div className="dropdown dropdown-end">
                       <div
@@ -252,14 +265,14 @@ export default function Navbar(props: any) {
                         >
                           <div className="flex flex-col pb-1 border-b border-slate-100">
                             <Link
-                              href="/"
+                              href="/account"
                               className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
                             >
                               My Account
                             </Link>
 
                             <Link
-                              href="/"
+                              href="/account/events"
                               className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
                             >
                               Manage Events

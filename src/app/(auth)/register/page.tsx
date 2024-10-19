@@ -3,6 +3,7 @@ import Image from "next/image";
 import { headers } from "next/headers";
 import RegisterForm from "./modules/form";
 import Slider from "./modules/slider";
+import moment from "moment";
 
 const meta: any = {
   title: "Sign up for free | Madfun",
@@ -61,10 +62,13 @@ export default async function Page() {
           <Slider />
         </div>
       </div>
-      <div className="w-full sm:w-2/5 p-2 sm:p-4 flex items-center justify-center">
+      <div className="w-full h-screen sm:w-2/5 p-2 sm:p-4 flex flex-col items-center justify-center">
         <div className="w-full rounded-lg p-0 sm:px-4 ">
           <RegisterForm ipAddress={ip} geoData={response} />
         </div>
+      </div>
+      <div className="h-10 absolute bottom-0 sm:hidden w-full bg-slate-800 text-slate-100 flex flx-row items-center justify-center text-sm">
+        &copy; {moment().format("Y")} Madfun. All Rights Reserved
       </div>
     </div>
   );
