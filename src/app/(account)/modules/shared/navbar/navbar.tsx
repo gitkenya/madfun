@@ -22,12 +22,12 @@ export default function Navbar(props: any) {
             {button.icon} {button.title}
           </Link>
         )}
-        <div className="transition-colors duration-300 w-9 h-9 flex flex-row items-center justify-center rounded-full bg-slate-300/40 dark:bg-slate-700/40 hover:bg-slate-300/80 dark:hover:bg-slate-700/80">
+        <div className="transition-colors duration-300 w-9 h-9 hidden sm:flex flex-row items-center justify-center rounded-full bg-slate-300/40 dark:bg-slate-700/40 hover:bg-slate-300/80 dark:hover:bg-slate-700/80">
           <DarkModeToggle />
         </div>
         <Link
           href="/account/profile"
-          className="relative overflow-clip transition-colors duration-300 w-10 h-10 hidden sm:flex flex-row items-center justify-center rounded-full bg-slate-300/40 dark:bg-slate-700/40 hover:bg-slate-300/80 dark:hover:bg-slate-700/80 text-slate-500 dark:text-slate-400"
+          className="relative overflow-clip transition-colors duration-300 w-10 h-10 flex flex-row items-center justify-center rounded-full bg-slate-300/40 dark:bg-slate-700/40 hover:bg-slate-300/80 dark:hover:bg-slate-700/80 text-slate-500 dark:text-slate-400"
         >
           <FiUser size={20} />
         </Link>

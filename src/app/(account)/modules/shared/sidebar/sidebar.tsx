@@ -204,17 +204,9 @@ export default function Sidebar(props: any) {
                 <Menu>
                   <MenuButton className="transition-all duration-300 flex flex-row justify-between w-full items-center gap-2 rounded hover:bg-slate-300 dark:hover:bg-slate-800 py-1.5 px-3 text-sm/6 font-semibold text-gray-700 dark:text-gray-300 focus:outline-none data-[hover]:bg-slate-300 dark:data-[hover]:bg-slate-800 data-[open]:bg-slate-300 dark:data-[open]:bg-slate-800">
                     <div className="flex flex-row items-center gap-2">
-                      <Image
-                        className="rounded"
-                        src={
-                          userData?.photo
-                            ? userData.photo
-                            : "/assets/img/logos/logo.svg"
-                        }
-                        width={28}
-                        height={28}
-                        alt={`${userData?.name}`}
-                      />
+                      <div className="flex flex-col items-center justify-center bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-400 w-8 h-8 rounded">
+                        <FiUser size={20} />
+                      </div>
                       {userData?.name}
                     </div>
                     <IoEllipsisVerticalOutline className="size-4 text-gray-700 dark:text-slate-50 data-[open]:text-teal-600" />
@@ -314,7 +306,7 @@ export default function Sidebar(props: any) {
             <Menu>
               <MenuButton className="transition-all duration-300 flex flex-row justify-between w-full items-center gap-2 rounded hover:bg-slate-300 dark:hover:bg-slate-800 py-1.5 px-3 text-sm/6 font-semibold text-gray-700 dark:text-gray-300 focus:outline-none data-[hover]:bg-slate-300 dark:data-[hover]:bg-slate-800 data-[open]:bg-slate-300 dark:data-[open]:bg-slate-800">
                 <div className="flex flex-row items-center gap-2">
-                  <div className="flex flex-col items-center justify-center bg-slate-300 text-slate-600 dark:bg-slate-700 dark:text-slate-400 w-8 h-8 rounded">
+                  <div className="flex flex-col items-center justify-center bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-400 w-8 h-8 rounded">
                     <FiUser size={20} />
                   </div>
                   {userData?.name}
