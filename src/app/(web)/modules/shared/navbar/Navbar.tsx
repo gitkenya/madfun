@@ -130,7 +130,6 @@ export default function Navbar(props: any) {
           <div className="mx-auto max-w-[85rem] px-2 sm:px-0">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 z-50 flex items-center sm:hidden">
-                {/* Mobile menu button*/}
                 <DisclosureButton
                   className={`relative inline-flex items-center justify-center rounded-md p-2 ${
                     pathname === "/"
