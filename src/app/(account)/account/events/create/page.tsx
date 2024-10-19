@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { createClient } from "@/utils/supabase/server";
 import Navbar from "@/app/(account)/modules/shared/navbar/navbar";
 
@@ -20,7 +21,18 @@ export default async function Page() {
             <div className="camera bg-slate-300 dark:bg-slate-700"></div>
             <div className="display bg-slate-100 dark:bg-slate-500">
               <div className="artboard artboard-demo phone-1 bg-slate-100 dark:bg-slate-800">
-                Event Preview Mockup
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <Image
+                    className="rounded"
+                    src="/assets/img/logos/logo.svg"
+                    width={80}
+                    height={80}
+                    alt="Madfun"
+                  />
+                  <div className="text-slate-500 dark:text-slate-400">
+                    Event Preview Mockup
+                  </div>
+                </div>
               </div>
             </div>
           </div>
