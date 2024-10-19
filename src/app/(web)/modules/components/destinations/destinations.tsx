@@ -13,7 +13,7 @@ export default function Destinations(props: any) {
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-6">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
           <div className="flex flex-col gap-4 sm:gap-8 sm:pe-16">
-            <div className="font-poppins hidden sm:flex flex-col gap-1 sm:gap-3">
+            <div className="font-poppins hidden sm:flex flex-col gap-1 sm:gap-3 text-slate-800">
               <h2 className="text-lg sm:text-3xl font-bold uppercase">Top</h2>
               <h2 className="text-lg sm:text-3xl font-bold uppercase">
                 Destinations
@@ -31,7 +31,7 @@ export default function Destinations(props: any) {
             </p>
             <Link
               href="/travel"
-              className="text-sm font-medium flex flex-row items-center gap-2"
+              className="text-sm text-slate-600 font-medium flex flex-row items-center gap-2"
             >
               More to explore <IoChevronForwardOutline size={20} />
             </Link>

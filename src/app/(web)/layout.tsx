@@ -59,7 +59,7 @@ export default async function Layout({
     data: { user },
   } = await supabase.auth.getUser();
   return (
-    <main>
+    <main className="bg-white">
       <Navbar user={user ? user : null} />
       {children}
       <Footer />

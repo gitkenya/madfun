@@ -59,7 +59,7 @@ export default function Navbar(props: any) {
     {
       id: "3",
       name: "Hotels",
-      href: "/",
+      href: "https://madfun.com/hotels",
       current: pathname === "/hotels" || pathname.includes("hotels"),
     },
     {
@@ -71,7 +71,7 @@ export default function Navbar(props: any) {
     {
       id: "5",
       name: "Streams",
-      href: "/",
+      href: "https://streams.madfun.com",
       current: pathname === "/streams" || pathname.includes("streams"),
     },
   ];
@@ -263,7 +263,7 @@ export default function Navbar(props: any) {
                           tabIndex={0}
                           className="dropdown-content rounded menu bg-white mt-2 z-[1] w-52 p-2 shadow"
                         >
-                          <div className="flex flex-col pb-1 border-b border-slate-100">
+                          <div className="flex flex-col pb-1 border-b border-slate-100 text-slate-600">
                             <Link
                               href="/account"
                               className="w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
@@ -279,7 +279,7 @@ export default function Navbar(props: any) {
                             </Link>
                           </div>
                           <button
-                            className="mt-1 w-full rounded transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
+                            className="mt-1 w-full rounded text-slate-600 transition-all duration-300 px-4 py-2 hover:bg-slate-200 flex flex-row justify-start"
                             onClick={() => signOut()}
                           >
                             Logout

@@ -59,13 +59,13 @@ export default function Events(props: any) {
     <section className="relative w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">
         <div className="w-full flex flex-row items-center justify-center sm:justify-between">
-          <h1 className="font-poppins text-lg sm:text-3xl font-bold uppercase">
+          <h1 className="font-poppins text-slate-800 text-lg sm:text-3xl font-bold uppercase">
             Exciting Upcoming events
           </h1>
 
           <Link
             href={`${process.env.NEXT_PUBLIC_SITE_URL}/events`}
-            className="text-sm font-medium hidden sm:flex flex-row items-center gap-2"
+            className="text-sm font-medium hidden text-slate-600 sm:flex flex-row items-center gap-2"
           >
             View more <IoChevronForwardOutline size={20} />
           </Link>
@@ -101,7 +101,7 @@ export default function Events(props: any) {
                       </span>
                     </Link>
                     <div className="space-y-2">
-                      <h2 className="font-semibold text-sm sm:text-lg line-clamp-2">
+                      <h2 className="font-semibold text-slate-800 text-sm sm:text-lg line-clamp-2">
                         {event.eventName}
                       </h2>
                       <h3 className="text-sm text-slate-500 flex flex-row items-center gap-2">

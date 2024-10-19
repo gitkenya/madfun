@@ -44,7 +44,7 @@ export default function Insider(props: any) {
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[80rem] px-2 md:px-4 space-y-6 mt-2">
         <div className="w-full flex flex-row items-center justify-center">
-          <h2 className="text-lg sm:text-3xl font-bold uppercase font-poppins">
+          <h2 className="text-lg text-slate-800 sm:text-3xl font-bold uppercase font-poppins">
             Travel & Events Insider
           </h2>
         </div>
@@ -70,7 +70,7 @@ export default function Insider(props: any) {
                     >
                       {insider.category}
                     </h2>
-                    <h3 className="font-semibold sm:text-lg font-poppins">
+                    <h3 className="font-semibold text-slate-600 sm:text-lg font-poppins">
                       {insider.title}
                     </h3>
                   </div>
