@@ -27,3 +27,9 @@
   @apply bg-slate-200 border py-2.5 max-h-[200px] overflow-y-auto
   outline-none;
 }
+
+.mockup-phone {
+  .camera {
+    @apply bg-slate-300 dark:bg-slate-700;
+  }
+}
