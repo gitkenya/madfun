@@ -7,6 +7,11 @@ import "swiper/scss/effect-fade";
 export default function Slider() {
   const slides = [
     {
+      id: "0",
+      name: "",
+      photo: "/assets/img/auth/slider/slide-0.webp",
+    },
+    {
       id: "1",
       name: "",
       photo: "/assets/img/auth/slider/slide-1.jpg",
