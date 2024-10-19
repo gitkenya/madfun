@@ -3,6 +3,7 @@ import Link from "next/link";
 import DarkModeToggle from "@/components/theme/theme";
 import { IoPerson } from "react-icons/io5";
 import { useAccount } from "@/providers/account/account";
+import { FiUser } from "react-icons/fi";
 
 export default function Navbar(props: any) {
   const { user, title, button } = props;
@@ -26,9 +27,9 @@ export default function Navbar(props: any) {
         </div>
         <Link
           href="/account/profile"
-          className="relative overflow-clip transition-colors duration-300 w-10 h-10 hidden sm:flex flex-row items-center justify-center rounded-full bg-slate-300/40 dark:bg-slate-700/40 hover:bg-slate-300/80 dark:hover:bg-slate-700/80 text-slate-500 dark:text-slate-300"
+          className="relative overflow-clip transition-colors duration-300 w-10 h-10 hidden sm:flex flex-row items-center justify-center rounded-full bg-slate-300/40 dark:bg-slate-700/40 hover:bg-slate-300/80 dark:hover:bg-slate-700/80 text-slate-500 dark:text-slate-400"
         >
-          <IoPerson size={24} />
+          <FiUser size={20} />
         </Link>
       </div>
     </div>
