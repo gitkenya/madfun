@@ -35,7 +35,7 @@ export default function Slider(props: any) {
     <section className="relative w-full bg-slate-100">
       <div className="relative w-full h-[300px] sm:h-[calc(100vh-200px)] bg-slate-800 z-20">
         <div className="absolute flex flex-col items-center justify-center w-full h-full top-0 left-0 z-20 bg-gradient-to-b from-slate-900/60 via-slate-900/20 to-slate-900/10">
-          <div className="w-full px-4 max-w-[85rem] mx-auto hidden sm:flex flex-col items-center justify-end sm:justify-center">
+          <div className="w-full max-w-[85rem] mx-auto hidden sm:flex flex-col items-center justify-end sm:justify-center">
             <div className="block w-full max-w-[70rem] rounded-lg text-slate-600 ">
               <SearchBar
                 flight_types={flight_types}
@@ -95,7 +95,7 @@ export default function Slider(props: any) {
 
       {/* Bottom div to overlap the top div */}
       <div className="relative z-50 -mt-12 w-[94%] mx-auto rounded sm:hidden">
-        <div className="w-full px-4 max-w-[85rem] mx-auto flex bg-white rounded-lg shadow flex-col items-center justify-end sm:justify-center">
+        <div className="w-full max-w-[85rem] mx-auto flex bg-white rounded-lg shadow flex-col items-center justify-end sm:justify-center">
           <div className="block w-full max-w-[70rem] rounded-lg text-slate-600">
             <SearchBar
               flight_types={flight_types}

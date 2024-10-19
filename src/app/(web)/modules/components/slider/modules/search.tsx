@@ -73,7 +73,11 @@ export default function SearchBar(props: any) {
     }
   };
   return (
-    <TabGroup selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+    <TabGroup
+      selectedIndex={selectedIndex}
+      onChange={setSelectedIndex}
+      className={`p-0`}
+    >
       <TabList className={`flex flex-row justify-between sm:justify-start`}>
         <Tab
           className={`px-3 sm:px-6 py-2 w-full sm:w-auto sm:py-3 text-sm sm:text-base rounded-tl-lg bg-slate-200 sm:bg-transparent data-[selected]:bg-white/80 data-[selected]:text-slate-800 text-slate-700 sm:text-white data-[selected]:font-medium font-medium data-[selected]:rounded-t-lg data-[selected]:focus:outline-none data-[selected]:outline-none data-[selected]:hover:outline-none outline-none focus:outline-none hover:outline-none`}

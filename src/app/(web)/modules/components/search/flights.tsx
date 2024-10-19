@@ -234,79 +234,83 @@ export default function FlightSearch(props: any) {
             </div>
           </div>
         </div>
-        <div className="grid">
-          <label className="flex flex-row justify-center items-center uppercase text-slate-400 text-sm">
-            Departure
-          </label>
 
-          <div className="relative border border-slate-200 rounded-lg">
-            <DatePicker
-              id="departure-input"
-              selected={departureDate}
-              minDate={new Date()}
-              onChange={(date) => {
-                setDepartureDate(date); // Update departureDate first
+        <div className="sm:col-span-2 grid grid-cols-2 gap-3">
+          <div className="grid">
+            <label className="flex flex-row justify-center items-center uppercase text-slate-400 text-sm">
+              Departure
+            </label>
 
-                if (date && returnDate) {
-                  if (returnDate > date) {
-                    // Do nothing if returnDate is greater than departureDate
-                    return;
-                  } else if (date >= returnDate) {
-                    // If departureDate is equal or greater than returnDate, add 1 day to returnDate
-                    setReturnDate(
-                      new Date(new Date(date).setDate(date.getDate() + 1))
-                    );
+            <div className="relative border border-slate-200 rounded-lg">
+              <DatePicker
+                id="departure-input"
+                selected={departureDate}
+                minDate={new Date()}
+                onChange={(date) => {
+                  setDepartureDate(date); // Update departureDate first
+
+                  if (date && returnDate) {
+                    if (returnDate > date) {
+                      // Do nothing if returnDate is greater than departureDate
+                      return;
+                    } else if (date >= returnDate) {
+                      // If departureDate is equal or greater than returnDate, add 1 day to returnDate
+                      setReturnDate(
+                        new Date(new Date(date).setDate(date.getDate() + 1))
+                      );
+                    }
                   }
-                }
-              }}
-              className={`appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none`}
-            />
+                }}
+                className={`appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none`}
+              />
 
-            <label
-              className="absolute top-0 left-0 appearance-none flex items-center justify-center w-full h-full outline-none font-bold text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none"
-              htmlFor="departure-input"
-            >
-              {moment(departureDate).format("D MMM")}
-            </label>
+              <label
+                className="absolute top-0 left-0 appearance-none flex items-center justify-center w-full h-full outline-none font-bold text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none"
+                htmlFor="departure-input"
+              >
+                {moment(departureDate).format("D MMM")}
+              </label>
+            </div>
           </div>
-        </div>
-        <div className="grid">
-          <label className="flex flex-row justify-center items-center uppercase text-slate-400 text-sm">
-            Return
-          </label>
-          <div className="relative border border-slate-200 rounded-lg">
-            <DatePicker
-              id="return-input"
-              selected={returnDate}
-              disabled={selectedFlightType === 1}
-              minDate={
-                departureDate
-                  ? new Date(
-                      new Date(departureDate).setDate(
-                        departureDate.getDate() + 1
+          <div className="grid">
+            <label className="flex flex-row justify-center items-center uppercase text-slate-400 text-sm">
+              Return
+            </label>
+            <div className="relative border border-slate-200 rounded-lg">
+              <DatePicker
+                id="return-input"
+                selected={returnDate}
+                disabled={selectedFlightType === 1}
+                minDate={
+                  departureDate
+                    ? new Date(
+                        new Date(departureDate).setDate(
+                          departureDate.getDate() + 1
+                        )
                       )
-                    )
-                  : new Date()
-              }
-              onChange={(date) => {
-                setReturnDate(date);
-              }}
-              className={`appearance-none flex items-center justify-center w-full h-full outline-none text-base text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none`}
-            />
-            <label
-              className="absolute top-0 left-0 appearance-none flex items-center justify-center w-full h-full outline-none font-bold text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none"
-              htmlFor="return-input"
-            >
-              {returnDate ? (
-                moment(returnDate).format("D MMM")
-              ) : selectedFlightType === 1 ? (
-                <FiMinusCircle size={20} className="text-slate-300" />
-              ) : (
-                <IoAddOutline size={20} />
-              )}
-            </label>
+                    : new Date()
+                }
+                onChange={(date) => {
+                  setReturnDate(date);
+                }}
+                className={`appearance-none flex items-center justify-center w-full h-full outline-none text-base text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none`}
+              />
+              <label
+                className="absolute top-0 left-0 appearance-none flex items-center justify-center w-full h-full outline-none font-bold text-slate-800 bg-white rounded-lg py-2 px-4 focus:outline-none"
+                htmlFor="return-input"
+              >
+                {returnDate ? (
+                  moment(returnDate).format("D MMM")
+                ) : selectedFlightType === 1 ? (
+                  <FiMinusCircle size={20} className="text-slate-300" />
+                ) : (
+                  <IoAddOutline size={20} />
+                )}
+              </label>
+            </div>
           </div>
         </div>
+
         <div className="w-full sm:col-span-2">
           <label className="flex flex-row justify-between items-center uppercase text-slate-400 text-sm">
             Passengers & Class
@@ -336,26 +340,30 @@ export default function FlightSearch(props: any) {
           </div>
         </div>
       </div>
-      <div className="bg-slate-100 rounded-b-lg flex flex-row justify-between">
-        <div className="px-4 py-2 flex flex-row items-center gap-5">
-          <div className="flex flex-row gap-2 items-center py-2 pe-8 border-r border-slate-300">
-            <input
-              id="flight-hotel"
-              type="checkbox"
-              name="flight-hotel"
-              className="checkbox rounded border-slate-800"
-            />
+      <div className="bg-slate-100 rounded-b-lg flex flex-col sm:flex-row justify-between">
+        <div className="px-4 py-2 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
+          <div className="flex flex-row gap-2 items-center py-2 sm:pe-8 sm:border-r sm:border-slate-300">
+            <div>
+              <input
+                id="flight-hotel"
+                type="checkbox"
+                name="flight-hotel"
+                className="checkbox rounded border-slate-800"
+              />
+            </div>
             <label htmlFor="flight-hotel" className="cursor-pointer">
               Flight + Hotel
             </label>
           </div>
-          <div className="flex flex-row gap-2 items-center py-2 px-4 pe-8 border-r border-slate-300">
-            <input
-              id="airport-transfer"
-              type="checkbox"
-              name="airport-transfer"
-              className="checkbox rounded border-slate-800"
-            />
+          <div className="flex flex-row gap-2 justify-start sm:items-center py-2 px-4 sm:pe-8 sm:border-r sm:border-slate-300">
+            <div>
+              <input
+                id="airport-transfer"
+                type="checkbox"
+                name="airport-transfer"
+                className="checkbox rounded border-slate-800"
+              />
+            </div>
             <label htmlFor="airport-transfer" className="cursor-pointer">
               Airport Transfer
             </label>
@@ -385,7 +393,7 @@ export default function FlightSearch(props: any) {
           </div>
         </div>
         <div>
-          <button className="transition-colors duration-300 bg-slate-900 hover:bg-slate-700 text-white px-8 py-3 h-full rounded-br-lg flex flex-row items-center gap-4 font-poppins text-sm">
+          <button className="transition-colors duration-300 w-full sm:w-auto bg-slate-900 hover:bg-slate-700 text-white px-8 py-3 h-full rounded-b-lg sm:rounded-br-lg sm:rounded-bl-none flex flex-row items-center justify-center gap-4 font-poppins text-sm">
             <span>Request Quote</span>
             <span>
               <IoChevronForwardOutline />

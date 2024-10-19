@@ -102,7 +102,7 @@ export default function Navbar(props: any) {
   return (
     <Disclosure
       as="nav"
-      className={`fixed w-full transition-all duration-300 top-0 z-50 ${
+      className={`fixed w-full transition-all duration-300 top-0 z-[60] ${
         pathname === "/"
           ? `bg-gradient-to-b ${
               navmode === "floating"
