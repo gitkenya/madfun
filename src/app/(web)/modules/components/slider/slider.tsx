@@ -5,6 +5,8 @@ import { Autoplay, EffectFade } from "swiper/modules";
 import "swiper/scss";
 import "swiper/scss/effect-fade";
 import SearchBar from "./modules/search";
+import { IoChevronForwardOutline, IoLocationOutline } from "react-icons/io5";
+import Link from "next/link";
 export default function Slider(props: any) {
   const { flight_types, location_types, flight_stops, flight_classes } = props;
   const slides = [
@@ -41,6 +43,22 @@ export default function Slider(props: any) {
                 flight_stops={flight_stops}
                 flight_classes={flight_classes}
               />
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 w-full z-30 bg-gradient-to-b from-transparent via-slate-900/10 to-slate-900/50">
+            <div className="w-full flex flex-row justify-between items-center pt-12 pb-20 px-4 py-2 sm:py-4 max-w-[80rem] mx-auto text-white text-sm sm:text-base">
+              <div className="flex flex-row items-center gap-3 font-poppins">
+                <span>
+                  <IoLocationOutline size={20} />
+                </span>
+                <span className="font-semibold">Malaysia</span>
+              </div>
+              <Link
+                href="/travel/malaysia"
+                className="transition-all duration-300 font-medium flex flex-row items-center gap-2 hover:text-yellow-400"
+              >
+                Book now <IoChevronForwardOutline size={18} />
+              </Link>
             </div>
           </div>
         </div>

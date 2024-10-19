@@ -21,6 +21,7 @@ import FlightSearch from "@/app/(web)/modules/components/search/flights";
 import ReactLoading from "react-loading";
 import { toast } from "sonner";
 import { FiSearch } from "react-icons/fi";
+import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
 
