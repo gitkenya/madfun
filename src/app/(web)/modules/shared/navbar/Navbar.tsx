@@ -186,7 +186,7 @@ export default function Navbar(props: any) {
                             nav.current
                               ? `before:w-full ${
                                   pathname === "/"
-                                    ? "text-white hover:text-yellow-400 before:bg-white"
+                                    ? "text-white hover:text-primary-500 before:bg-white"
                                     : "text-slate-700 hover:text-slate-800 before:bg-slate-800 "
                                 } `
                               : `${
@@ -194,7 +194,7 @@ export default function Navbar(props: any) {
                                     ? `${
                                         navmode === "floating"
                                           ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
-                                          : "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                                          : "text-white hover:text-primary-500 hover:before:w-full before:bg-primary-500"
                                       }`
                                     : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                                 }`
@@ -215,7 +215,7 @@ export default function Navbar(props: any) {
                         ? `${
                             navmode === "floating"
                               ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
-                              : "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                              : "text-white hover:text-primary-500 hover:before:w-full before:bg-primary-500"
                           }`
                         : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                     } px-4 py-2 rounded flex flex-row gap-2 items-center`}
@@ -228,7 +228,7 @@ export default function Navbar(props: any) {
                         ? `${
                             navmode === "floating"
                               ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
-                              : "text-white hover:text-yellow-400 hover:before:w-full before:bg-yellow-400"
+                              : "text-white hover:text-primary-500 hover:before:w-full before:bg-primary-500"
                           }`
                         : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                     } px-4 py-2 rounded flex flex-row gap-2 items-center`}
@@ -360,7 +360,7 @@ export default function Navbar(props: any) {
                 <Link href="/">
                   <DisclosureButton
                     as="span"
-                    className={`flex flex-row gap-2 m-3 items-center justify-center bg-yellow-400 text-slate-800 rounded-md px-3 py-2 text-base font-medium`}
+                    className={`flex flex-row gap-2 m-3 items-center justify-center bg-primary-500 text-slate-800 rounded-md px-3 py-2 text-base font-medium`}
                   >
                     <IoAdd size={18} />
                     Create event

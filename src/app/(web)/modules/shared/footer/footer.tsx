@@ -66,7 +66,7 @@ export default function Footer() {
             </p>
             <Link
               href="/"
-              className="transition-colors duration-300 text-slate-200 hover:text-yellow-400 text-sm font-medium flex flex-row items-center gap-2"
+              className="transition-colors duration-300 text-slate-200 hover:text-primary-500 text-sm font-medium flex flex-row items-center gap-2"
             >
               Read more about us <IoChevronForwardOutline size={20} />
             </Link>

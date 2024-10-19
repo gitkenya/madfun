@@ -122,7 +122,7 @@ export default function RegisterForm(props: any) {
             Already have an account?{" "}
             <Link
               href="/login"
-              className="transition-colors duration-300 font-medium text-yellow-500 hover:text-slate-800 underline"
+              className="transition-colors duration-300 font-medium text-primary-500 hover:text-slate-800 underline"
             >
               Login
             </Link>

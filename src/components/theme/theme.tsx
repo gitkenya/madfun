@@ -28,7 +28,7 @@ export default function DarkModeToggle() {
         <IoSunny
           size={20}
           aria-hidden="true"
-          className="theme-controller text-yellow-400"
+          className="theme-controller text-primary-500"
         />
       )}
       <span className="sr-only">Toggle Theme</span>

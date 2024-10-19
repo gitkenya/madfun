@@ -26,7 +26,7 @@ export default function SearchForm(props: any) {
     <div className="w-full hidden sm:flex flex-col gap-6">
       <h1 className="flex flex-row items-end gap-3 font-poppins text-lg sm:text-4xl font-bold text-white tracking-wider">
         Travel Experiences
-        <IoEllipse size={14} className="text-yellow-400 mb-[0.4rem]" />
+        <IoEllipse size={14} className="text-primary-500 mb-[0.4rem]" />
       </h1>
       <div className="grid grid-cols-3 rounded-lg bg-white">
         <div className="flex flex-row items-center border-r border-slate-200">

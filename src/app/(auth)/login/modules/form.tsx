@@ -30,7 +30,7 @@ export default function LoginForm() {
             No account?{" "}
             <Link
               href="/register"
-              className="transition-colors duration-300 font-medium text-yellow-500 hover:text-slate-800 underline"
+              className="transition-colors duration-300 font-medium text-primary-500 hover:text-slate-800 underline"
             >
               Signup
             </Link>
@@ -119,7 +119,7 @@ export default function LoginForm() {
             <LoginButton />
             <Link
               href="/forgot-password"
-              className="transition-all duration-300 py-2 flex flex-row items-center justify-center text-slate-800 font-medium underline text-center hover:text-yellow-500"
+              className="transition-all duration-300 py-2 flex flex-row items-center justify-center text-slate-800 font-medium underline text-center hover:text-primary-500"
             >
               Forgot Password?
             </Link>

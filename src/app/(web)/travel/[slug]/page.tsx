@@ -143,19 +143,19 @@ export default async function Page({ params }: { params: { slug: string } }) {
               <h3>Price Includes</h3>
               <ul>
                 <li className="flex flex-row items-center gap-2">
-                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  <IoCheckmark size={20} className="text-primary-500" />{" "}
                   Breakfast at the hotel
                 </li>
                 <li className="flex flex-row items-center gap-2">
-                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  <IoCheckmark size={20} className="text-primary-500" />{" "}
                   Breakfast at the hotel
                 </li>
                 <li className="flex flex-row items-center gap-2">
-                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  <IoCheckmark size={20} className="text-primary-500" />{" "}
                   Breakfast at the hotel
                 </li>
                 <li className="flex flex-row items-center gap-2">
-                  <IoCheckmark size={20} className="text-yellow-400" />{" "}
+                  <IoCheckmark size={20} className="text-primary-500" />{" "}
                   Breakfast at the hotel
                 </li>
               </ul>
@@ -199,7 +199,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 1: Departure
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day
@@ -213,7 +213,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 2: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day
@@ -227,7 +227,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 3: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day
@@ -241,7 +241,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 4: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day
@@ -255,7 +255,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 5: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day
@@ -269,7 +269,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 6: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day
@@ -283,7 +283,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
                   Day 7: Kuala Lumpur to Genting and Batu Caves
                 </div>
                 <div className="collapse-content">
-                  <p className="border-l-2 border-yellow-400 ps-2 sm:ps-5">
+                  <p className="border-l-2 border-primary-500 ps-2 sm:ps-5">
                     Pickup at 10:00 am from Singapore, a 5-hour drive to Ibis
                     Hotel Kuala Lumpur. 3:00 pm Check into the hotel for a
                     relaxed evening at your leisure to recharge and await a day

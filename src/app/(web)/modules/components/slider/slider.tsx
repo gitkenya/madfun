@@ -55,7 +55,7 @@ export default function Slider(props: any) {
               </div>
               <Link
                 href="/travel/malaysia"
-                className="transition-all duration-300 font-medium flex flex-row items-center gap-2 hover:text-yellow-400"
+                className="transition-all duration-300 font-medium flex flex-row items-center gap-2 hover:text-primary-500"
               >
                 Book now <IoChevronForwardOutline size={18} />
               </Link>

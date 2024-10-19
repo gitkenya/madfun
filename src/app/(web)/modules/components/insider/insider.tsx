@@ -33,7 +33,7 @@ export default function Insider(props: any) {
     if (cat === "Travel") {
       return "text-green-600";
     } else if (cat === "Events") {
-      return "text-yellow-400";
+      return "text-primary-500";
     } else if (cat === "Streams") {
       return "text-red-600";
     } else {

@@ -83,7 +83,7 @@ export default function ForgotForm() {
           <div className="w-full mt-2 text-sm">
             <Link
               href="/login"
-              className="transition-all duration-300 flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-slate-600 ms-2"
+              className="transition-all duration-300 flex items-center gap-2 text-sm font-medium text-slate-800 hover:text-primary-500 ms-2"
             >
               <IoArrowBack size={16} />
               Back to Login

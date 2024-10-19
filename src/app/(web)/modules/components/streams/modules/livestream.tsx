@@ -26,7 +26,7 @@ export default function LivestreamModal(props: any) {
   return (
     <>
       <button
-        className="transition-colors duration-300 rounded-full flex flex-col gap-2 text-white text-sm hover:text-yellow-400"
+        className="transition-colors duration-300 rounded-full flex flex-col gap-2 text-white text-sm hover:text-primary-500"
         onClick={openModal}
       >
         <IoPlayCircleOutline size={60} className="" />

@@ -133,7 +133,7 @@ export default function Flights(props: any) {
     <div className="w-full max-w-[75rem] hidden sm:flex flex-col gap-4">
       <h1 className="flex flex-row items-end gap-3 font-poppins text-lg sm:text-4xl uppercase font-bold text-white tracking-wider">
         Flights
-        <IoEllipse size={14} className="text-yellow-400 mb-[0.4rem]" />
+        <IoEllipse size={14} className="text-primary-500 mb-[0.4rem]" />
       </h1>
       <div className="flex flex-col rounded-lg shadow-lg">
         <div className="w-full grid grid-cols-1 sm:grid-cols-8 gap-3 rounded-t-lg p-4 bg-white">

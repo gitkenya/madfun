@@ -314,7 +314,7 @@ export default function SearchBar(props: any) {
                               <span className="bg-red-500/20 text-sm font-semibold text-red-600 px-2 py-1 rounded">
                                 {moment(event.start_date).format("D MMM")}
                               </span>
-                              <span className="flex flex-row items-center gap-1 bg-yellow-400 text-xs font-normal text-slate-800 px-2 py-1 rounded">
+                              <span className="flex flex-row items-center gap-1 bg-primary-500 text-xs font-normal text-slate-800 px-2 py-1 rounded">
                                 <IoLocationOutline size={18} /> {event.venue}
                               </span>
                             </p>
