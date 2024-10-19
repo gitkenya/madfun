@@ -16,7 +16,7 @@ export default async function Page() {
         <div className="p-4 w-full sm:w-3/5 min-h-[calc(100vh-64px)]">
           Create Event Form
         </div>
-        <div className="w-full hidden sm:flex flex-col items-center justify-center sm:w-2/5 sm:border-l sm:border-slate-300 dark:border-slate-800">
+        <div className="w-full hidden sm:flex flex-col items-center justify-center sm:w-2/5 sm:border-l sm:border-slate-200 dark:border-slate-800">
           <Mockup />
         </div>
       </div>
