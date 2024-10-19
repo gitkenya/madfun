@@ -50,7 +50,7 @@ export default function Sidebar(props: any) {
     {
       href: "/account/events",
       class: "",
-      label: "Events",
+      label: "Manage Events",
       icon: <IoCalendarOutline size={22} />,
       condition: pathname === "/account/events" || pathname.includes("events"),
     },
