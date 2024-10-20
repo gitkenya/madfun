@@ -6,7 +6,6 @@ import { TfiAlignLeft } from "react-icons/tfi";
 import { RiShareForwardLine } from "react-icons/ri";
 import { usePathname } from "next/navigation";
 import {
-  IoAddOutline,
   IoCloseOutline,
   IoEllipsisVerticalOutline,
   IoNotificationsOutline,
@@ -14,13 +13,13 @@ import {
   IoMailOutline,
   IoCalendarOutline,
   IoInformationCircleOutline,
+  IoGridOutline,
 } from "react-icons/io5";
 import { useRouter } from "next-nprogress-bar";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import signOut from "@/app/(auth)/logout/logout";
 import { GoSignOut } from "react-icons/go";
 import ThemeToggle from "@/components/theme/mode";
-import { BsGrid1X2 } from "react-icons/bs";
 import { CiBullhorn } from "react-icons/ci";
 import { AiOutlineDollar } from "react-icons/ai";
 import ReactLoading from "react-loading";
@@ -45,7 +44,7 @@ export default function Sidebar(props: any) {
       href: "/account",
       class: "",
       label: "Dashboard",
-      icon: <BsGrid1X2 size={20} />,
+      icon: <IoGridOutline size={22} />,
       condition: pathname === "/account",
     },
     {
@@ -214,8 +213,8 @@ export default function Sidebar(props: any) {
 
                   <MenuItems
                     transition
-                    anchor="bottom end"
-                    className="w-64 -mt-2 z-50 origin-top-right rounded border border-slate-900/5 dark:border-white/5  bg-slate-200 dark:bg-slate-800 p-1 text-sm/6 text-gray-700 dark:text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                    anchor="bottom"
+                    className="w-72 -mt-2 z-50 origin-bottom rounded border border-slate-900/5 dark:border-white/5  bg-slate-200 dark:bg-slate-800 p-1 text-sm/6 text-gray-700 dark:text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                   >
                     <MenuItem>
                       <div className="flex flex-col gap-1 px-3 py-1.5">
@@ -306,8 +305,8 @@ export default function Sidebar(props: any) {
             <Menu>
               <MenuButton className="transition-all duration-300 flex flex-row justify-between w-full items-center gap-2 rounded hover:bg-slate-300 dark:hover:bg-slate-800 py-1.5 px-3 text-sm/6 font-semibold text-gray-700 dark:text-gray-300 focus:outline-none data-[hover]:bg-slate-300 dark:data-[hover]:bg-slate-800 data-[open]:bg-slate-300 dark:data-[open]:bg-slate-800">
                 <div className="flex flex-row items-center gap-2">
-                  <div className="flex flex-col items-center justify-center bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-400 w-8 h-8 rounded">
-                    <FiUser size={20} />
+                  <div className="flex flex-col items-center justify-center bg-slate-200 text-slate-600 dark:bg-slate-700 dark:text-slate-400 w-8 h-8 rounded-full">
+                    <FiUser size={18} />
                   </div>
                   {userData?.name}
                 </div>
