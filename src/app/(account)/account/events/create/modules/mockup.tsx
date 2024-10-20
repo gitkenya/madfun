@@ -10,25 +10,25 @@ export default function Mockup(props: any) {
     <div className="mockup-phone bg-slate-300 dark:bg-slate-700 border-slate-400/20 dark:border-slate-600">
       <div className="camera bg-slate-300 dark:bg-slate-700"></div>
       <div className="display bg-slate-100 dark:bg-slate-500">
-        <div className="artboard artboard-demo phone-1 bg-slate-100 dark:bg-slate-800">
+        <div className="artboard artboard-demo phone-1 bg-slate-100 dark:bg-slate-800 p-1.5">
           {hasAnyData ? (
-            <div className="w-full h-full flex flex-col gap-2">
-              <div className="relative w-full h-[240px] bg-slate-200">
+            <div className="w-full h-full flex flex-col">
+              <div className="relative w-full h-[240px] bg-slate-200 dark:bg-slate-700/60 rounded-t-[2.4rem]">
                 {newEventData?.event_poster && (
                   <Image
-                    className="object-cover"
+                    className="object-cover rounded-t-[2.4rem]"
                     src={newEventData.event_poster.value}
                     fill
                     alt="Madfun Event Poster"
                   />
                 )}
               </div>
-              <div className="py-2 px-3">
+              <div className="py-2 px-3 bg-slate-200/50 dark:bg-slate-700/60 h-[calc(100%-240px)] rounded-b-[2.4rem]">
                 <div
                   className={`w-[80%] h-6 flex flex-col justify-center ${
                     newEventData?.event_title
                       ? ""
-                      : "bg-slate-200 dark:bg-slate-700/60"
+                      : "bg-slate-300/60 dark:bg-slate-800/60 animate-pulse"
                   }`}
                 >
                   {newEventData?.event_title && (
@@ -50,16 +50,16 @@ export default function Mockup(props: any) {
                   ) : (
                     <div>
                       <div
-                        className={`w-[30%] h-3 flex justify-center items-center bg-slate-200 dark:bg-slate-700/60 mb-1 animate-pulse`}
+                        className={`w-[30%] h-3 flex justify-center items-center bg-slate-300/60 dark:bg-slate-800/60 mb-1 animate-pulse`}
                       ></div>
                       <div
-                        className={`w-full h-3 flex justify-center items-center bg-slate-200 dark:bg-slate-700/60 mb-1 animate-pulse`}
+                        className={`w-full h-3 flex justify-center items-center bg-slate-300/60 dark:bg-slate-800/60 mb-1 animate-pulse`}
                       ></div>
                       <div
-                        className={`w-[90%] h-3 flex justify-center items-center bg-slate-200 dark:bg-slate-700/60 mb-1 animate-pulse`}
+                        className={`w-[90%] h-3 flex justify-center items-center bg-slate-300/60 dark:bg-slate-800/60 mb-1 animate-pulse`}
                       ></div>
                       <div
-                        className={`w-[60%] h-3 flex justify-center items-center bg-slate-200 dark:bg-slate-700/60 mb-1 animate-pulse`}
+                        className={`w-[60%] h-3 flex justify-center items-center bg-slate-300/60 dark:bg-slate-800/60 mb-1 animate-pulse`}
                       ></div>
                     </div>
                   )}
