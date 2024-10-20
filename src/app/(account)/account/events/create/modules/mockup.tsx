@@ -23,7 +23,7 @@ export default function Mockup(props: any) {
                   />
                 )}
               </div>
-              <div className="py-2 px-3 bg-slate-200/50 dark:bg-slate-700/60 h-[calc(100%-240px)] rounded-b-[2.4rem]">
+              <div className="py-3 px-3 bg-slate-200/50 dark:bg-slate-700/60 h-[calc(100%-240px)] rounded-b-[2.4rem]">
                 {newEventData?.event_title ? (
                   <div className="font-bold text-slate-700 dark:text-slate-400">
                     {newEventData.event_title}
