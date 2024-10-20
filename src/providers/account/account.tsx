@@ -9,11 +9,28 @@ export default function AccountProvider({
   children: React.ReactNode;
 }) {
   const [userData, setUserData] = useState<any>(null);
+  const [newEventData, setNewEventData] = useState<any>({
+    event_poster: "",
+    event_title: "",
+    event_description: "",
+    event_guests: "",
+    event_category: "",
+    event_age: "",
+    event_visibility: "",
+    event_type: "",
+  });
   const [loadingUser, setLoadingUser] = useState(true);
 
   return (
     <AccountContext.Provider
-      value={{ userData, setUserData, loadingUser, setLoadingUser }}
+      value={{
+        userData,
+        setUserData,
+        loadingUser,
+        setLoadingUser,
+        newEventData,
+        setNewEventData,
+      }}
     >
       {children}
     </AccountContext.Provider>

@@ -79,7 +79,7 @@ export default function Step1({ formData, handleChange }: any) {
               Upload an image that represents your event (Aspect ratio 1:1)
             </p>
           </div>
-          <CroppieModal />
+          <CroppieModal handleChange={handleChange} />
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">

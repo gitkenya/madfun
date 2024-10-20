@@ -9,7 +9,7 @@ import { IoCameraOutline } from "react-icons/io5";
 import { FiUpload } from "react-icons/fi";
 
 export default function CroppieModal(props: any) {
-  const { user } = props;
+  const { user, handleChange } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [eventPhoto, setEventPhoto] = useState("");
   const [croppie, setCroppie] = useState<Croppie | null>(null);
@@ -64,6 +64,7 @@ export default function CroppieModal(props: any) {
         .then(async (photo: any) => {
           setIsOpen(false);
           setEventPhoto(photo);
+          handleChange({ name: "event_poster", value: photo });
         });
     } else {
       toast.error("Photo upload failed!", {

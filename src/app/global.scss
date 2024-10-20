@@ -43,3 +43,8 @@
 .dark .radio[aria-checked="true"] {
   @apply shadow-[0_0_0_4px_oklch(0.2_0_0)_inset] text-transparent outline-none;
 }
+
+.artboard.phone-1 {
+  width: 280px;
+  height: 580px;
+}
