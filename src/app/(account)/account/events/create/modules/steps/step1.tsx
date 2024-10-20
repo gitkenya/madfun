@@ -1,5 +1,5 @@
 import React, { useEffect, useId, useState } from "react";
-import { IoChevronDownOutline } from "react-icons/io5";
+import { IoCameraOutline, IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
 
 export default function Step1({ formData, handleChange }: any) {
@@ -85,8 +85,11 @@ export default function Step1({ formData, handleChange }: any) {
           />
           <label
             htmlFor="event_poster"
-            className="w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] border border-slate-300 dark:border-slate-700 rounded-lg"
-          ></label>
+            className="cursor-pointer flex flex-col items-center justify-center gap-3 w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 rounded-lg"
+          >
+            <span>Add Poster</span>
+            <IoCameraOutline size={28} />
+          </label>
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
