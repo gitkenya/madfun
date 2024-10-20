@@ -1,6 +1,7 @@
 import React, { useEffect, useId, useState } from "react";
 import { IoCameraOutline, IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
+import CroppieModal from "./cropper";
 
 export default function Step1({ formData, handleChange }: any) {
   const [loadingCategories, setLoadingCategories] = useState(false);
@@ -77,19 +78,7 @@ export default function Step1({ formData, handleChange }: any) {
               Upload an image that represents your event (Aspect ratio 1:1)
             </p>
           </div>
-          <input
-            type="file"
-            id="event_poster"
-            name="event_poster"
-            className="hidden"
-          />
-          <label
-            htmlFor="event_poster"
-            className="cursor-pointer flex flex-col items-center justify-center gap-3 w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 rounded-lg"
-          >
-            <span>Add Poster</span>
-            <IoCameraOutline size={28} />
-          </label>
+          <CroppieModal />
         </div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
