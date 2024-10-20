@@ -1,9 +1,56 @@
-import React, { useId, useState } from "react";
+import React, { useEffect, useId, useState } from "react";
 import { IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
 
-const Step1 = ({ formData, handleChange }: any) => {
+export default function Step1({ formData, handleChange }: any) {
+  const [loadingCategories, setLoadingCategories] = useState(false);
   const [eventCategories, setEventCategories] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      setLoadingCategories(true);
+      try {
+        const reqData = await fetch(
+          `https://api.v1.interactive.madfun.com/v1/api/event/view/category`,
+          {
+            method: "POST",
+            headers: {
+              accept: "application/json",
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              api_key: "4ba0e1aae090cdefc1887d2689b25e3f",
+              source: "MOBILE",
+              limit: 10,
+            }),
+          }
+        );
+        if (reqData.ok) {
+          const resData = await reqData.json();
+          console.log(resData);
+          if (resData.code === "Success") {
+            const {
+              data: { data },
+            } = resData;
+            //console.log(data);
+            const categories: any[] = data.map((cat: any) => ({
+              value: cat.id,
+              label: cat.desciption,
+            }));
+            setEventCategories(categories); // Set the fetched events
+          }
+        } else {
+          console.error("Failed to fetch events");
+        }
+        setLoadingCategories(false);
+      } catch (error) {
+        console.error("An error occurred while fetching events:", error);
+        setLoadingCategories(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const CustomDropdownIndicator = (props: any) => {
     return (
@@ -27,7 +74,7 @@ const Step1 = ({ formData, handleChange }: any) => {
               Event poster
             </h3>
             <p className="">
-              Upload an image that represents your event (Aspect ratio 4:3)
+              Upload an image that represents your event (Aspect ratio 1:1)
             </p>
           </div>
           <input
@@ -38,7 +85,7 @@ const Step1 = ({ formData, handleChange }: any) => {
           />
           <label
             htmlFor="event_poster"
-            className="w-[280px] h-[180px] border border-slate-300 dark:border-slate-700 rounded-lg"
+            className="w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] border border-slate-300 dark:border-slate-700 rounded-lg"
           ></label>
         </div>
         <div className="flex flex-col gap-4">
@@ -98,7 +145,6 @@ const Step1 = ({ formData, handleChange }: any) => {
           </div>
           <Select
             defaultValue={null}
-            onChange={handleChange}
             options={eventCategories}
             placeholder="Select category"
             unstyled
@@ -217,6 +263,4 @@ const Step1 = ({ formData, handleChange }: any) => {
       </div>
     </div>
   );
-};
-
-export default Step1;
+}
