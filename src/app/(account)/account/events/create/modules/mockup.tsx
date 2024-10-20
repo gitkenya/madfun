@@ -13,7 +13,7 @@ export default function Mockup(props: any) {
         <div className="artboard artboard-demo phone-1 bg-slate-100 dark:bg-slate-800 p-1.5">
           {hasAnyData ? (
             <div className="w-full h-full flex flex-col">
-              <div className="relative w-full h-[240px] bg-slate-200 dark:bg-slate-700/60 rounded-t-[2.4rem]">
+              <div className="relative w-full h-[240px] bg-slate-200 dark:bg-slate-700/20 rounded-t-[2.4rem]">
                 {newEventData?.event_poster && (
                   <Image
                     className="object-cover rounded-t-[2.4rem]"
