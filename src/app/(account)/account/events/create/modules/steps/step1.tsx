@@ -37,6 +37,7 @@ export default function Step1({ formData, handleChange }: any) {
             const categories: any[] = data.map((cat: any) => ({
               value: cat.id,
               label: cat.desciption,
+              name: "event_category",
             }));
             setEventCategories(categories); // Set the fetched events
           }
@@ -138,6 +139,7 @@ export default function Step1({ formData, handleChange }: any) {
           <Select
             defaultValue={null}
             options={eventCategories}
+            onChange={handleChange}
             placeholder="Select category"
             unstyled
             instanceId={useId()}

@@ -27,12 +27,25 @@ export default function CreateEventForm(props: any) {
     setStep((prevStep) => prevStep - 1);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | any) => {
     console.log(e);
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    // Check if the value is an object (e.g., for React Select)
+    const value = e?.target?.value ?? e; // Use e directly for cases where it's an object (like from React Select)
+
+    if (typeof value === "object" && value !== null) {
+      // Handling for Select components or object-based values
+      setFormData({
+        ...formData,
+        [e.name]: value, // Save the whole object (id and value)
+      });
+      console.log(formData);
+    } else {
+      // Handling for standard inputs
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value,
+      });
+    }
   };
 
   const handleSubmit = async () => {
