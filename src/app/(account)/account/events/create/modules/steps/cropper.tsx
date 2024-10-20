@@ -11,7 +11,6 @@ import { FiUpload } from "react-icons/fi";
 export default function CroppieModal(props: any) {
   const { user } = props;
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoading, setLoading] = useState(false);
   const [eventPhoto, setEventPhoto] = useState("");
   const [croppie, setCroppie] = useState<Croppie | null>(null);
 
@@ -45,19 +44,7 @@ export default function CroppieModal(props: any) {
   };
 
   const cancelSubmit = async () => {
-    const inputFile = document.getElementById(
-      "user_profile_photo"
-    ) as HTMLInputElement;
-    inputFile.value = "";
     setIsOpen(false);
-    setLoading(false);
-    toast.error("Photo upload cancelled!", {
-      description:
-        "Your photo upload process has been successfully cancelled. ",
-      position: "bottom-right",
-      icon: " ",
-      duration: 5000,
-    });
   };
 
   const handleSubmit = async () => {
@@ -162,7 +149,6 @@ export default function CroppieModal(props: any) {
                         type="button"
                         className="transition-all duration-300 w-full inline-flex justify-center rounded-bl-lg bg-slate-600 hover:bg-slate-700 px-4 py-2 text-sm font-medium text-slate-50 focus:outline-none"
                         onClick={cancelSubmit}
-                        disabled={isLoading}
                       >
                         Cancel
                       </button>
@@ -170,9 +156,8 @@ export default function CroppieModal(props: any) {
                         type="button"
                         className="transition-all duration-300 w-full inline-flex justify-center items-center gap-3 rounded-br-lg bg-primary-500 px-4 py-2 text-sm font-medium text-slate-800 hover:bg-primary-600 focus:outline-none"
                         onClick={handleSubmit}
-                        disabled={isLoading}
                       >
-                        {isLoading ? "Please wait..." : "Crop Photo"}
+                        Crop Photo
                       </button>
                     </div>
                   </div>
