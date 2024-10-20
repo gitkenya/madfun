@@ -30,7 +30,12 @@ const Step1 = ({ formData, handleChange }: any) => {
               Upload an image that represents your event (Aspect ratio 4:3)
             </p>
           </div>
-          <input type="file" name="event_poster" className="hidden" />
+          <input
+            type="file"
+            id="event_poster"
+            name="event_poster"
+            className="hidden"
+          />
           <label
             htmlFor="event_poster"
             className="w-[280px] h-[180px] border border-slate-300 dark:border-slate-700 rounded-lg"
