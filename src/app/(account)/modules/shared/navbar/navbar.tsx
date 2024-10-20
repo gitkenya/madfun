@@ -43,7 +43,7 @@ export default function Navbar(props: any) {
           <MenuItems
             transition
             anchor="bottom end"
-            className="w-64 mt-4 z-50 origin-top-right rounded border border-slate-900/5 dark:border-white/5  bg-slate-100 dark:bg-slate-800 p-1 text-sm/6 text-gray-700 dark:text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+            className="w-64 mt-4 z-50 origin-top-right rounded shadow-lg border border-slate-900/5 dark:border-white/5  bg-slate-100 dark:bg-slate-800 p-1 text-sm/6 text-gray-700 dark:text-white transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
           >
             <MenuItem>
               <div className="flex flex-col gap-1 px-3 py-1.5">
