@@ -24,19 +24,15 @@ export default function Mockup(props: any) {
                 )}
               </div>
               <div className="py-2 px-3 bg-slate-200/50 dark:bg-slate-700/60 h-[calc(100%-240px)] rounded-b-[2.4rem]">
-                <div
-                  className={`w-[80%] h-6 flex flex-col justify-center ${
-                    newEventData?.event_title
-                      ? ""
-                      : "bg-slate-300/60 dark:bg-slate-800/60 animate-pulse"
-                  }`}
-                >
-                  {newEventData?.event_title && (
-                    <div className="font-bold text-slate-700 dark:text-slate-400 text-lg">
-                      {newEventData.event_title}
-                    </div>
-                  )}
-                </div>
+                {newEventData?.event_title ? (
+                  <div className="font-bold text-slate-700 dark:text-slate-400">
+                    {newEventData.event_title}
+                  </div>
+                ) : (
+                  <div
+                    className={`w-[80%] h-6 flex flex-col justify-center bg-slate-300/60 dark:bg-slate-800/60 animate-pulse`}
+                  ></div>
+                )}
                 <div className="w-[100%] flex flex-col justify-center mt-2">
                   {newEventData?.event_description ? (
                     <div className="text-xs text-slate-700 dark:text-slate-400">
