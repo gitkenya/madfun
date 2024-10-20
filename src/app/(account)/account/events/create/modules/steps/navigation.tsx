@@ -12,13 +12,13 @@ const StepNavigation = ({
     <div className="px-0 py-6 sm:px-6 sm:py-6 flex flex-col sm:flex-row justify-between items-center gap-5">
       {step > 1 ? (
         <button
-          className="flex flex-row justify-center w-full min-w-[200px] bg-slate-50 border border-slate-700 text-slate-800 px-5 py-3 rounded-lg"
+          className="flex flex-row justify-center w-full min-w-[200px] bg-slate-50 dark:bg-transparent border border-slate-700 dark:border-slate-600 text-slate-800 dark:text-slate-400 px-5 py-3 rounded-lg"
           onClick={handlePrevious}
         >
           Previous
         </button>
       ) : (
-        <button className="flex flex-row justify-center w-full min-w-[200px] bg-slate-50 border border-slate-700 text-slate-800 px-5 py-3 rounded-lg">
+        <button className="flex flex-row justify-center w-full min-w-[200px] bg-slate-50 dark:bg-transparent border border-slate-700 dark:border-slate-600 text-slate-800 dark:text-slate-400 px-5 py-3 rounded-lg">
           Clear
         </button>
       )}

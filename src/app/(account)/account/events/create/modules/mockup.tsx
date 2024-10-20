@@ -23,9 +23,9 @@ export default function Mockup(props: any) {
                   />
                 )}
               </div>
-              <div className="p-2">
+              <div className="py-2 px-3">
                 <div
-                  className={`w-[80%] h-6 flex flex-col justify-center px-2 ${
+                  className={`w-[80%] h-6 flex flex-col justify-center ${
                     newEventData?.event_title
                       ? ""
                       : "bg-slate-200 dark:bg-slate-700/60"
@@ -37,7 +37,7 @@ export default function Mockup(props: any) {
                     </div>
                   )}
                 </div>
-                <div className="w-[100%] flex flex-col justify-center px-2 mt-2">
+                <div className="w-[100%] flex flex-col justify-center mt-2">
                   {newEventData?.event_description ? (
                     <div className="text-xs text-slate-700 dark:text-slate-400">
                       <h4 className="font-semibold text-xs">

@@ -148,12 +148,13 @@ export default function Step1({ formData, handleChange }: any) {
             name="event_category"
             classNames={{
               control: () =>
-                "appearance-none flex items-center w-full h-full outline-none bg-slate-50 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg py-3 px-4 focus:outline-none",
+                "appearance-none flex items-center w-full h-full outline-none bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg py-3 px-4 focus:outline-none",
               menu: () =>
-                "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
-              option: () => "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                "p-1 mt-1 border min-w-[200px] left-0 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none",
+              option: () =>
+                "cursor-pointer p-2 hover:bg-slate-100 dark:hover:bg-slate-600 rounded-sm",
               menuList: () => "cursor-pointer text-base",
-              placeholder: () => "text-base text-slate-600",
+              placeholder: () => "text-base text-slate-600 dark:text-slate-500",
               dropdownIndicator: () => "pt-1",
             }}
           />
