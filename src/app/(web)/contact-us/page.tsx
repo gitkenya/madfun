@@ -43,8 +43,8 @@ export default async function Page() {
           <div className="w-full sm:w-2/3">
             <ContactForm ipAddress={ip} geoData={response} />
           </div>
-          <div className="w-full sm:w-1/3 bg-primary-500 rounded-lg sm:rounded-xl p-4 sm:min-h-80 flex flex-col justify-between gap-4 text-slate-800">
-            <div className="flex flex-col gap-3">
+          <div className="w-full sm:w-1/3 bg-primary-500 rounded-lg sm:rounded-xl p-4 sm:min-h-80 flex flex-col justify-between gap-8 text-slate-800">
+            <div className="flex flex-col gap-6">
               <h2 className="font-semibold font-poppins text-lg">
                 Contact information
               </h2>
