@@ -31,11 +31,11 @@ export default async function Page() {
             </p>
             <Link
               href="/account/events/setup"
-              className="flex flex-row justify-center min-w-[240px] bg-slate-50 dark:bg-transparent border border-slate-700 dark:border-slate-600 text-slate-800 dark:text-slate-400 px-5 py-3 rounded-lg"
+              className="transition-all duration-300 flex flex-row justify-center min-w-[240px] bg-white hover:bg-slate-100 dark:bg-transparent dark:hover:border-slate-500 dark:hover:text-slate-300 border border-slate-700 dark:border-slate-600 text-slate-800 dark:text-slate-400 px-5 py-3 rounded-lg"
             >
               Create your event
             </Link>
-            <ul>
+            <ul className="flex flex-col gap-1.5">
               <li className="flex flex-row gap-2 items-center">
                 <IoCheckmarkOutline
                   size={18}
@@ -112,10 +112,10 @@ export default async function Page() {
               Contact us for a custom quote with advanced features and tailored
               support from the Madfun Team
             </p>
-            <button className="flex flex-row justify-center min-w-[240px] bg-slate-800 dark:bg-slate-600 border border-slate-800 text-slate-50 px-5 py-3 rounded-lg">
+            <button className="transition-all duration-300 flex flex-row justify-center min-w-[240px] bg-slate-800 dark:bg-slate-600 dark:hover:bg-slate-500 dark:hover:text-white border border-slate-800 text-slate-50 px-5 py-3 rounded-lg">
               Contact us for a quote
             </button>
-            <ul>
+            <ul className="flex flex-col gap-1.5">
               <li className="flex flex-row gap-2 items-center">
                 <span>
                   <IoCheckmarkOutline
