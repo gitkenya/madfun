@@ -17,21 +17,21 @@ export default async function Page() {
       <Navbar title="Dashboard" user={user} />
       <div className="w-full p-4 flex flex-col gap-4 sm:gap-6">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 px-6">
+          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 sm:py-6 px-6">
             <h2 className="font-bold text-lg sm:text-xl">0</h2>
             <p className="text-slate-500 dark:text-slate-400">Total events</p>
           </div>
-          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 px-6">
+          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 sm:py-6 px-6">
             <h2 className="font-bold text-lg sm:text-xl">0</h2>
             <p className="text-slate-500 dark:text-slate-400">
               Total Tickets sold
             </p>
           </div>
-          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 px-6">
+          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 sm:py-6 px-6">
             <h2 className="font-bold text-lg sm:text-xl">0</h2>
             <p className="text-slate-500 dark:text-slate-400">Total Revenue</p>
           </div>
-          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 px-6">
+          <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col gap-2 py-4 sm:py-6 px-6">
             <h2 className="font-bold text-lg sm:text-xl">0</h2>
             <p className="text-slate-500 dark:text-slate-400">
               Available for withdrawal
