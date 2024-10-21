@@ -39,7 +39,6 @@ export default function Events(props: any) {
             const {
               data: { data },
             } = resData;
-            console.log(data);
             const filteredEvents = data
               .filter(
                 (event: any) => event.isPublic === "1" && event.status === "1"
