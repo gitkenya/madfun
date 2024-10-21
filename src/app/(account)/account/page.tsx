@@ -43,9 +43,11 @@ export default async function Page() {
           <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col items-center justify-between gap-5 py-4 sm:py-6 px-6">
             <h2 className="font-bold text-lg sm:text-xl pb-3">Recent events</h2>
             <div className="flex flex-col items-center justify-center gap-5">
-              <IoCalendarOutline
-                size={80}
-                className="text-slate-400 dark:text-slate-600"
+              <Image
+                src="/assets/img/icons/account/events.png"
+                width={120}
+                height={120}
+                alt="Create Event"
               />
               <h3 className="font-semibold sm:text-lg">
                 No events created yet
