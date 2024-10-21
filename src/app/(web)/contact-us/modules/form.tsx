@@ -47,8 +47,29 @@ export default function ContactForm(props: any) {
         ref={ref}
         className="form"
         action={async (formData) => {
+          const fPhone = async (field: string) => {
+            const res = field.replace(/\s/g, "");
+            return res;
+          };
+          // Input Validation
           const email = formData.get("contact_email") as string;
-          if (validator.isEmail(email)) {
+          const phone = await fPhone(formData.get("contact_phone") as string);
+          if (!validator.isEmail(email)) {
+            toast.error("Invalid Email Address", {
+              description: "Please enter a correct email address and try again",
+              position: "bottom-right",
+              icon: " ",
+              duration: 5000,
+            });
+          } else if (phone.length < 13) {
+            toast.error("Invalid Phone Number!", {
+              description:
+                "Please ensure that you typed your phone number correctly and try again.",
+              position: "bottom-right",
+              icon: " ",
+              duration: 5000,
+            });
+          } else {
             const res = await sendMessage(formData, ipData);
             console.log(res);
             if (res.success) {
@@ -102,14 +123,6 @@ export default function ContactForm(props: any) {
                 );
               }
             }
-          } else {
-            toast.error("Invalid email address!", {
-              description:
-                "Please check and enter a valid email address then resend your message!.",
-              position: "bottom-right",
-              icon: " ",
-              duration: 5000,
-            });
           }
         }}
       >
