@@ -123,7 +123,7 @@ export default function ContactForm(props: any) {
             </label>
             <input
               type="text"
-              className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
+              className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
               id="contact_name_id"
               name="contact_name"
               placeholder="Jane Doe"
@@ -141,7 +141,7 @@ export default function ContactForm(props: any) {
             </label>
             <input
               type="email"
-              className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
+              className="appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
               id="contact_email_id"
               name="contact_email"
               placeholder="jane@example.com"
@@ -168,7 +168,7 @@ export default function ContactForm(props: any) {
                 id: "contact_phone_id",
                 name: "contact_phone",
                 className:
-                  "appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-50 rounded rounded-s-none py-3 px-4 focus:outline-none",
+                  "appearance-none block w-full outline-none text-sm border border-slate-200 text-slate-800 bg-slate-50 rounded rounded-s-none py-3 px-4 focus:outline-none",
                 required: true,
                 autoFocus: false,
                 placeholder: "712 345 678",
@@ -188,7 +188,7 @@ export default function ContactForm(props: any) {
               <textarea
                 name="contact_message"
                 id="contact_message_id"
-                className="appearance-none block w-full outline-none text-sm min-h-32 border border-slate-300 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
+                className="appearance-none block w-full outline-none text-sm min-h-32 border border-slate-200 text-slate-800 bg-slate-50 rounded py-3 px-4 focus:outline-none"
                 placeholder="Type your message..."
                 required
               />
