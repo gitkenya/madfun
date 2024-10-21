@@ -105,7 +105,7 @@ export default function CreateEventForm(props: any) {
               >
                 <button
                   onClick={closeDrawer}
-                  className="absolute top-0 right-0 m-4 w-8 h-8 flex flex-row items-center justify-center bg-slate-300 text-slate-500 dark:bg-slate-700 rounded-full"
+                  className="absolute top-0 right-0 m-4 w-8 h-8 flex flex-row items-center justify-center bg-slate-200 text-slate-600 dark:text-slate-300 dark:bg-slate-700/40 rounded-full"
                 >
                   <IoCloseOutline size={20} />
                 </button>
@@ -125,7 +125,7 @@ export default function CreateEventForm(props: any) {
                         <Datepicker
                           primaryColor={"red"}
                           inputClassName={`appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none`}
-                          toggleClassName="absolute bg-slate-200 dark:bg-slate-700 rounded-r-lg text-slate-600 dark:text-slate-300 right-0 top-0 h-full px-3 text-gray-400 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
+                          toggleClassName="absolute rounded-r-lg text-slate-600 dark:text-slate-300 right-0 top-0 h-full px-3 text-gray-400 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
                           useRange={false}
                           asSingle={true}
                           value={eventDate}
