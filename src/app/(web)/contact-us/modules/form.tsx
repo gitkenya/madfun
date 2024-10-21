@@ -116,14 +116,14 @@ export default function ContactForm(props: any) {
         <div className="grid grid-cols-1 gap-3">
           <div className="grid mb-3">
             <label
-              className="block uppercase tracking-wide text-slate-800 dark:text-slate-200 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-slate-800 text-xs font-bold mb-2"
               htmlFor="contact_name_id"
             >
               Your Full Name
             </label>
             <input
               type="text"
-              className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 rounded py-3 px-4 focus:outline-none"
+              className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 rounded py-3 px-4 focus:outline-none"
               id="contact_name_id"
               name="contact_name"
               placeholder="Jane Doe"
@@ -134,14 +134,14 @@ export default function ContactForm(props: any) {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="relative grid">
             <label
-              className="flex items-center justify-between tracking-wide text-slate-800 dark:text-slate-200 text-xs font-bold mb-2"
+              className="flex items-center justify-between tracking-wide text-slate-800 text-xs font-bold mb-2"
               htmlFor="contact_email_id"
             >
               <span className="uppercase">Your Email</span>
             </label>
             <input
               type="email"
-              className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 rounded py-3 px-4 focus:outline-none"
+              className="appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 rounded py-3 px-4 focus:outline-none"
               id="contact_email_id"
               name="contact_email"
               placeholder="jane@example.com"
@@ -151,7 +151,7 @@ export default function ContactForm(props: any) {
           </div>
           <div className="grid">
             <label
-              className="block uppercase tracking-wide text-slate-800 dark:text-slate-200 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-slate-800 text-xs font-bold mb-2"
               htmlFor="contact_phone_id"
             >
               Phone Number
@@ -168,7 +168,7 @@ export default function ContactForm(props: any) {
                 id: "contact_phone_id",
                 name: "contact_phone",
                 className:
-                  "appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 rounded rounded-s-none py-3 px-4 focus:outline-none",
+                  "appearance-none block w-full outline-none text-sm border border-slate-300 text-slate-800 bg-slate-100 rounded rounded-s-none py-3 px-4 focus:outline-none",
                 required: true,
                 autoFocus: false,
                 placeholder: "712 345 678",
@@ -179,7 +179,7 @@ export default function ContactForm(props: any) {
         <div className="grid grid-cols-1 gap-3 mt-6">
           <div className="grid relative">
             <label
-              className="block uppercase tracking-wide text-slate-800 dark:text-slate-200 text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-slate-800 text-xs font-bold mb-2"
               htmlFor="contact_message_id"
             >
               Message
@@ -188,7 +188,7 @@ export default function ContactForm(props: any) {
               <textarea
                 name="contact_message"
                 id="contact_message_id"
-                className="appearance-none block w-full outline-none text-sm min-h-32 border border-slate-300 text-slate-800 bg-slate-100 dark:bg-slate-900 dark:text-slate-100 dark:border-slate-700 rounded py-3 px-4 focus:outline-none"
+                className="appearance-none block w-full outline-none text-sm min-h-32 border border-slate-300 text-slate-800 bg-slate-100 rounded py-3 px-4 focus:outline-none"
                 placeholder="Type your message..."
                 required
               />
