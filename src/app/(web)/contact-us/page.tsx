@@ -35,7 +35,7 @@ export default async function Page() {
             Contact us
           </h1>
           <p className="text-slate-600">
-            React out to us for inquiries, support, or to request a custom quote
+            Reach out to us for inquiries, support, or to request a custom quote
             for premium event services
           </p>
         </div>
