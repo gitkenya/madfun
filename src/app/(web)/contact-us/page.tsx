@@ -39,7 +39,7 @@ export default async function Page() {
             for premium event services
           </p>
         </div>
-        <div className="w-full max-w-[60rem] mx-auto p-4 border-2 border-primary-300 bg-slate-50 rounded-xl relative flex flex-col sm:flex-row-reverse gap-4 sm:gap-x-12">
+        <div className="w-full max-w-[60rem] mx-auto p-4  bg-slate-50 rounded-xl relative flex flex-col sm:flex-row-reverse gap-4 sm:gap-x-12">
           <div className="w-full sm:w-2/3">
             <ContactForm ipAddress={ip} geoData={response} />
           </div>
