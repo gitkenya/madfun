@@ -28,7 +28,7 @@ export default async function Page() {
   );
   const response = await geoData.json();
   return (
-    <section className="w-full py-8 bg-slate-100">
+    <section className="w-full py-8 bg-slate-100 min-h-screen">
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 pt-10 sm:pt-12">
         <div className="flex flex-col items-center justify-center text-center max-w-[30rem] mx-auto py-8">
           <h1 className="flex flex-row items-center justify-center gap-3 font-poppins text-lg sm:text-4xl uppercase font-bold text-slate-800 tracking-wider">
