@@ -123,6 +123,11 @@ export default function CreateEventForm(props: any) {
                           Date
                         </label>
                         <Datepicker
+                          minDate={
+                            new Date(
+                              new Date().setDate(new Date().getDate() + 1)
+                            )
+                          }
                           primaryColor={"red"}
                           inputClassName={`appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none`}
                           toggleClassName="absolute rounded-r-lg text-slate-600 dark:text-slate-300 right-0 top-0 h-full px-3 text-gray-400 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
