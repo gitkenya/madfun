@@ -14,6 +14,7 @@ import {
   IoCalendarOutline,
   IoInformationCircleOutline,
   IoGridOutline,
+  IoAddOutline,
 } from "react-icons/io5";
 import { useRouter } from "next-nprogress-bar";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
@@ -180,6 +181,15 @@ export default function Sidebar(props: any) {
                   </div>
                 </div>
                 <nav className="flex flex-col text-slate-600 gap-1 pt-8">
+                  <Link
+                    href={`/account/events/create`}
+                    className="transition-all duration-300 px-4 py-2.5 rounded flex flex-row items-center gap-2 text-sm bg-primary-500 hover:bg-primary-400 text-slate-800 mb-4"
+                  >
+                    <span>
+                      <IoAddOutline size={22} />
+                    </span>{" "}
+                    Create Event
+                  </Link>
                   {links.map((link, index) => (
                     <Link
                       key={index}
@@ -280,6 +290,15 @@ export default function Sidebar(props: any) {
               </div>
             </div>
             <nav className="flex flex-col text-slate-600 gap-1">
+              <Link
+                href={`/account/events/create`}
+                className="transition-all duration-300 px-4 py-2.5 rounded flex flex-row items-center gap-2 text-sm bg-primary-500 hover:bg-primary-400 text-slate-800 mb-4"
+              >
+                <span>
+                  <IoAddOutline size={22} />
+                </span>{" "}
+                Create Event
+              </Link>
               {links.map((link, index) => (
                 <Link
                   key={index}
