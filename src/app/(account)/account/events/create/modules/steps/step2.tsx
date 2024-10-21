@@ -1,14 +1,15 @@
 // components/Step2.tsx
+"use client";
 import React from "react";
 import {
   IoCalendarOutline,
-  IoEllipseOutline,
+  IoCloseCircleOutline,
   IoEllipsisVertical,
   IoLocationOutline,
   IoTimeOutline,
 } from "react-icons/io5";
 
-const Step2 = ({ formData, handleChange }: any) => {
+export default function Step2({ formData, handleChange, handleDrawer }: any) {
   return (
     <div className="text-slate-600 dark:text-slate-300 sm:p-6">
       <h2 className="flex flex-row items-center gap-5 font-semibold text-slate-800 dark:text-slate-300 text-lg sm:text-2xl mb-5">
@@ -29,19 +30,28 @@ const Step2 = ({ formData, handleChange }: any) => {
           </button>
 
           <div className="flex flex-col gap-2">
-            <button className="flex flex-row items-center gap-2">
+            <button
+              className="flex flex-row items-center gap-2"
+              onClick={handleDrawer}
+            >
               <span>
                 <IoCalendarOutline />
               </span>{" "}
               Add date
             </button>
-            <button className="flex flex-row items-center gap-2">
+            <button
+              className="flex flex-row items-center gap-2"
+              onClick={handleDrawer}
+            >
               <span>
                 <IoTimeOutline />
               </span>
               Add time
             </button>
-            <button className="flex flex-row items-center gap-2">
+            <button
+              className="flex flex-row items-center gap-2"
+              onClick={handleDrawer}
+            >
               <span>
                 <IoLocationOutline />
               </span>
@@ -52,6 +62,4 @@ const Step2 = ({ formData, handleChange }: any) => {
       </div>
     </div>
   );
-};
-
-export default Step2;
+}

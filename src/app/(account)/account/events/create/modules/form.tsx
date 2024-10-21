@@ -5,12 +5,15 @@ import Step1 from "./steps/step1";
 import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
 import StepNavigation from "./steps/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { useAccount } from "@/providers/account/account";
+import Mockup from "./mockup";
+import { IoCloseOutline } from "react-icons/io5";
 
 export default function CreateEventForm(props: any) {
   const [step, setStep] = useState(1);
-  const { newEventData, setNewEventData } = useAccount();
-
+  const { newEventData, setNewEventData, openEventDrawer, setOpenEventDrawer } =
+    useAccount();
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
   };
@@ -43,25 +46,70 @@ export default function CreateEventForm(props: any) {
     console.log(newEventData);
   };
 
-  return (
-    <div>
-      {step === 1 && (
-        <Step1 formData={newEventData} handleChange={handleChange} />
-      )}
-      {step === 2 && (
-        <Step2 formData={newEventData} handleChange={handleChange} />
-      )}
-      {step === 3 && (
-        <Step3 formData={newEventData} handleChange={handleChange} />
-      )}
+  const handleDrawer = async () => {
+    setOpenEventDrawer(true);
+  };
+  const closeDrawer = async () => {
+    setOpenEventDrawer(false);
+  };
 
-      <StepNavigation
-        step={step}
-        handleNext={handleNext}
-        handlePrevious={handlePrevious}
-        handleSubmit={handleSubmit}
-        isLastStep={step === 3}
-      />
+  const slideIn = {
+    hidden: { x: "100%" }, // start from the right
+    visible: { x: 0 }, // move to center
+    exit: { x: "100%" }, // slide out to the right
+  };
+
+  return (
+    <div className="w-full h-full flex flex-col sm:flex-row gap-4 sm:gap-6 overflow-x-hidden">
+      <div className="p-4 w-full sm:w-3/5 min-h-[calc(100vh-64px)]">
+        <div>
+          {step === 1 && (
+            <Step1 formData={newEventData} handleChange={handleChange} />
+          )}
+          {step === 2 && (
+            <Step2
+              formData={newEventData}
+              handleChange={handleChange}
+              handleDrawer={handleDrawer}
+            />
+          )}
+          {step === 3 && (
+            <Step3 formData={newEventData} handleChange={handleChange} />
+          )}
+
+          <StepNavigation
+            step={step}
+            handleNext={handleNext}
+            handlePrevious={handlePrevious}
+            handleSubmit={handleSubmit}
+            isLastStep={step === 3}
+          />
+        </div>
+      </div>
+      <div className="w-full sticky top-[64px] h-[calc(100vh-64px)] hidden sm:flex flex-col items-center justify-center sm:w-2/5 sm:border-l sm:border-slate-200 dark:border-slate-800">
+        <div className="w-full h-full relative sm:flex flex-col items-center justify-center">
+          <AnimatePresence>
+            {openEventDrawer && (
+              <motion.div
+                className="absolute w-full h-full bg-slate-100 z-50"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={slideIn}
+                transition={{ duration: 0.2 }} // Adjust speed here
+              >
+                <button
+                  onClick={closeDrawer}
+                  className="absolute top-0 right-0 m-4 w-8 h-8 flex flex-row items-center justify-center bg-slate-300 text-slate-500 dark:bg-slate-700 rounded-full"
+                >
+                  <IoCloseOutline size={20} />
+                </button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <Mockup />
+        </div>
+      </div>
     </div>
   );
 }

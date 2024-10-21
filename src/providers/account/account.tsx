@@ -9,6 +9,7 @@ export default function AccountProvider({
   children: React.ReactNode;
 }) {
   const [userData, setUserData] = useState<any>(null);
+  const [openEventDrawer, setOpenEventDrawer] = useState(false);
   const [newEventData, setNewEventData] = useState<any>({
     event_poster: "",
     event_title: "",
@@ -30,6 +31,8 @@ export default function AccountProvider({
         setLoadingUser,
         newEventData,
         setNewEventData,
+        openEventDrawer,
+        setOpenEventDrawer,
       }}
     >
       {children}
