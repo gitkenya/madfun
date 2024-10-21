@@ -52,7 +52,7 @@ export default async function Page() {
               </h3>
               <Link
                 href="/account/events/create"
-                className="border border-slate-700 dark:border-slate-500 text-slate-700 dark:text-slate-400 px-5 py-2 rounded-lg flex flex-row items-center justify-center"
+                className="transition-all duration-300 border border-slate-700 dark:border-slate-500 text-slate-700 hover:bg-slate-300 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:hover:text-slate-200 px-5 py-2 rounded-lg flex flex-row items-center justify-center"
               >
                 Create event
               </Link>
@@ -82,14 +82,14 @@ export default async function Page() {
           <div className="text-slate-600 dark:text-slate-300 rounded-lg grid grid-cols-2 gap-2 sm:gap-5">
             <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col items-center justify-between gap-2 py-4 px-6">
               <h2 className="font-bold text-lg sm:text-xl">Gender</h2>
-              <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full border-[20px] border-slate-200 flex flex-row items-center justify-center"></div>
+              <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full border-[20px] border-slate-200 dark:border-slate-700 flex flex-row items-center justify-center"></div>
               <span className="px-4 py-1.5 border text-slate-400 border-slate-300 dark:border-slate-700 dark:text-slate-600 rounded text-sm">
                 No data
               </span>
             </div>
             <div className="border border-slate-300/50 bg-white dark:bg-slate-800/50 dark:border-slate-700/50 text-slate-600 dark:text-slate-300 rounded-lg flex flex-col items-center justify-between gap-2 py-4 px-6">
               <h2 className="font-bold text-lg sm:text-xl">Age group</h2>
-              <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-slate-200 flex flex-row items-center justify-center"></div>
+              <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-slate-200 dark:bg-slate-700 flex flex-row items-center justify-center"></div>
               <span className="px-4 py-1.5 border text-slate-400 border-slate-300 dark:border-slate-700 dark:text-slate-600 rounded text-sm">
                 No data
               </span>
