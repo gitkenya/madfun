@@ -209,16 +209,25 @@ export default function Navbar(props: any) {
                 </div>
                 <div className="hidden sm:flex items-center gap-5">
                   <Link
-                    href="/"
+                    href="/contact-us"
                     className={`relative transition-all duration-300 before:transition-all before:ease-in-out before:duration-300 hover:before:w-full before:absolute before:-bottom-3 before:left-0 before:w-0 before:h-0.5 ${
-                      pathname === "/"
-                        ? `${
-                            navmode === "floating"
-                              ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
-                              : "text-white hover:text-primary-500 hover:before:w-full before:bg-primary-500"
+                      pathname.includes("contact-us")
+                        ? `before:w-full ${
+                            pathname === "/"
+                              ? "text-white hover:text-primary-500 before:bg-white"
+                              : "text-slate-700 hover:text-slate-800 before:bg-slate-800 "
+                          } `
+                        : `${
+                            pathname === "/"
+                              ? `${
+                                  navmode === "floating"
+                                    ? "text-slate-800 hover:text-slate-700 hover:before:w-full before:bg-slate-800"
+                                    : "text-white hover:text-primary-500 hover:before:w-full before:bg-primary-500"
+                                }`
+                              : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
                           }`
-                        : "text-slate-700 hover:text-slate-800 hover:before:w-full before:bg-slate-800"
-                    } px-4 py-2 rounded flex flex-row gap-2 items-center`}
+                    } rounded px-4 py-2 font-normal flex flex-row items-center gap-2
+                  `}
                   >
                     Contact us
                   </Link>
