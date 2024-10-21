@@ -15,7 +15,7 @@ export default async function Page() {
       <Navbar title="Create Event" user={user} />
       <div className="flex flex-col items-center justify-center w-full sm:min-h-[calc(100vh-64px)]">
         <div className="p-4 w-full max-w-[60rem] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-          <div className="flex flex-col gap-4 items-center justify-start px-4 py-6 sm:px-6 sm:py-12 text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg sm:rounded-xl">
+          <div className="flex flex-col gap-4 items-center justify-start p-4 sm:p-8 sm:px-12 text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg sm:rounded-xl">
             <h2 className="font-bold text-slate-700 dark:text-slate-200 text-lg">
               Essentials
             </h2>
@@ -25,7 +25,7 @@ export default async function Page() {
                 Fee on Ticket Price
               </span>
             </h3>
-            <p className="text-center">
+            <p className="text-center text-sm">
               Get started by creating and managing your events with basic tools
               on our platform
             </p>
@@ -101,14 +101,14 @@ export default async function Page() {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col gap-4 items-center justify-start px-4 py-6 sm:px-6 sm:py-12 text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg sm:rounded-xl">
+          <div className="flex flex-col gap-4 items-center justify-start p-4 sm:p-8 sm:px-12 text-slate-400 dark:text-slate-400 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg sm:rounded-xl">
             <h2 className="font-bold text-slate-700 dark:text-slate-200 text-lg">
               Premium
             </h2>
             <h3 className="flex flex-row items-end gap-2 text-slate-700 dark:text-slate-200">
               <span className="text-2xl font-bold">Let's Talk</span>
             </h3>
-            <p className="text-center">
+            <p className="text-center text-sm">
               Contact us for a custom quote with advanced features and tailored
               support from the Madfun Team
             </p>
