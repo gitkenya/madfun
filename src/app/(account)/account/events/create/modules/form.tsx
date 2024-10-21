@@ -47,7 +47,7 @@ export default function CreateEventForm(props: any) {
   };
 
   const handleDrawer = async () => {
-    setOpenEventDrawer(true);
+    setOpenEventDrawer(!openEventDrawer);
   };
   const closeDrawer = async () => {
     setOpenEventDrawer(false);
