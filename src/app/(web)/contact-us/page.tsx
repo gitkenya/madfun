@@ -5,6 +5,14 @@ import {
   IoMailOutline,
 } from "react-icons/io5";
 import ContactForm from "./modules/form";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTiktok,
+  FaXTwitter,
+} from "react-icons/fa6";
+import Link from "next/link";
 
 export default async function Page() {
   const header = headers();
@@ -62,6 +70,43 @@ export default async function Page() {
                   76738 - 00620 Nairobi
                 </div>
               </div>
+            </div>
+            <div className="flex flex-row gap-2 items-center">
+              <Link
+                href="https://www.linkedin.com/in/wearemadfun/"
+                target="_blank"
+                className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
+              >
+                <FaLinkedinIn />
+              </Link>
+              <Link
+                href="https://www.facebook.com/wearemadfun"
+                target="_blank"
+                className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
+              >
+                <FaFacebookF />
+              </Link>
+              <Link
+                href="https://twitter.com/weare_madfun"
+                target="_blank"
+                className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
+              >
+                <FaXTwitter />
+              </Link>
+              <Link
+                href="https://www.instagram.com/wearemadfun/"
+                target="_blank"
+                className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
+              >
+                <FaInstagram />
+              </Link>
+              <Link
+                href="https://www.tiktok.com/wearemadfun/"
+                target="_blank"
+                className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
+              >
+                <FaTiktok />
+              </Link>
             </div>
           </div>
         </div>
