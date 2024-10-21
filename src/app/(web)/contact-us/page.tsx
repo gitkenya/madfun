@@ -71,20 +71,13 @@ export default async function Page() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row gap-2 items-center">
+            <div className="flex flex-row gap-3 items-center">
               <Link
                 href="https://www.linkedin.com/in/wearemadfun/"
                 target="_blank"
                 className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
               >
                 <FaLinkedinIn />
-              </Link>
-              <Link
-                href="https://www.facebook.com/wearemadfun"
-                target="_blank"
-                className="bg-slate-700 text-yellow-400 w-8 h-8 rounded-full flex flex-row justify-center items-center"
-              >
-                <FaFacebookF />
               </Link>
               <Link
                 href="https://twitter.com/weare_madfun"
