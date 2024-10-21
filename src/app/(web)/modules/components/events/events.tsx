@@ -24,7 +24,7 @@ export default function Events(props: any) {
             body: JSON.stringify({
               api_key: "4ba0e1aae090cdefc1887d2689b25e3f",
               source: "MOBILE",
-              limit: 4,
+              limit: 10,
               page: 1,
               sort: "",
               pastEvent: 0,
@@ -34,13 +34,19 @@ export default function Events(props: any) {
         );
         if (reqData.ok) {
           const resData = await reqData.json();
-          console.log(resData);
+          //console.log(resData);
           if (resData.code === "Success") {
             const {
               data: { data },
             } = resData;
             console.log(data);
-            setEvents(data); // Set the fetched events
+            const filteredEvents = data
+              .filter(
+                (event: any) => event.isPublic === "1" && event.status === "1"
+              )
+              .slice(0, 4); // Limit to first 4 results
+
+            setEvents(filteredEvents);
           }
         } else {
           console.error("Failed to fetch events");
