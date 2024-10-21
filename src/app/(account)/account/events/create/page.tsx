@@ -30,7 +30,7 @@ export default async function Page() {
               on our platform
             </p>
             <Link
-              href="/account/events/setup"
+              href="/account/events/editor"
               className="transition-all duration-300 flex flex-row justify-center min-w-[240px] bg-white hover:bg-slate-100 dark:bg-transparent dark:hover:border-slate-500 dark:hover:text-slate-300 border border-slate-700 dark:border-slate-600 text-slate-800 dark:text-slate-400 px-5 py-3 rounded-lg"
             >
               Create your event
