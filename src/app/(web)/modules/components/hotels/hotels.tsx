@@ -184,7 +184,9 @@ export default function Hotels(props: any) {
                                   </div>
                                 </div>
                                 <div className="flex flex-row items-center gap-1.5">
-                                  <span>from Ksh.</span>
+                                  <span>
+                                    <span className="sm:hidden">From</span> Ksh.
+                                  </span>
                                   <span className="line-clamp-1">
                                     {hotel.price}
                                   </span>
