@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useState } from "react";
 import Step1 from "./steps/step1";
 import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
@@ -8,11 +8,16 @@ import StepNavigation from "./steps/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAccount } from "@/providers/account/account";
 import Mockup from "./mockup";
-import { IoCloseOutline } from "react-icons/io5";
+import { IoChevronDownOutline, IoCloseOutline } from "react-icons/io5";
 import Datepicker from "react-tailwindcss-datepicker";
+import Select, { components } from "react-select";
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 
 export default function CreateEventForm(props: any) {
   const [step, setStep] = useState(1);
+  const [timeSlots, setTimeSlots] = useState<any[]>([]);
+  const [startSlot, setStartSlot] = useState(null);
+  const [timeZones, setTimeZones] = useState<any[]>([]);
   const { newEventData, setNewEventData, openEventDrawer, setOpenEventDrawer } =
     useAccount();
   const [eventDate, setEventDate] = useState<any>({
@@ -64,6 +69,43 @@ export default function CreateEventForm(props: any) {
     exit: { x: "100%" }, // slide out to the right
   };
 
+  const CustomDropdownIndicator = (props: any) => {
+    return (
+      <components.DropdownIndicator {...props}>
+        <IoChevronDownOutline />
+      </components.DropdownIndicator>
+    );
+  };
+
+  const handleStartSlotChange = (event: any) => {
+    setStartSlot(event.value);
+  };
+
+  useEffect(() => {
+    const fetchZones = async () => {
+      try {
+        const reqData = await fetch(
+          `https://timeapi.io/api/timezone/availabletimezones`
+        );
+        if (reqData.ok) {
+          const resData = await reqData.json();
+          const newZones: any[] = resData.map((zone: any, index: number) => ({
+            value: zone.toString(),
+            label: zone,
+          }));
+          console.log(newZones);
+          setTimeZones(newZones);
+        } else {
+          console.error("Failed to fetch events");
+        }
+      } catch (error) {
+        console.error("An error occurred while fetching events:", error);
+      }
+    };
+
+    fetchZones();
+  }, []);
+
   return (
     <div className="w-full h-[calc(100vh-64px)] flex flex-col sm:flex-row gap-4 sm:gap-6 overflow-x-hidden">
       <div className="p-4 w-full sm:w-3/5 min-h-[calc(100vh-64px)]">
@@ -110,40 +152,163 @@ export default function CreateEventForm(props: any) {
                   <IoCloseOutline size={20} />
                 </button>
                 <div className="w-full h-full text-slate-600 dark:text-slate-300  pt-12">
-                  <div className="px-6">
-                    <h2 className="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-5">
-                      Add event date & time
-                    </h2>
-                    <div className="flex flex-col gap-4">
-                      <div className="flex flex-col gap-1">
+                  <div className="px-6 flex flex-col gap-3">
+                    <div>
+                      <h2 className="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-5">
+                        Add event date & time
+                      </h2>
+                      <div className="flex flex-col gap-4">
+                        <div className="flex flex-col gap-1">
+                          <label
+                            htmlFor="event_date"
+                            className="uppercase text-sm text-slate-600 dark:text-slate-300"
+                          >
+                            Date
+                          </label>
+                          <Datepicker
+                            minDate={
+                              new Date(
+                                new Date().setDate(new Date().getDate() + 1)
+                              )
+                            }
+                            primaryColor={"red"}
+                            inputClassName={`appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none`}
+                            toggleClassName="absolute rounded-r-lg text-slate-600 dark:text-slate-300 right-0 top-0 h-full px-3 text-gray-400 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
+                            useRange={false}
+                            asSingle={true}
+                            value={eventDate}
+                            displayFormat="DD-MM-YYYY"
+                            onChange={(newDate) => setEventDate(newDate)}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-5">
+                      <div className="grid">
                         <label
-                          htmlFor="event_date"
-                          className="uppercase text-sm text-slate-600 dark:text-slate-300"
+                          className="block uppercase tracking-wide text-slate-800 text-sm mb-2"
+                          htmlFor="event_start_time"
                         >
-                          Date
+                          Start Time
                         </label>
-                        <Datepicker
-                          minDate={
-                            new Date(
-                              new Date().setDate(new Date().getDate() + 1)
-                            )
-                          }
-                          primaryColor={"red"}
-                          inputClassName={`appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none`}
-                          toggleClassName="absolute rounded-r-lg text-slate-600 dark:text-slate-300 right-0 top-0 h-full px-3 text-gray-400 focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed"
-                          useRange={false}
-                          asSingle={true}
-                          value={eventDate}
-                          displayFormat="DD-MM-YYYY"
-                          onChange={(newDate) => setEventDate(newDate)}
+                        <Select
+                          defaultValue={startSlot}
+                          onChange={handleStartSlotChange}
+                          options={timeSlots}
+                          placeholder="Time"
+                          unstyled
+                          name="event_start_time"
+                          instanceId="event_start_time"
+                          components={{
+                            DropdownIndicator: CustomDropdownIndicator,
+                          }}
+                          className="w-full"
+                          classNames={{
+                            control: () =>
+                              "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
+                            menu: () =>
+                              "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
+                            option: () =>
+                              "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                            menuList: () => "cursor-pointer text-base",
+                            placeholder: () => "text-base text-slate-600",
+                            dropdownIndicator: () => "pt-1",
+                          }}
+                        />
+                      </div>
+                      <div className="grid">
+                        <label
+                          className="block uppercase tracking-wide text-slate-800 text-sm mb-2"
+                          htmlFor="event_end_time"
+                        >
+                          End Time
+                        </label>
+                        <Select
+                          defaultValue={startSlot}
+                          onChange={handleStartSlotChange}
+                          options={timeSlots}
+                          placeholder="Time"
+                          unstyled
+                          name="event_end_time"
+                          instanceId="event_end_time"
+                          components={{
+                            DropdownIndicator: CustomDropdownIndicator,
+                          }}
+                          className="w-full"
+                          classNames={{
+                            control: () =>
+                              "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
+                            menu: () =>
+                              "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
+                            option: () =>
+                              "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                            menuList: () => "cursor-pointer text-base",
+                            placeholder: () => "text-base text-slate-600",
+                            dropdownIndicator: () => "pt-1",
+                          }}
                         />
                       </div>
                     </div>
-                  </div>
-
-                  <div className="grid grid-cols-2">
-                    <div>1</div>
-                    <div>2</div>
+                    <div className="grid grid-cols-1 gap-5">
+                      <div className="grid">
+                        <label
+                          className="block uppercase tracking-wide text-slate-800 text-sm mb-2"
+                          htmlFor="event_zone"
+                        >
+                          Timezone
+                        </label>
+                        <Select
+                          defaultValue={startSlot}
+                          onChange={handleStartSlotChange}
+                          options={timeZones}
+                          placeholder="Timezone"
+                          unstyled
+                          name="event_zone"
+                          instanceId="event_zone"
+                          components={{
+                            DropdownIndicator: CustomDropdownIndicator,
+                          }}
+                          className="w-full"
+                          classNames={{
+                            control: () =>
+                              "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
+                            menu: () =>
+                              "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
+                            option: () =>
+                              "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
+                            menuList: () => "cursor-pointer text-base",
+                            placeholder: () => "text-base text-slate-600",
+                            dropdownIndicator: () => "pt-1",
+                          }}
+                        />
+                      </div>
+                      <div className="flex flex-col">
+                        <TabGroup>
+                          <TabList className="flex flex-row justify-between gap-2 bg-slate-200 p-2 rounded">
+                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 focus:outline-none data-[selected]:bg-white data-[hover]:bg-white data-[selected]:data-[hover]:bg-white data-[focus]:outline-0 data-[focus]:outline-white">
+                              Physical
+                            </Tab>
+                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 focus:outline-none data-[selected]:bg-white data-[hover]:bg-white data-[selected]:data-[hover]:bg-white data-[focus]:outline-0 data-[focus]:outline-white">
+                              Virtual
+                            </Tab>
+                            <Tab className="transition-all duration-300  rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 focus:outline-none data-[selected]:bg-white data-[hover]:bg-white data-[selected]:data-[hover]:bg-white data-[focus]:outline-0 data-[focus]:outline-white">
+                              Hybrid
+                            </Tab>
+                          </TabList>
+                          <TabPanels className="mt-3">
+                            <TabPanel className="rounded-xl bg-white/5 p-3">
+                              Physical Modules
+                            </TabPanel>
+                            <TabPanel className="rounded-xl bg-white/5 p-3">
+                              Virtual Modules
+                            </TabPanel>
+                            <TabPanel className="rounded-xl bg-white/5 p-3">
+                              Hybrid Modules
+                            </TabPanel>
+                          </TabPanels>
+                        </TabGroup>
+                      </div>
+                    </div>
                   </div>
 
                   <div className="absolute bottom-0 w-full flex flex-row justify-between gap-6 p-4 px-6 bg-slate-50 dark:bg-slate-900">
