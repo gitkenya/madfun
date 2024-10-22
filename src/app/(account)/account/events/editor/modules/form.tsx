@@ -370,6 +370,11 @@ export default function CreateEventForm(props: any) {
                                       mapContainerStyle={mapContainerStyle}
                                       zoom={14}
                                       center={selectedLocation || center}
+                                      options={{
+                                        streetViewControl: false, // This disables the Street View Pegman
+                                        mapTypeControl: false,
+                                        fullscreenControl: false,
+                                      }}
                                     >
                                       {selectedLocation && (
                                         <Marker position={selectedLocation} />
