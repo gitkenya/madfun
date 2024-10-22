@@ -106,9 +106,13 @@ export default function Events(props: any) {
                       </span>
                     </Link>
                     <div className="space-y-2">
-                      <h2 className="font-semibold text-slate-800 text-sm sm:text-lg line-clamp-2">
-                        {event.eventName}
-                      </h2>
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`}
+                      >
+                        <h2 className="font-semibold text-slate-800 text-sm sm:text-lg line-clamp-2">
+                          {event.eventName}
+                        </h2>
+                      </Link>
                       <h3 className="text-sm text-slate-500 flex flex-row items-center gap-2">
                         <span className="">Play</span>
                         <span>
