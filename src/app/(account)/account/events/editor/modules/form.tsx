@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Step1 from "./steps/step1";
 import Step2 from "./steps/step2";
 import Step3 from "./steps/step3";
@@ -12,6 +12,7 @@ import { IoChevronDownOutline, IoCloseOutline } from "react-icons/io5";
 import Datepicker from "react-tailwindcss-datepicker";
 import Select, { components } from "react-select";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 export default function CreateEventForm(props: any) {
   const [step, setStep] = useState(1);
@@ -79,6 +80,40 @@ export default function CreateEventForm(props: any) {
 
   const handleStartSlotChange = (event: any) => {
     setStartSlot(event.value);
+  };
+
+  const libraries = ["places"];
+  const mapContainerStyle = {
+    width: "100%",
+    height: "200px",
+  };
+  const center = {
+    lat: -1.286389, // Default location (Latitude of Nairobi, Kenya)
+    lng: 36.817223, // Default location (Longitude of Nairobi, Kenya)
+  };
+
+  const [selectedLocation, setSelectedLocation] = useState<any>(null);
+  const inputRef = useRef(null);
+
+  const { isLoaded, loadError } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!, // Store API Key in environment variable
+    libraries,
+  });
+
+  const handlePlaceSelect = () => {
+    const autocomplete = new window.google.maps.places.Autocomplete(
+      inputRef.current
+    );
+    autocomplete.setFields(["geometry", "name"]);
+    autocomplete.addListener("place_changed", () => {
+      const place = autocomplete.getPlace();
+      if (place.geometry) {
+        setSelectedLocation({
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng(),
+        });
+      }
+    });
   };
 
   useEffect(() => {
@@ -152,7 +187,7 @@ export default function CreateEventForm(props: any) {
                   <IoCloseOutline size={20} />
                 </button>
                 <div className="w-full h-full text-slate-600 dark:text-slate-300  pt-12">
-                  <div className="px-6 flex flex-col gap-3">
+                  <div className="h-[calc(100vh-120px)] px-6 flex flex-col gap-3 overflow-y-auto pb-20">
                     <div>
                       <h2 className="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-5">
                         Add event date & time
@@ -296,8 +331,27 @@ export default function CreateEventForm(props: any) {
                             </Tab>
                           </TabList>
                           <TabPanels className="mt-3">
-                            <TabPanel className="rounded-xl bg-white/5 p-3">
-                              Physical Modules
+                            <TabPanel className="rounded-xl bg-white/5">
+                              <div className="flex flex-col gap-2">
+                                <input
+                                  ref={inputRef}
+                                  type="text"
+                                  onFocus={handlePlaceSelect}
+                                  placeholder="Search for a place"
+                                  className="appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white py-3 px-4 focus:outline-none"
+                                />
+                                <div className="event_map rounded border border-slate-300 w-full min-h-[200px]">
+                                  <GoogleMap
+                                    mapContainerStyle={mapContainerStyle}
+                                    zoom={14}
+                                    center={selectedLocation || center}
+                                  >
+                                    {selectedLocation && (
+                                      <Marker position={selectedLocation} />
+                                    )}
+                                  </GoogleMap>
+                                </div>
+                              </div>
                             </TabPanel>
                             <TabPanel className="rounded-xl bg-white/5 p-3">
                               Virtual Modules
