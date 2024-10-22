@@ -171,7 +171,7 @@ export default function Hotels(props: any) {
                               <div className="font-poppins font-semibold text-white sm:text-lg">
                                 {hotel.name}
                               </div>
-                              <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
+                              <div className="hidden sm:flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
                                 <div className="flex flex-row items-end gap-2 sm:gap-3 text-white text-sm font-normal">
                                   <div className="flex flex-row items-center gap-1.5">
                                     <span>
