@@ -109,7 +109,7 @@ export default function Events(props: any) {
                       <Link
                         href={`${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`}
                       >
-                        <h2 className="font-semibold text-slate-800 text-sm sm:text-lg line-clamp-2">
+                        <h2 className="transition-colors duration-300 font-semibold text-slate-800 text-sm sm:text-lg line-clamp-2 hover:text-red-500">
                           {event.eventName}
                         </h2>
                       </Link>
