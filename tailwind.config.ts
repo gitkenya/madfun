@@ -36,6 +36,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [daisyui, require("tailwindcss-animate")],
+  plugins: [
+    daisyui,
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar"),
+  ],
 };
 export default config;

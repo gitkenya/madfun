@@ -173,7 +173,7 @@ export default function CreateEventForm(props: any) {
 
   return (
     <div className="w-full h-[calc(100vh-64px)] flex flex-col sm:flex-row gap-4 sm:gap-6 overflow-x-hidden">
-      <div className="p-4 w-full sm:min-w-[68%] min-h-[calc(100vh-64px)]">
+      <div className="p-4 w-full sm:w-[70%] min-h-[calc(100vh-64px)]">
         <div>
           {step === 1 && (
             <Step1 formData={newEventData} handleChange={handleChange} />
@@ -198,7 +198,7 @@ export default function CreateEventForm(props: any) {
           />
         </div>
       </div>
-      <div className="w-full sticky top-0 h-[calc(100vh-64px)] hidden sm:flex flex-col items-center justify-center sm:min-w-[32%] sm:border-l sm:border-slate-200 dark:border-slate-800">
+      <div className="w-full sticky top-0 h-[calc(100vh-64px)] hidden sm:flex flex-col items-center justify-center sm:w-[30%] sm:border-l sm:border-slate-200 dark:border-slate-800">
         <div className="w-full h-full relative sm:flex flex-col items-center justify-center">
           <AnimatePresence>
             {openEventDrawer && (
@@ -217,7 +217,7 @@ export default function CreateEventForm(props: any) {
                   <IoCloseOutline size={20} />
                 </button>
                 <div className="w-full h-full text-slate-600 dark:text-slate-300  pt-12">
-                  <div className="h-[calc(100vh-120px)] px-6 flex flex-col gap-3 overflow-y-auto pb-20">
+                  <div className="h-[calc(100vh-120px)] px-6 flex flex-col gap-3 overflow-y-scroll scrollbar-thin pb-20">
                     <div>
                       <h2 className="text-lg font-semibold text-slate-600 dark:text-slate-300 mb-5">
                         Add event date & time
