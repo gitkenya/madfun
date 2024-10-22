@@ -12,12 +12,20 @@ import { IoChevronDownOutline, IoCloseOutline } from "react-icons/io5";
 import Datepicker from "react-tailwindcss-datepicker";
 import Select, { components } from "react-select";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  Marker,
+  useLoadScript,
+  Libraries,
+} from "@react-google-maps/api";
+import { timezones } from "./data/timezones";
 
 export default function CreateEventForm(props: any) {
   const [step, setStep] = useState(1);
   const [timeSlots, setTimeSlots] = useState<any[]>([]);
   const [startSlot, setStartSlot] = useState(null);
+  const [endSlot, setEndSlot] = useState(null);
+  const [filteredEndSlots, setFilteredEndSlots] = useState<any[]>([]);
   const [timeZones, setTimeZones] = useState<any[]>([]);
   const { newEventData, setNewEventData, openEventDrawer, setOpenEventDrawer } =
     useAccount();
@@ -78,11 +86,21 @@ export default function CreateEventForm(props: any) {
     );
   };
 
-  const handleStartSlotChange = (event: any) => {
-    setStartSlot(event.value);
+  const handleStartSlotChange = (selectedOption: any) => {
+    setStartSlot(selectedOption);
+
+    // Filter end times so that they are after the selected start time
+    const startTime = selectedOption.value;
+    const filtered = timeSlots.filter((slot) => slot.value > startTime);
+    setFilteredEndSlots(filtered);
   };
 
-  const libraries = ["places"];
+  // Handle end time change
+  const handleEndSlotChange = (selectedOption: any) => {
+    setEndSlot(selectedOption);
+  };
+
+  const libraries: Libraries = ["places"];
   const mapContainerStyle = {
     width: "100%",
     height: "200px",
@@ -96,7 +114,7 @@ export default function CreateEventForm(props: any) {
   const inputRef = useRef(null);
 
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!, // Store API Key in environment variable
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string, // Add your API key here
     libraries,
   });
 
@@ -116,29 +134,35 @@ export default function CreateEventForm(props: any) {
     });
   };
 
+  const generateTimeSlots = () => {
+    const slots = [];
+    let time = new Date();
+    time.setHours(0, 0, 0, 0); // Start at midnight
+
+    while (time.getDate() === new Date().getDate()) {
+      const hours = time.getHours().toString().padStart(2, "0");
+      const minutes = time.getMinutes().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}`;
+
+      // Format with value and label
+      slots.push({ value: timeString, label: timeString });
+      time.setMinutes(time.getMinutes() + 15); // Increment by 15 minutes
+    }
+
+    setTimeSlots(slots);
+  };
+
   useEffect(() => {
-    const fetchZones = async () => {
-      try {
-        const reqData = await fetch(
-          `https://timeapi.io/api/timezone/availabletimezones`
-        );
-        if (reqData.ok) {
-          const resData = await reqData.json();
-          const newZones: any[] = resData.map((zone: any, index: number) => ({
-            value: zone.toString(),
-            label: zone,
-          }));
-          console.log(newZones);
-          setTimeZones(newZones);
-        } else {
-          console.error("Failed to fetch events");
-        }
-      } catch (error) {
-        console.error("An error occurred while fetching events:", error);
-      }
+    const loadTimezones = () => {
+      const newZones = timezones.map((zone: any) => ({
+        value: zone.timezone,
+        label: zone.timezone,
+      }));
+      setTimeZones(newZones);
     };
 
-    fetchZones();
+    loadTimezones();
+    generateTimeSlots();
   }, []);
 
   return (
@@ -259,8 +283,8 @@ export default function CreateEventForm(props: any) {
                           End Time
                         </label>
                         <Select
-                          defaultValue={startSlot}
-                          onChange={handleStartSlotChange}
+                          defaultValue={endSlot}
+                          onChange={handleEndSlotChange}
                           options={timeSlots}
                           placeholder="Time"
                           unstyled
@@ -340,16 +364,18 @@ export default function CreateEventForm(props: any) {
                                   placeholder="Search for a place"
                                   className="appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white py-3 px-4 focus:outline-none"
                                 />
-                                <div className="event_map rounded border border-slate-300 w-full min-h-[200px]">
-                                  <GoogleMap
-                                    mapContainerStyle={mapContainerStyle}
-                                    zoom={14}
-                                    center={selectedLocation || center}
-                                  >
-                                    {selectedLocation && (
-                                      <Marker position={selectedLocation} />
-                                    )}
-                                  </GoogleMap>
+                                <div className="event_map rounded border border-slate-300 w-full min-h-[200px] flex flex-col items-center justify-center">
+                                  {isLoaded && (
+                                    <GoogleMap
+                                      mapContainerStyle={mapContainerStyle}
+                                      zoom={14}
+                                      center={selectedLocation || center}
+                                    >
+                                      {selectedLocation && (
+                                        <Marker position={selectedLocation} />
+                                      )}
+                                    </GoogleMap>
+                                  )}
                                 </div>
                               </div>
                             </TabPanel>
