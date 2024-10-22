@@ -14,8 +14,10 @@ export default function Destinations(props: any) {
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
           <div className="flex flex-col gap-4 sm:gap-8 sm:pe-16">
             <div className="font-poppins hidden sm:flex flex-col gap-1 sm:gap-3 text-slate-800">
-              <h2 className="text-lg sm:text-3xl font-bold uppercase">Top</h2>
-              <h2 className="text-lg sm:text-3xl font-bold uppercase">
+              <h2 className="text-lg sm:text-3xl font-bold uppercase text-slate-800">
+                Top
+              </h2>
+              <h2 className="text-lg sm:text-3xl font-bold uppercase text-slate-800">
                 Destinations
               </h2>
             </div>

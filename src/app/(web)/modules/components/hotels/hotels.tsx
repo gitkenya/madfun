@@ -114,10 +114,7 @@ export default function Hotels(props: any) {
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">
         <div className="w-full flex flex-col gap-3 items-center justify-center font-poppins">
           <h2 className="text-lg text-slate-800 sm:text-3xl font-bold uppercase sm:max-w-lg text-center leading">
-            Experience Luxury & Comfort
-          </h2>
-          <h2 className="text-lg text-slate-800 sm:text-3xl font-bold uppercase sm:max-w-lg text-center leading">
-            in our handpicked stays
+            Our Top Picks
           </h2>
         </div>
         <div className="w-full px-2 sm:px-0">
