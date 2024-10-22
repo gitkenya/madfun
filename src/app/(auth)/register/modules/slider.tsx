@@ -14,7 +14,7 @@ export default function Slider() {
     {
       id: "1",
       name: "",
-      photo: "/assets/img/auth/slider/slide-1.jpg",
+      photo: "/assets/img/auth/slider/slide-6.jpg",
     },
     {
       id: "2",

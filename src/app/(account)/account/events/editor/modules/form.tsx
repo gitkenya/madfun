@@ -140,6 +140,12 @@ export default function CreateEventForm(props: any) {
                       </div>
                     </div>
                   </div>
+
+                  <div className="grid grid-cols-2">
+                    <div>1</div>
+                    <div>2</div>
+                  </div>
+
                   <div className="absolute bottom-0 w-full flex flex-row justify-between gap-6 p-4 px-6 bg-slate-50 dark:bg-slate-900">
                     <button className="flex flex-row justify-center w-full bg-slate-50 dark:bg-transparent border border-slate-700 dark:border-slate-600 text-slate-800 dark:text-slate-400 px-4 py-2 rounded-lg">
                       Clear

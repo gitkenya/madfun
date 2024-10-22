@@ -20,10 +20,11 @@ export default function Slider(props: any) {
       name: "",
       photo: "/assets/img/slider/maldives-island.jpg",
     },
+
     {
-      id: "3",
+      id: "2",
       name: "",
-      photo: "/assets/img/slider/hero.jpg",
+      photo: "/assets/img/slider/hero-5.jpg",
     },
     {
       id: "4",
