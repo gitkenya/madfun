@@ -55,7 +55,7 @@ export default function Destinations(props: any) {
                     <div className="font-semibold text-white sm:text-lg font-poppins">
                       {destination.name}
                     </div>
-                    <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
+                    <div className="hidden sm:flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
                       <div className="flex flex-row items-end gap-3">
                         <div className="flex flex-row items-center gap-2">
                           <span>
