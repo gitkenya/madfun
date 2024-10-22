@@ -8,7 +8,11 @@ import StepNavigation from "./steps/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAccount } from "@/providers/account/account";
 import Mockup from "./mockup";
-import { IoChevronDownOutline, IoCloseOutline } from "react-icons/io5";
+import {
+  IoChevronDownOutline,
+  IoCloseOutline,
+  IoLocationOutline,
+} from "react-icons/io5";
 import Datepicker from "react-tailwindcss-datepicker";
 import Select, { components } from "react-select";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
@@ -35,10 +39,12 @@ export default function CreateEventForm(props: any) {
   });
   const handleNext = () => {
     setStep((prevStep) => prevStep + 1);
+    closeDrawer();
   };
 
   const handlePrevious = () => {
     setStep((prevStep) => prevStep - 1);
+    closeDrawer();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement> | any) => {
@@ -167,7 +173,7 @@ export default function CreateEventForm(props: any) {
 
   return (
     <div className="w-full h-[calc(100vh-64px)] flex flex-col sm:flex-row gap-4 sm:gap-6 overflow-x-hidden">
-      <div className="p-4 w-full sm:w-3/5 min-h-[calc(100vh-64px)]">
+      <div className="p-4 w-full sm:min-w-[68%] min-h-[calc(100vh-64px)]">
         <div>
           {step === 1 && (
             <Step1 formData={newEventData} handleChange={handleChange} />
@@ -192,7 +198,7 @@ export default function CreateEventForm(props: any) {
           />
         </div>
       </div>
-      <div className="w-full sticky top-0 h-[calc(100vh-64px)] hidden sm:flex flex-col items-center justify-center sm:w-2/5 sm:border-l sm:border-slate-200 dark:border-slate-800">
+      <div className="w-full sticky top-0 h-[calc(100vh-64px)] hidden sm:flex flex-col items-center justify-center sm:min-w-[32%] sm:border-l sm:border-slate-200 dark:border-slate-800">
         <div className="w-full h-full relative sm:flex flex-col items-center justify-center">
           <AnimatePresence>
             {openEventDrawer && (
@@ -264,13 +270,14 @@ export default function CreateEventForm(props: any) {
                           className="w-full"
                           classNames={{
                             control: () =>
-                              "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
+                              "appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none",
                             menu: () =>
                               "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                             option: () =>
                               "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
                             menuList: () => "cursor-pointer text-base",
-                            placeholder: () => "text-base text-slate-600",
+                            placeholder: () =>
+                              "text-base text-slate-600 dark:text-slate-400",
                             dropdownIndicator: () => "pt-1",
                           }}
                         />
@@ -296,13 +303,14 @@ export default function CreateEventForm(props: any) {
                           className="w-full"
                           classNames={{
                             control: () =>
-                              "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
+                              "appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none",
                             menu: () =>
                               "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                             option: () =>
                               "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
                             menuList: () => "cursor-pointer text-base",
-                            placeholder: () => "text-base text-slate-600",
+                            placeholder: () =>
+                              "text-base text-slate-600 dark:text-slate-400",
                             dropdownIndicator: () => "pt-1",
                           }}
                         />
@@ -330,40 +338,46 @@ export default function CreateEventForm(props: any) {
                           className="w-full"
                           classNames={{
                             control: () =>
-                              "appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none",
+                              "appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-lg py-3 px-4 focus:outline-none",
                             menu: () =>
                               "p-1 mt-1 border min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
                             option: () =>
                               "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
                             menuList: () => "cursor-pointer text-base",
-                            placeholder: () => "text-base text-slate-600",
+                            placeholder: () =>
+                              "text-base text-slate-600 dark:text-slate-400",
                             dropdownIndicator: () => "pt-1",
                           }}
                         />
                       </div>
                       <div className="flex flex-col">
                         <TabGroup>
-                          <TabList className="flex flex-row justify-between gap-2 bg-slate-200 p-2 rounded">
-                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 focus:outline-none data-[selected]:bg-white data-[hover]:bg-white data-[selected]:data-[hover]:bg-white data-[focus]:outline-0 data-[focus]:outline-white">
+                          <TabList className="flex flex-row justify-between gap-2 bg-slate-200 dark:bg-slate-700 p-2 rounded">
+                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 dark:text-white focus:outline-none data-[selected]:bg-white data-[selected]:dark:bg-slate-600 data-[hover]:bg-white dark:data-[hover]:bg-slate-500 data-[selected]:data-[hover]:bg-white data-[selected]:dark:data-[hover]:bg-slate-600 data-[focus]:outline-0 data-[focus]:outline-white">
                               Physical
                             </Tab>
-                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 focus:outline-none data-[selected]:bg-white data-[hover]:bg-white data-[selected]:data-[hover]:bg-white data-[focus]:outline-0 data-[focus]:outline-white">
+                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 dark:text-white focus:outline-none data-[selected]:bg-white data-[selected]:dark:bg-slate-600 data-[hover]:bg-white dark:data-[hover]:bg-slate-500 data-[selected]:data-[hover]:bg-white data-[selected]:dark:data-[hover]:bg-slate-600 data-[focus]:outline-0 data-[focus]:outline-white">
                               Virtual
                             </Tab>
-                            <Tab className="transition-all duration-300  rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 focus:outline-none data-[selected]:bg-white data-[hover]:bg-white data-[selected]:data-[hover]:bg-white data-[focus]:outline-0 data-[focus]:outline-white">
+                            <Tab className="transition-all duration-300 rounded w-full py-1 px-3 text-sm/6 font-normal text-slate-800 dark:text-white focus:outline-none data-[selected]:bg-white data-[selected]:dark:bg-slate-600 data-[hover]:bg-white dark:data-[hover]:bg-slate-500 data-[selected]:data-[hover]:bg-white data-[selected]:dark:data-[hover]:bg-slate-600 data-[focus]:outline-0 data-[focus]:outline-white">
                               Hybrid
                             </Tab>
                           </TabList>
                           <TabPanels className="mt-3">
-                            <TabPanel className="rounded-xl bg-white/5">
-                              <div className="flex flex-col gap-2">
-                                <input
-                                  ref={inputRef}
-                                  type="text"
-                                  onFocus={handlePlaceSelect}
-                                  placeholder="Search for a place"
-                                  className="appearance-none flex items-center w-full h-full outline-none border border-slate-200 rounded sm:rounded-lg text-base text-slate-800 bg-white py-3 px-4 focus:outline-none"
-                                />
+                            <TabPanel className="rounded-xl">
+                              <div className="flex flex-col gap-4">
+                                <div className="relative flex flex-row items-center">
+                                  <div className="w-12 px-4 py-3 flex flex-row items-center justify-center border border-slate-200 dark:border-slate-700 border-e-0 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-s-lg">
+                                    <IoLocationOutline size={20} className="" />
+                                  </div>
+                                  <input
+                                    ref={inputRef}
+                                    type="text"
+                                    onFocus={handlePlaceSelect}
+                                    placeholder="Type event location"
+                                    className="appearance-none relative block w-full outline-none text-sm border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-800 rounded-e-lg py-3 px-4 focus:outline-none"
+                                  />
+                                </div>
                                 <div className="event_map rounded border border-slate-300 w-full min-h-[200px] flex flex-col items-center justify-center">
                                   {isLoaded && (
                                     <GoogleMap
@@ -374,6 +388,7 @@ export default function CreateEventForm(props: any) {
                                         streetViewControl: false, // This disables the Street View Pegman
                                         mapTypeControl: false,
                                         fullscreenControl: false,
+                                        scrollwheel: false,
                                       }}
                                     >
                                       {selectedLocation && (

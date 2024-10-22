@@ -19,6 +19,13 @@ export default function AccountProvider({
     event_age: "",
     event_visibility: "",
     event_type: "",
+    event_date: "",
+    event_start_time: "",
+    event_end_time: "",
+    event_timezone: "",
+    event_location_name: "",
+    event_location_coords: "",
+    event_virtual_link: "",
   });
   const [loadingUser, setLoadingUser] = useState(true);
 
