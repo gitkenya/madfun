@@ -65,7 +65,7 @@ export default function Events(props: any) {
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">
         <div className="w-full flex flex-row items-center justify-center sm:justify-between">
           <h1 className="font-poppins text-slate-800 text-lg sm:text-3xl font-bold uppercase">
-            Exciting Upcoming events
+            Top events
           </h1>
 
           <Link
