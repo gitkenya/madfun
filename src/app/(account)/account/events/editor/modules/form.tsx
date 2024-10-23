@@ -15,14 +15,12 @@ import {
 } from "react-icons/io5";
 import Datepicker from "react-tailwindcss-datepicker";
 import Select, { components } from "react-select";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import {
-  GoogleMap,
-  Marker,
-  useLoadScript,
-  Libraries,
-} from "@react-google-maps/api";
+import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { timezones } from "./data/timezones";
+const libraries: any[] = ["places"];
 
 export default function CreateEventForm(props: any) {
   const [step, setStep] = useState(1);
@@ -31,8 +29,14 @@ export default function CreateEventForm(props: any) {
   const [endSlot, setEndSlot] = useState(null);
   const [filteredEndSlots, setFilteredEndSlots] = useState<any[]>([]);
   const [timeZones, setTimeZones] = useState<any[]>([]);
-  const { newEventData, setNewEventData, openEventDrawer, setOpenEventDrawer } =
-    useAccount();
+  const {
+    newEventData,
+    setNewEventData,
+    openEventDrawer,
+    setOpenEventDrawer,
+    openTicketsDrawer,
+    setOpenTicketsDrawer,
+  } = useAccount();
   const [eventDate, setEventDate] = useState<any>({
     startDate: null,
     endDate: null,
@@ -78,6 +82,11 @@ export default function CreateEventForm(props: any) {
     setOpenEventDrawer(false);
   };
 
+  const handleTicketsDrawer = async () => {
+    console.log(openTicketsDrawer);
+    setOpenTicketsDrawer((prevState: any) => !prevState);
+  };
+
   const slideIn = {
     hidden: { x: "100%" }, // start from the right
     visible: { x: 0 }, // move to center
@@ -106,7 +115,6 @@ export default function CreateEventForm(props: any) {
     setEndSlot(selectedOption);
   };
 
-  const libraries: Libraries = ["places"];
   const mapContainerStyle = {
     width: "100%",
     height: "200px",
@@ -121,7 +129,7 @@ export default function CreateEventForm(props: any) {
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string, // Add your API key here
-    libraries,
+    libraries: ["places"],
   });
 
   const handlePlaceSelect = () => {
@@ -171,6 +179,10 @@ export default function CreateEventForm(props: any) {
     generateTimeSlots();
   }, []);
 
+  const toggleTicketsDrawer = () => {
+    setOpenTicketsDrawer((prevState: any) => !prevState);
+  };
+
   return (
     <div className="w-full h-[calc(100vh-64px)] flex flex-col sm:flex-row gap-4 sm:gap-6 overflow-x-hidden">
       <div className="p-4 w-full sm:w-[70%] min-h-[calc(100vh-64px)]">
@@ -186,7 +198,11 @@ export default function CreateEventForm(props: any) {
             />
           )}
           {step === 3 && (
-            <Step3 formData={newEventData} handleChange={handleChange} />
+            <Step3
+              formData={newEventData}
+              handleChange={handleChange}
+              handleTicketsDrawer={toggleTicketsDrawer}
+            />
           )}
 
           <StepNavigation
@@ -426,6 +442,17 @@ export default function CreateEventForm(props: any) {
           <Mockup />
         </div>
       </div>
+      <Drawer
+        open={openTicketsDrawer}
+        onClose={toggleTicketsDrawer}
+        size={400}
+        direction="right"
+        className="max-w-full"
+      >
+        <div className="p-4">
+          <h4>Add Ticket Form</h4>
+        </div>
+      </Drawer>
     </div>
   );
 }

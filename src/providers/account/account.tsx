@@ -10,6 +10,7 @@ export default function AccountProvider({
 }) {
   const [userData, setUserData] = useState<any>(null);
   const [openEventDrawer, setOpenEventDrawer] = useState(false);
+  const [openTicketsDrawer, setOpenTicketsDrawer] = useState(false);
   const [newEventData, setNewEventData] = useState<any>({
     event_poster: "",
     event_title: "",
@@ -40,6 +41,8 @@ export default function AccountProvider({
         setNewEventData,
         openEventDrawer,
         setOpenEventDrawer,
+        openTicketsDrawer,
+        setOpenTicketsDrawer,
       }}
     >
       {children}
