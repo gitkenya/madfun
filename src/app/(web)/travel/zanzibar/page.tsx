@@ -32,7 +32,7 @@ export default async function Page() {
           src={`/assets/img/destinations/banners/zanzibar.webp`}
           fill
           priority
-          alt="Experience Nairobi"
+          alt="Experience Zanzibar with Madfun"
           sizes="(max-width: 768px) 600px, (max-width: 1200px) 1200px, 1600px"
         />
         <div className="absolute flex flex-col items-center justify-center top-0 left-0 w-full h-full sm:rounded-xl bg-gradient-to-b from-slate-900/10 via-slate-900/60 to-slate-900/20 z-20">
