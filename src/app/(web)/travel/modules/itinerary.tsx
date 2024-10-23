@@ -8,7 +8,10 @@ export default function Itinerary(props: any) {
       <div className="mb-6 text-slate-600">
         <div className="join join-vertical w-full">
           {itinerary?.map((itn: any, index: number) => (
-            <div className="collapse collapse-arrow join-item border-slate-300 border">
+            <div
+              key={itn.id}
+              className="collapse collapse-arrow join-item border-slate-300 border"
+            >
               <input
                 type="radio"
                 name="my-accordion-4"

@@ -84,7 +84,6 @@ export default async function Page() {
         "Enjoy breakfast in the morning, check out from the hotel before noon, and get picked up for your transfer to the airport to catch your flight.",
     },
   ];
-  itinerary;
 
   return (
     <section className="w-full pt-16 sm:pt-20">
