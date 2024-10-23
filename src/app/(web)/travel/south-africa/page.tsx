@@ -19,10 +19,6 @@ export default async function Page() {
       photo: "/assets/img/destinations/gallery/south-africa/gallery-3.jpg",
     },
     {
-      id: "6",
-      photo: "/assets/img/destinations/gallery/south-africa/gallery-6.jpg",
-    },
-    {
       id: "4",
       photo: "/assets/img/destinations/gallery/south-africa/gallery-4.jpg",
     },
