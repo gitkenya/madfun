@@ -51,9 +51,9 @@ export default async function Page() {
         <div className="w-full sm:w-7/12 flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="flex flex-col gap-4">
-              <h2 className="text-lg sm:text-xl font-semibold text-slate-700 font-poppins">
-                Breezy is around: you can’t afford to miss this!
-              </h2>
+              <h1 className="text-lg sm:text-2xl font-semibold uppercase text-slate-700 font-poppins tracking-wider">
+                {currentDestination?.subtitle}
+              </h1>
               <p className="">
                 Experience Breezy LIVE in Johannesburg on December 15, 2024!
                 Imagine an all-inclusive package featuring concert tickets in

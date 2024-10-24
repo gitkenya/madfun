@@ -51,9 +51,9 @@ export default async function Page() {
         <div className="w-full sm:w-7/12 flex flex-col gap-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
             <div className="flex flex-col gap-4">
-              <h2 className="text-lg sm:text-xl font-semibold text-slate-700 font-poppins uppercase">
-                ANDREA BOCELLI
-              </h2>
+              <h1 className="text-lg sm:text-2xl font-bold uppercase font-poppins text-slate-700 tracking-wider">
+                {currentDestination?.subtitle}
+              </h1>
               <p className="">
                 Grammy Award winning Artist, Andrea Bocelli will be performing
                 LIVE in London, 7 hours away and you can't afford to miss it.

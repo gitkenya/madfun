@@ -61,10 +61,10 @@ export default async function Page() {
         <div className="absolute flex flex-col items-center justify-center top-0 left-0 w-full h-full sm:rounded-xl bg-gradient-to-b from-slate-900/10 via-slate-900/60 to-slate-900/20 z-20">
           <div className="w-full max-w-[50rem] mx-auto flex flex-col gap-4 items-center justify-center text-center text-white">
             <h1 className="text-lg sm:text-5xl font-bold uppercase font-poppins tracking-wider">
-              Amboseli
+              {currentDestination?.title}
             </h1>
             <p className="sm:text-lg font-medium">
-              4 days, 3 night Amboseli National Park Spectacular Safari
+              {currentDestination?.subtitle}
             </p>
           </div>
         </div>

@@ -31,7 +31,7 @@ export default function OtherDestinations(props: any) {
             <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-slate-900/10 via-slate-900/10 to-slate-900/60 rounded-lg flex flex-col justify-end">
               <div className="flex flex-col gap-1.5 px-5 py-3">
                 <div className="font-semibold text-white sm:text-lg font-poppins">
-                  {des.title}
+                  {des.name}
                 </div>
                 <div className="flex flex-col sm:flex-row justify-end sm:items-end sm:justify-start gap-1 sm:gap-3 text-white text-sm">
                   <div className="flex flex-row items-end gap-3">

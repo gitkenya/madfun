@@ -1,44 +1,25 @@
 import Image from "next/image";
 import BookingForm from "../modules/form";
-import Link from "next/link";
 import Gallery from "../modules/gallery";
-import Itinerary from "../modules/itinerary";
 import OtherDestinations from "../modules/others";
 import { destinations } from "@/utils/data/destinations";
 
 export default async function Page() {
   const currentDestination = destinations.find(
-    (obj: any) => obj.slug === "naivasha"
+    (obj: any) => obj.slug === "atlantis"
   );
-  const gallery: any[] = [
-    {
-      id: "1",
-      photo: "/assets/img/destinations/gallery/naivasha/gallery-1.webp",
-    },
-    {
-      id: "2",
-      photo: "/assets/img/destinations/gallery/naivasha/gallery-2.jpg",
-    },
-    {
-      id: "3",
-      photo: "/assets/img/destinations/gallery/naivasha/gallery-3.jpg",
-    },
-    {
-      id: "4",
-      photo: "/assets/img/destinations/gallery/naivasha/gallery-4.jpg",
-    },
-    {
-      id: "5",
-      photo: "/assets/img/destinations/gallery/naivasha/gallery-5.jpg",
-    },
-  ];
+  const galleryLength = 5;
+  const gallery = Array.from({ length: galleryLength }, (v, i) => ({
+    id: `${i + 1}`,
+    photo: `/assets/img/destinations/gallery/atlantis/gallery-${i + 1}.jpg`,
+  }));
 
   return (
     <section className="w-full pt-16 sm:pt-20">
       <div className="w-full max-w-[85rem] mx-auto relative min-h-[240px] sm:min-h-[360px] sm:rounded-xl mt-0 mb-6 sm:mt-6">
         <Image
           className="object-cover sm:rounded-xl"
-          src={`/assets/img/destinations/banners/naivasha.webp`}
+          src={`/assets/img/destinations/banners/atlantis.jpg`}
           fill
           priority
           alt="Experience Lake Nakuru with Madfun"
@@ -59,30 +40,36 @@ export default async function Page() {
         <div className="w-full sm:w-7/12 flex flex-col gap-4">
           <div className="flex flex-col mb-6">
             <div className="flex flex-col gap-4">
+              <h2 className="italic font-semibold text-slate-700 text-lg">
+                3 days, 2 nights stay
+              </h2>
               <p className="">
-                Imagine yourself sipping wine while enjoying breathtaking views
-                at the rooftop lounge while the kids burn some energy on the
-                trampoline. This dream can be your reality at the Impala House
-                in Naivasha, the ideal spot for an amazing 2-night, 3-day family
-                getaway.
+                Nestled between the shimmering Arabian Gulf and the breathtaking
+                Dubai skyline, Atlantis, The Palm invites you to a realm of
+                unforgettable experiences. From luxurious accommodations and
+                world-class dining by celebrity chefs to thrilling adventures at
+                Aqua venture Waterpark, discover a destination where every
+                moment feels extraordinary
               </p>
-              <p>
-                Located on Moi South Lake Road, this beautiful 3-bedroom
-                bungalow offers comfort and enjoyment for just 55,000ksh. Enjoy
-                a fully furnished home where relaxation is key. Challenge your
-                family to a pool game, capture those Insta-worthy moments with
-                free Wi-Fi, and let daily housekeeping take care of the details.
+              <p className="italic">
+                Special rate: <span className="font-bold">USD 2400</span> for
+                two in a double room
               </p>
-              <p>
-                While the package is self-catering, you can elevate your
-                experience by hiring a professional chef for just Ksh 3,000
-                daily. But if you’d rather cook for yourself, the kitchen is
-                fully stocked.
-              </p>
-              <p>
-                Whether you seek adventure or relaxation, the Impala house
-                offers the perfect blend.
-              </p>
+              <div>
+                <h2 className="font-semibold text-slate-700 font-poppins">
+                  Inclusions
+                </h2>
+                <ul className="list-disc px-4">
+                  <li>2 nights of accommodation in an Ocean King room</li>
+                  <li>Meals on bed and breakfast basis</li>
+                  <li>Complimentary access to Aquaventure Waterpark</li>
+                  <li>Complimentary entrance to The Lost Chambers Aquarium</li>
+                  <li>Complimentary access to the AWAKEN Fitness Centre</li>
+                  <li>One Explorers Club session per stay</li>
+                  <li>Extraordinary views of the Arabian Sea</li>
+                </ul>
+              </div>
+              <p className="italic">Terms and conditions apply</p>
             </div>
           </div>
 
@@ -98,7 +85,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="w-full bg-slate-100">
-        <OtherDestinations slug={`naivasha`} />
+        <OtherDestinations slug={`atlantis`} />
       </div>
     </section>
   );
