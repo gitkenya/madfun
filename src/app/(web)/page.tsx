@@ -39,6 +39,7 @@ export default async function Home() {
       />
       <Events />
       <Destinations destinations={destinations} />
+      <Hotels />
       <Streams />
       <Insider />
     </>

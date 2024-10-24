@@ -3,6 +3,7 @@ import BookingForm from "../modules/form";
 import Link from "next/link";
 import Gallery from "../modules/gallery";
 import Itinerary from "../modules/itinerary";
+import OtherDestinations from "../modules/others";
 
 export default async function Page() {
   const gallery: any[] = [
@@ -73,11 +74,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="w-full bg-slate-100">
-        <div className="w-full max-w-[85rem] mx-auto py-6 sm:py-12 px-4 sm:px-0 flex flex-col gap-5">
-          <h2 className="font-bold text-lg sm:text-3xl text-slate-800 font-poppins">
-            Other Destinations
-          </h2>
-        </div>
+        <OtherDestinations slug={`joburg`} />
       </div>
     </section>
   );
