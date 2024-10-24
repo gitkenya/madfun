@@ -3,8 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { MdOutlineHotel, MdPersonOutline } from "react-icons/md";
 import { hotels } from "@/utils/data/hotels";
+import { IoChevronForwardOutline } from "react-icons/io5";
 
 export default function Hotels(props: any) {
+  const featuredHotels: any[] = hotels.filter(
+    (obj: any) => obj.featured === true
+  );
   return (
     <section className="w-full py-8 sm:py-12 bg-slate-100">
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-2">
@@ -15,7 +19,7 @@ export default function Hotels(props: any) {
         </div>
         <div className="w-full px-2 sm:px-0">
           <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-8">
-            {hotels?.map((hotel: any) => (
+            {featuredHotels?.map((hotel: any) => (
               <div key={hotel.id} className="grid">
                 <div className="relative rounded-lg flex flex-col justify-between gap-4">
                   <Link
@@ -58,6 +62,14 @@ export default function Hotels(props: any) {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="flex flex-row items-center justify-center py-6 sm:pt-12 sm:py-10">
+            <Link
+              href="/hotels"
+              className="text-sm text-slate-600 font-medium flex flex-row items-center gap-2 px-5 py-2 border border-slate-600 rounded-lg"
+            >
+              More to explore <IoChevronForwardOutline size={20} />
+            </Link>
           </div>
         </div>
       </div>

@@ -36,7 +36,9 @@ export default function Streams() {
             You Can't miss
           </h2>
         </div>
-        <LivestreamModal />
+        <div className="hidden">
+          <LivestreamModal />
+        </div>
         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-slate-900/50">
           <div className="w-full flex flex-row justify-between items-center px-4 py-2 sm:py-4 max-w-[85rem] mx-auto text-white text-sm sm:text-lg">
             <div className="flex flex-row items-center gap-3">
@@ -52,7 +54,8 @@ export default function Streams() {
               <span className="font-semibold">Every Brilliant thing</span>
             </div>
             <Link
-              href="/"
+              href="https://streams.madfun.com"
+              target="_blank"
               className="text-sm font-normal flex flex-row items-center gap-2"
             >
               Buy to watch <IoChevronForwardOutline size={18} />

@@ -23,7 +23,7 @@ export const hotels: any[] = [
     guests: "",
     beds: "",
     price: "",
-    featured: true,
+    featured: false,
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const hotels: any[] = [
     guests: "",
     beds: "",
     price: "",
-    featured: true,
+    featured: false,
   },
   {
     id: 4,

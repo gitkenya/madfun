@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
+import { blogs } from "@/utils/data/blog";
+import { IoChevronForwardOutline } from "react-icons/io5";
 
 export default function Insider(props: any) {
-  const insiders = [
+  const insiders: any[] = blogs.filter((obj: any) => obj.featured === true);
+  [
     {
       id: "1",
       date: "24 Oct, 24",
@@ -53,37 +56,45 @@ export default function Insider(props: any) {
             <div key={insider.id} className="grid">
               <div className="relative bg-white border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-between gap-4">
                 <div className="flex flex-col gap-4">
-                  <Link className="w-full" href={`/`}>
-                    <Image
-                      className="rounded-lg"
-                      src={insider.photo}
-                      width={600}
-                      height={400}
-                      alt={insider.title}
-                    />
-                  </Link>
+                  <Link
+                    className="w-full aspect-video bg-cover bg-center rounded-lg"
+                    href={`/blog/${insider.slug}`}
+                    style={{
+                      backgroundImage: `url(/assets/img/blog/sidebar/${insider.photo})`,
+                    }}
+                  ></Link>
                   <div className="space-y-2">
                     <h2
-                      className={`font-semibold uppercase tracking-[0.28em] sm:tracking-[0.28em] text-sm ${categoryColor(
-                        insider.category
+                      className={`transition-colors duration-300 font-semibold uppercase tracking-[0.28em] sm:tracking-[0.28em] text-sm ${categoryColor(
+                        "Travel"
                       )}`}
                     >
-                      {insider.category}
+                      Travel Tips
                     </h2>
-                    <h3 className="font-semibold text-slate-600 sm:text-lg font-poppins">
-                      {insider.title}
-                    </h3>
+                    <Link href={`/blog/${insider.slug}`}>
+                      <h3 className="transition-colors duration-300 font-semibold text-slate-600 hover:text-red-600 sm:text-lg font-poppins">
+                        {insider.title}
+                      </h3>
+                    </Link>
                   </div>
                 </div>
-                <div className="">
+                <div className="hidden">
                   <h4 className="text-sm text-slate-400 flex flex-row items-center justify-between gap-2">
-                    <span className="">{insider.time}</span>
-                    <span className="">{insider.date}</span>
+                    <span className="">{insider?.time}</span>
+                    <span className="">{insider?.date}</span>
                   </h4>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex flex-row items-center justify-center py-6 sm:pt-12 sm:py-10">
+          <Link
+            href="/blog"
+            className="text-sm text-slate-600 font-medium flex flex-row items-center gap-2 px-5 py-2 border border-slate-600 rounded-lg"
+          >
+            More to explore <IoChevronForwardOutline size={20} />
+          </Link>
         </div>
       </div>
     </section>

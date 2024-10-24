@@ -104,26 +104,10 @@ export default function Footer() {
                   <ul className="flex flex-col gap-2">
                     <li>
                       <Link
-                        href="/"
+                        href="/blog"
                         className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
                       >
-                        About us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
-                      >
-                        Events guide
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="/"
-                        className="transition-all duration-300 text-sm text-slate-300 hover:text-slate-200"
-                      >
-                        Fun times
+                        Blog
                       </Link>
                     </li>
                     <li>
