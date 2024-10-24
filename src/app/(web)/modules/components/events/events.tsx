@@ -23,6 +23,8 @@ export default function Events(props: any) {
       ];
       const today = new Date().getDay();
       const startIndex = today % rotatingEvents.length;
+
+      // Ensure rotating events always have 3 items by wrapping around
       const rotatedEvents = [
         ...rotatingEvents.slice(startIndex),
         ...rotatingEvents.slice(0, startIndex),
@@ -62,17 +64,44 @@ export default function Events(props: any) {
             const {
               data: { data },
             } = resData;
+
+            // Attempt to find event 228 in the data
             const mainEvent = data.find(
               (event: any) => event.eventID === "228"
             );
+
+            // If event 228 is not found, create a placeholder or handle the missing event case
+            if (!mainEvent) {
+              console.warn("Main event (228) not found.");
+            }
+
+            // Filter for public and active events, excluding the mainEvent (228)
             const filteredEvents = data.filter(
-              (event: any) => event.isPublic === "1" && event.status === "1"
+              (event: any) =>
+                event.isPublic === "1" &&
+                event.status === "1" &&
+                event.eventID !== "228" // Avoid duplicating main event
             );
-            const rotatingEvents = filteredEvents
+
+            // Get 3 rotating events that match the rotatingEventIDs
+            let rotatingEvents = filteredEvents
               .filter((event: any) => rotatingEventIDs.includes(event.eventID))
               .slice(0, 3);
-            const finalEvents = [mainEvent, ...rotatingEvents];
+
+            // Ensure we always get 3 rotating events. If fewer than 3 found, pad with other events
+            if (rotatingEvents.length < 3) {
+              const additionalEvents = filteredEvents
+                .filter((event: any) => !rotatingEvents.includes(event))
+                .slice(0, 3 - rotatingEvents.length); // Fill the gap
+
+              rotatingEvents = [...rotatingEvents, ...additionalEvents];
+            }
+
+            // Combine the main event (228) and the rotating events
+            const finalEvents = [mainEvent, ...rotatingEvents].filter(Boolean); // Remove any `undefined` entries
+
             setEvents(finalEvents);
+            console.log(finalEvents);
           }
         } else {
           console.error("Failed to fetch events");
