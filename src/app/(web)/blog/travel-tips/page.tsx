@@ -8,7 +8,7 @@ export default async function Page() {
   const currentBlog = blogs.find((obj: any) => obj.slug === slug);
   return (
     <section className="w-full py-8 bg-slate-100 min-h-screen text-slate-600">
-      <div className="mx-auto max-w-[85rem] px-2 sm:px-0 pt-10 sm:pt-16 flex flex-col sm:flex-row-reverse gap-4 sm:gap-12">
+      <div className="mx-auto max-w-[85rem] px-4 sm:px-0 pt-12 sm:pt-16 flex flex-col sm:flex-row-reverse gap-4 sm:gap-12">
         <div className="w-full sm:w-2/3 flex flex-col gap-4 sm:gap-6">
           <div
             className="w-full aspect-video bg-cover bg-center rounded-xl sm:rounded-xl"
