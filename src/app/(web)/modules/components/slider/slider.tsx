@@ -22,7 +22,7 @@ export default function Slider(props: any) {
     },
 
     {
-      id: "2",
+      id: "3",
       name: "",
       photo: "/assets/img/slider/hero-5.jpg",
     },

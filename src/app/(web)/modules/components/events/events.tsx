@@ -10,9 +10,32 @@ export default function Events(props: any) {
   const [loadingEvents, setLoadingEvents] = useState(true);
 
   useEffect(() => {
+    const getRotatingEventIDs = async () => {
+      const rotatingEvents = [
+        "209",
+        "211",
+        "227",
+        "236",
+        "196",
+        "234",
+        "232",
+        "235",
+      ];
+      const today = new Date().getDay();
+      const startIndex = today % rotatingEvents.length;
+      const rotatedEvents = [
+        ...rotatingEvents.slice(startIndex),
+        ...rotatingEvents.slice(0, startIndex),
+      ].slice(0, 3);
+
+      return rotatedEvents;
+    };
+
     const fetchEvents = async () => {
       setLoadingEvents(true);
       try {
+        const rotatingEventIDs: any[] = await getRotatingEventIDs();
+
         const reqData = await fetch(
           `https://api.v1.interactive.madfun.com/v1/api/event/view`,
           {
@@ -24,28 +47,32 @@ export default function Events(props: any) {
             body: JSON.stringify({
               api_key: "4ba0e1aae090cdefc1887d2689b25e3f",
               source: "MOBILE",
-              limit: 10,
+              limit: 100,
               page: 1,
               sort: "",
               pastEvent: 0,
-              eventID: "",
+              eventID: "", // Empty to fetch all events
             }),
           }
         );
+
         if (reqData.ok) {
           const resData = await reqData.json();
-          //console.log(resData);
           if (resData.code === "Success") {
             const {
               data: { data },
             } = resData;
-            const filteredEvents = data
-              .filter(
-                (event: any) => event.isPublic === "1" && event.status === "1"
-              )
-              .slice(0, 4); // Limit to first 4 results
-
-            setEvents(filteredEvents);
+            const mainEvent = data.find(
+              (event: any) => event.eventID === "228"
+            );
+            const filteredEvents = data.filter(
+              (event: any) => event.isPublic === "1" && event.status === "1"
+            );
+            const rotatingEvents = filteredEvents
+              .filter((event: any) => rotatingEventIDs.includes(event.eventID))
+              .slice(0, 3);
+            const finalEvents = [mainEvent, ...rotatingEvents];
+            setEvents(finalEvents);
           }
         } else {
           console.error("Failed to fetch events");
@@ -80,9 +107,9 @@ export default function Events(props: any) {
             ? Array.from({ length: 4 }).map((_, index) => (
                 <div
                   key={index}
-                  className="relative min-h-[240px] sm:min-h-[420px] bg-slate-50 border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-start gap-4"
+                  className="relative bg-slate-50 border border-slate-200 p-2 sm:p-4 rounded-lg flex flex-col justify-start gap-4"
                 >
-                  <div className="w-full min-h-[150px] sm:min-h-[300px] bg-slate-200 rounded-lg animate-pulse"></div>
+                  <div className="w-full aspect-square bg-slate-200 rounded-lg animate-pulse"></div>
                   <div className="w-full min-h-[20px] bg-slate-200 rounded animate-pulse"></div>
                   <div className="w-36 min-h-[20px] bg-slate-200 rounded animate-pulse"></div>
                 </div>
@@ -94,13 +121,10 @@ export default function Events(props: any) {
                       className="w-full"
                       href={`${process.env.NEXT_PUBLIC_SITE_URL}/event/${event.eventID}`}
                     >
-                      <img
-                        className="rounded-lg"
-                        src={event.posterURL}
-                        width={600}
-                        height={600}
-                        alt="Events in Kenya Cinema Nairobi"
-                      />
+                      <div
+                        className="aspect-square bg-cover bg-center rounded-lg"
+                        style={{ backgroundImage: `url(${event.posterURL})` }}
+                      ></div>
                       <span className="absolute top-0 left-0 m-6 min-w-20 text-center bg-slate-50 text-sm font-semibold text-red-600 px-2 py-1 rounded">
                         {moment(event.start_date).format("D MMM")}
                       </span>
@@ -119,7 +143,8 @@ export default function Events(props: any) {
                           <IoEllipse size={8} />
                         </span>
                         <span className="">
-                          {event.currency} {event.minAmount}
+                          {event.currency}{" "}
+                          {parseFloat(event.minAmount).toLocaleString()}
                         </span>
                       </h3>
                     </div>
