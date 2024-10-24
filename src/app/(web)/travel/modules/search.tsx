@@ -51,26 +51,11 @@ export default function SearchForm(props: any) {
             }}
           />
         </div>
-        <div className="flex flex-row items-center">
-          <Select
-            defaultValue={selectedLocation}
-            onChange={handleLocationChange}
-            options={locations}
+        <div className="flex flex-row items-center sm:px-5">
+          <input
+            type="number"
             placeholder="Number of travellers"
-            unstyled
-            instanceId={useId()}
-            components={{ DropdownIndicator: CustomDropdownIndicator }}
-            className="w-full m-4"
-            classNames={{
-              control: () =>
-                "appearance-none items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded py-2 px-4 focus:outline-none",
-              menu: () =>
-                "p-1 mt-2 border w-full min-w-[200px] left-0  border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
-              option: () => "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
-              menuList: () => "cursor-pointer text-base",
-              placeholder: () => "text-base text-slate-600",
-              dropdownIndicator: () => "pt-1",
-            }}
+            className="appearance-none items-center w-full outline-none text-base text-slate-800 bg-white rounded py-3 px-4 focus:outline-none"
           />
         </div>
         <div className="flex flex-row items-center justify-end">
