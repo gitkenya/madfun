@@ -2,9 +2,13 @@ import Image from "next/image";
 import BookingForm from "../modules/form";
 import Link from "next/link";
 import Gallery from "../modules/gallery";
+import { destinations } from "@/utils/data/destinations";
 import OtherDestinations from "../modules/others";
 
 export default async function Page() {
+  const currentDestination = destinations.find(
+    (obj: any) => obj.slug === "amboseli"
+  );
   const gallery: any[] = [
     {
       id: "1",
@@ -168,7 +172,7 @@ export default async function Page() {
           </div>
         </div>
         <div className="w-full rounded-lg sm:w-5/12">
-          <BookingForm user={null} />
+          <BookingForm user={null} destination={currentDestination} />
         </div>
       </div>
       <div className="w-full bg-slate-100">

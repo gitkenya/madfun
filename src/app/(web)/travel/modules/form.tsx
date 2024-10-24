@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { submitRequest } from "./actions";
 import { toast } from "sonner";
 export default function BookingForm(props: any) {
-  const { user } = props;
+  const { user, destination } = props;
   const ref = useRef<HTMLFormElement>(null);
   const [travelDate, setTravelDate] = useState<any>(
     new Date(new Date().setDate(new Date().getDate() + 1))
@@ -135,13 +135,23 @@ export default function BookingForm(props: any) {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:mt-4">
-          <div className="flex flex-col">
-            <div>From</div>
-            <div className="flex flex-row items-center gap-2">
-              <span className="line-through text-slate-500">Ksh. 45,000</span>
-              <span className="font-bold text-lg">Ksh. 40,000</span>
+          {destination?.from ? (
+            <div className="flex flex-col">
+              <div>From</div>
+              <div className="flex flex-row items-center gap-2">
+                <span className="line-through text-slate-500">
+                  {destination.currency}.{" "}
+                  {(parseFloat(destination.from) * 1.2).toLocaleString()}
+                </span>
+                <span className="font-bold text-lg">
+                  {destination.currency}.{" "}
+                  {parseFloat(destination.from).toLocaleString()}
+                </span>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div></div>
+          )}
           <div>
             <BookButton />
           </div>
