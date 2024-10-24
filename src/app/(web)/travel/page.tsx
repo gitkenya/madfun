@@ -47,8 +47,8 @@ export default async function Page() {
           </div>
         </div>
         <div className="mx-auto max-w-[85rem] px-2 sm:px-4 space-y-6 my-6 sm:my-12">
-          <div className="grid grid-cols-1 sm:grid-cols-4 gap-5">
-            <div className="flex flex-col gap-8 sm:pe-16">
+          <div className="relative grid grid-cols-1 sm:grid-cols-4 gap-5">
+            <div className="flex flex-col gap-8 sm:pe-16 sm:sticky sm:top-[70px] sm:max-h-64">
               <div className="font-poppins flex flex-col gap-1 sm:gap-3 text-slate-800">
                 <h2 className="text-lg sm:text-3xl font-bold uppercase">Top</h2>
                 <h2 className="text-lg sm:text-3xl font-bold uppercase">
@@ -60,7 +60,7 @@ export default async function Page() {
                 unforgettable memories
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 sm:col-span-3 gap-3 sm:gap-5">
+            <div className="min-h-screen grid grid-cols-2 sm:grid-cols-3 sm:col-span-3 gap-3 sm:gap-5">
               {destinations?.map((destination: any) => (
                 <Link
                   key={destination.id}
