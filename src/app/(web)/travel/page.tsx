@@ -97,8 +97,10 @@ export default async function Page() {
                         </div>
                         {destination.from && (
                           <div className="flex flex-row items-center gap-1">
-                            <span>From Ksh.</span>
-                            <span>{destination.from.toLocaleString()}</span>
+                            <span>From {destination.currency}.</span>
+                            <span>
+                              {parseFloat(destination.from).toLocaleString()}
+                            </span>
                           </div>
                         )}
                       </div>

@@ -43,7 +43,7 @@ export default function SearchForm(props: any) {
               control: () =>
                 "appearance-none flex items-center w-full h-full outline-none text-base text-slate-800 bg-white rounded py-2 px-4 focus:outline-none",
               menu: () =>
-                "p-1 mt-2 border w-full left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 focus:outline-none",
+                "p-1 mt-2 border w-full left-0 border-slate-200 text-slate-800 bg-white rounded-lg py-3 px-4 pe-0 focus:outline-none",
               option: () => "cursor-pointer p-2 hover:bg-slate-100 rounded-sm",
               menuList: () => "cursor-pointer text-base",
               placeholder: () => "text-base text-slate-600",

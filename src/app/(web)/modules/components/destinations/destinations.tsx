@@ -9,6 +9,9 @@ import {
 
 export default function Destinations(props: any) {
   //const { destinations } = props;
+  const featuredDestinations: any[] = destinations.filter(
+    (obj: any) => obj.featured === true
+  );
   return (
     <section className="w-full py-8 sm:py-12 bg-white">
       <div className="mx-auto max-w-[85rem] px-2 sm:px-0 space-y-6 mt-6">
@@ -40,7 +43,7 @@ export default function Destinations(props: any) {
             </Link>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 sm:col-span-3 gap-3 sm:gap-5">
-            {destinations?.map((destination: any) => (
+            {featuredDestinations?.map((destination: any) => (
               <Link
                 key={destination.id}
                 href={`/travel/${destination.slug}`}
@@ -76,8 +79,10 @@ export default function Destinations(props: any) {
                       </div>
                       {destination.from && (
                         <div className="flex flex-row items-center gap-1">
-                          <span>From Ksh.</span>
-                          <span>{destination.from.toLocaleString()}</span>
+                          <span>From {destination.currency}.</span>
+                          <span>
+                            {parseFloat(destination.from).toLocaleString()}
+                          </span>
                         </div>
                       )}
                     </div>
