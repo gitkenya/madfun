@@ -8,9 +8,7 @@ import { toast } from "sonner";
 export default function BookingForm(props: any) {
   const { user, destination } = props;
   const ref = useRef<HTMLFormElement>(null);
-  const [travelDate, setTravelDate] = useState<any>(
-    new Date(new Date().setDate(new Date().getDate() + 1))
-  );
+  const [travelDate, setTravelDate] = useState<any>(null);
   return (
     <div className="w-full text-slate-800 sm:sticky sm:top-20">
       <div className="w-full px-4 py-3 bg-gray-200 flex flex-row items-center justify-center rounded-t-xl">
@@ -109,6 +107,7 @@ export default function BookingForm(props: any) {
               selected={travelDate}
               name="book_date"
               placeholderText="---"
+              dateFormat={`dd-MM-YYYY`}
               minDate={new Date(new Date().setDate(new Date().getDate() + 1))}
               required
               onChange={(date) => {
