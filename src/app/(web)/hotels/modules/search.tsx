@@ -4,11 +4,11 @@ import { IoEllipse, IoChevronDownOutline } from "react-icons/io5";
 import Select, { components } from "react-select";
 
 export default function SearchForm(props: any) {
-  const { destinations } = props;
+  const { hotels } = props;
   const [selectedLocation, setSelectedLocation] = useState(1);
-  const locations: any[] = destinations.map((destination: any) => ({
-    value: destination.id,
-    label: destination.name,
+  const locations: any[] = hotels.map((hotel: any) => ({
+    value: hotel.id,
+    label: hotel.name,
   }));
   const handleLocationChange = (event: any) => {
     setSelectedLocation(event.value);
@@ -25,7 +25,7 @@ export default function SearchForm(props: any) {
   return (
     <div className="w-full hidden sm:flex flex-col gap-6">
       <h1 className="flex flex-row items-end gap-3 font-poppins text-lg sm:text-4xl font-bold text-white tracking-wider">
-        Travel Experiences
+        Hotel Experiences
         <IoEllipse size={14} className="text-primary-500 mb-[0.4rem]" />
       </h1>
       <div className="grid grid-cols-3 rounded-lg bg-white">
@@ -34,7 +34,7 @@ export default function SearchForm(props: any) {
             defaultValue={selectedLocation}
             onChange={handleLocationChange}
             options={locations}
-            placeholder="Destination"
+            placeholder="Hotel"
             unstyled
             instanceId={useId()}
             components={{ DropdownIndicator: CustomDropdownIndicator }}
@@ -56,7 +56,7 @@ export default function SearchForm(props: any) {
             defaultValue={selectedLocation}
             onChange={handleLocationChange}
             options={locations}
-            placeholder="Number of travellers"
+            placeholder="Number of guests"
             unstyled
             instanceId={useId()}
             components={{ DropdownIndicator: CustomDropdownIndicator }}

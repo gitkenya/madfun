@@ -59,7 +59,7 @@ export default function Navbar(props: any) {
     {
       id: "3",
       name: "Hotels",
-      href: "https://madfun.com/hotels",
+      href: "/hotels",
       current: pathname === "/hotels" || pathname.includes("hotels"),
     },
     {
