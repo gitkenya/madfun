@@ -3,7 +3,7 @@ import BookingForm from "../modules/form";
 import Link from "next/link";
 import Gallery from "../modules/gallery";
 import { destinations } from "@/utils/data/destinations";
-import OtherDestinations from "../modules/others";
+import OtherDestinations from "../modules/otherDestinations";
 
 export default async function Page() {
   const currentDestination = destinations.find(

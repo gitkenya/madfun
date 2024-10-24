@@ -3,7 +3,7 @@ import BookingForm from "../modules/form";
 import Link from "next/link";
 import Gallery from "../modules/gallery";
 import Itinerary from "../modules/itinerary";
-import OtherDestinations from "../modules/others";
+import OtherDestinations from "../modules/otherDestinations";
 import { destinations } from "@/utils/data/destinations";
 
 export default async function Page() {
